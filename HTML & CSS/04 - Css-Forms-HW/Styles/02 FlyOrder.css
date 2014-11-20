@@ -1,0 +1,70 @@
+form{
+    width: 500px;
+    height: 300px;
+    background-color: pink;
+    font-family: tahoma;
+}
+h1{
+    text-transform: uppercase;
+    text-align: center;
+    font-style: italic;
+}
+.left{
+    width: 45%;
+    float: left;
+    margin: 5px;
+    padding-left: 2%;
+}
+.right{
+    width: 45%;
+    float:right;
+    margin: 5px;
+    padding-right: 2%;
+}
+.prefDir, label, .city{
+    display: block;
+}
+label{
+    font-style: italic;
+}
+.city{
+    width: 200px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+    .city select{
+        width: 200px;
+        height: 25px;
+    }
+    label[for="prefDir"]{
+        display: inline-block;
+    }
+.time{
+    height: 50px;
+}
+    .time input{
+        width: 200px;
+    }
+    .interval input{
+        width: 100px;
+    }
+.iHaveNoGoodNameForYou span{
+    display: inline-block;
+    height: 25px;
+}
+.iHaveNoGoodNameForYou span input, .iHaveNoGoodNameForYou span label{
+    display: block;
+    width: 60px;
+}
+.pickClass{
+    height: 50px;
+}
+    .pickClass select{
+        width: 200px;
+    }
+.search{
+    width: 200px;
+}
+    .search input{
+        width: 100%;
+    }

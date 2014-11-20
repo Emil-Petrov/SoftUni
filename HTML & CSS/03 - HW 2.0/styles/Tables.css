@@ -1,0 +1,170 @@
+@import "Resetter.css";
+*:focus{
+    outline: none;
+}
+body{
+    font-family:Tahoma;
+    background: green;
+    /*margin: 2%;*/
+    font-size: 0.8em;
+}
+table{
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+    table thead tr th{
+        background: #fac81e;
+        font-weight: bold;
+        font-size: 1.5em;
+        margin: 0px;
+        padding:  0px;
+        text-decoration: none;
+        font-style: normal;
+        padding: 5px;
+    }
+    table thead tr th:first-child{
+        height: 40px;
+    }
+    tr:nth-of-type(odd){
+        background: #FFFFFF;
+    }
+    tr:nth-of-type(even){
+        background: #BBB8AE;
+    }
+        td,th{
+            border: 1px solid #000000;
+            vertical-align: middle;
+        }
+        th:first-child{
+            border-top-left-radius: 15px;
+            height: 50px;
+        }
+        th:last-child{
+            border-top-right-radius: 15px;
+        }
+        tbody tr:last-child td:first-child{
+            border-bottom-left-radius: 15px;
+        }
+        tbody tr:last-child td:last-child{
+            border-bottom-right-radius: 15px;
+        }
+.bets select{
+    color: green;
+}
+.bets select:disabled{
+    color: red;
+}
+.bets:disabled{
+    color:red;
+}
+.fCountry{
+    text-align: right;
+}
+.sCountry{
+    text-align: left;
+}
+#grA .fCountry::after{
+    content: url("https://az545221.vo.msecnd.net/skype-faq-media/faq_content/skype/flags/br_16x16.png");
+    padding: 5px;
+    align-content: center;
+}
+#grA .sCountry::before{
+    content: url("https://az545221.vo.msecnd.net/skype-faq-media/faq_content/skype/flags/mx_16x16.png");
+    padding: 5px;
+}
+#grB .fCountry::after{
+    content: url("https://az545221.vo.msecnd.net/skype-faq-media/faq_content/skype/flags/es_16x16.png");
+    padding: 5px;
+}
+#grB .sCountry::before{
+    content: url("https://az545221.vo.msecnd.net/skype-faq-media/faq_content/skype/flags/nl_16x16.png");
+    padding: 5px;
+}
+#grC .fCountry::after{
+    content: url("https://az545221.vo.msecnd.net/skype-faq-media/faq_content/skype/flags/it_16x16.png");
+    padding: 5px;
+}
+#grC .sCountry::before{
+    /*Apparently England is not in the skype list of emotes so flag:GB it is.*/
+    content: url("https://az545221.vo.msecnd.net/skype-faq-media/faq_content/skype/flags/gb_16x16.png");
+    padding: 5px;
+}
+#grF .fCountry::after{
+    content: url("https://az545221.vo.msecnd.net/skype-faq-media/faq_content/skype/flags/ar_16x16.png");
+    padding: 5px;
+}
+#grF .sCountry::before{
+    content: url("https://az545221.vo.msecnd.net/skype-faq-media/faq_content/skype/flags/ba_16x16.png");
+    padding: 5px;
+}
+#grE .fCountry::after{
+    content: url("https://az545221.vo.msecnd.net/skype-faq-media/faq_content/skype/flags/de_16x16.png");
+    padding: 5px;
+}
+#grE .sCountry::before{
+    content: url("https://az545221.vo.msecnd.net/skype-faq-media/faq_content/skype/flags/pt_16x16.png");
+    padding: 5px;
+}
+.score{
+    text-align: center;
+}
+body table tbody tr td button {
+    box-shadow:inset 0px 1px 0px 0px #c1ed9c;
+    background-color: #006400;
+    border-radius: 45px;
+    color:#ffffff;
+    height:25px;
+    line-height:25px;
+    width:25px;
+    text-decoration:none;
+    text-align:center;
+    vertical-align: middle;
+    text-shadow:1px 1px 0px #689324;
+    font-size: 0.7em;
+    font-weight:normal;
+    font-style:normal;
+    padding: 0px;
+    margin: 0 15%;
+}
+body table tbody tr td button:active {
+     position: relative;
+     top: 1px;
+ }
+body table tbody tr td button:disabled{
+    background-color: rgb(255,0,0);
+}
+.fCountry{
+    width: 125px;
+    height: 40px;
+    text-align: right;
+}
+.sCountry{
+    width: 125px;    text-align: left;
+}
+.score{
+    width: 50px;
+    text-align: center;
+}
+.group{
+    width: 50px;
+    text-align: center;
+}
+.bets{
+    width: 100px;
+    text-align: center;
+}
+.betFrst{
+    text-align: right;
+    width: 125px;
+    padding-right: 10px;
+}
+.betScnd{
+    text-align: left;
+    width: 125px;    
+	padding-left: 10px;
+}
+.placeBet{
+    align-self: center;
+    width: 35px;
+}

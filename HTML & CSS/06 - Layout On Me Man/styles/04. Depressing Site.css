@@ -1,0 +1,276 @@
+html{
+    font-size: 15px;
+}
+body{
+    font-family: Arial;
+    background: black;
+}
+header > h2{
+    color: #8dc231;
+}
+h1, h2, h3, h4, h5, h6{
+    padding: 0;
+    margin: 0;
+}
+.wrapper {
+    position: absolute;
+    top: 0;
+    left: 27%;
+    width: 46%;
+    background: #fdfdfd;
+}
+    .wrapper > header{
+        position: relative;
+        height: 269px;
+        background: url("../res/headerBackground.jpg");
+    }
+    .wrapper > header > h1{
+        position: absolute;
+        bottom: 30px;
+        right: 20px;
+
+        padding: 0;
+        margin: 0;
+
+        text-align: right;
+
+        color: #fdfdfd;
+
+        font-size: 2rem;
+    }
+    .wrapper > nav{
+        margin-bottom: 20px;
+    }
+    .wrapper > nav > ul{
+        display: block;
+        margin: 0;
+        padding-left: 0;
+        height: 40px;
+
+        text-align: left;
+
+        background: linear-gradient(to bottom, rgba(234,234,234,1) 0%,rgba(206,206,206,1) 100%);
+    }
+    .wrapper > nav > ul > a, .wrapper > nav > ul > a:visited{
+        text-decoration: none;
+        display: inline-block;
+        color: #5d5c5c;
+    }
+    .wrapper > nav > ul > a > li > span{
+        display: inline-block;
+        margin: auto 0;
+        padding-top: 10px;
+    }
+    .wrapper > nav > ul > a > li {
+        display: inline-block;
+
+        margin: 0 20px 0 0;
+        padding-left: 15px;
+        font-size: 1.5rem;
+
+        text-transform: uppercase;
+
+        height: 40px;
+        border-left: 1px solid #fff;
+    }
+    .wrapper > nav > ul > a:nth-child(5) > li{
+        border-right: 1px solid #fff;
+        padding-right: 15px;
+    }
+    .wrapper > aside{
+        float:right;
+        width: 250px;
+        margin-right: 15px;
+    }
+    .wrapper > aside > section{
+        border-radius: 15px;
+        border: 1px solid #dcdcdd;
+        background: #ececed;
+        margin-bottom: 15px;
+    }
+    .wrapper > aside > section > header{
+        margin-top: 15px;
+        margin-left: 15px;
+        margin-bottom: 15px;
+    }
+    .wrapper > aside > section > article{
+        margin-left: 15px;
+    }
+    .wrapper > aside > section > article > header{
+        margin-top: 15px;
+    }
+    .wrapper > aside > section > article >  content > p{
+        height: 20px;
+        width: 200px;
+        overflow: hidden;
+        margin: 0;
+    }
+    .wrapper > aside > section > article > footer > p{
+        margin: 0;
+    }
+    .wrapper > aside > section > article > footer > p > a{
+        color: #8dc231;
+    }
+    .wrapper > aside > section:nth-child(2) > article > content > p{
+        height: 300px;
+        overflow: hidden;
+    }
+    .wrapper > aside > section:nth-child(2) > article > footer > .author{
+        font-weight: 600;
+    }
+    .wrapper > aside > section:nth-child(2) > article > footer > .author:before{
+    font-weight: normal;
+    content: "Author: ";
+    }
+    .wrapper > aside > section:nth-child(2) > footer > p > a{
+        color: #8dc231;
+        margin-left: 15px;
+    }
+    .wrapper > main > .welcomer{
+        margin-left: 50px;
+        margin-right: 300px;
+        border: 1px solid #dcdcdd;
+        border-radius: 15px;
+        padding: 15px;
+        height: 125px;
+        overflow: hidden;
+    }
+    .wrapper > main > .free-products{
+        margin-top: 15px;
+        margin-left: 50px;
+        margin-right: 300px;
+        margin-bottom: 60px;
+        padding: 15px;
+
+        border-radius: 15px;
+        border: 1px solid #dcdcdd;
+    }
+    .wrapper > main > .free-products > article{
+        height: 125px;
+        overflow: hidden;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    .wrapper > main > .free-products > article >  img{
+        display: inline-block;
+        float: left;
+        margin-left: 0;
+        margin-right: 15px; ;
+        height: 100%;
+    }
+    .wrapper > footer{
+        height: 100px;
+        background: linear-gradient(to bottom, rgb(199, 230, 141) 0%, rgb(164, 215, 70) 100%);
+    }
+    .wrapper > footer > p{
+        display: block;
+        width: 500px;
+        padding-left: 150px;
+        padding-top: 30px;
+    }
+    .wrapper > footer > p > a{
+        color: black;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*}*/
+    /*body > div > header{*/
+        /*position: relative;*/
+
+        /*height: 270px;*/
+
+        /*margin-bottom: 50px;*/
+
+        /*background: url("../res/headerBackground.jpg");*/
+        /*background-repeat: no-repeat;*/
+
+    /*}*/
+    /*body > div > header > h1{*/
+        /*position: absolute;*/
+        /*bottom: 10px;*/
+        /*right: 10px;*/
+        /*text-align: right;*/
+        /*color: #f8f8f8;*/
+    /*}*/
+    /*body > div > header > .wrapper > nav > ul{*/
+        /*margin-top: 0;*/
+        /*position: absolute;*/
+        /*bottom: -55px;*/
+
+        /*background: linear-gradient(#f0eff1, #d9d9d9);*/
+        /*width: 900px;*/
+        /*height: 40px;*/
+
+        /*display: inline-block;*/
+        /*list-style: none;*/
+        /*padding: 0;*/
+    /*}*/
+    /*body > div > header > .wrapper > nav > ul > a, body > header > .wrapper > nav > ul > a:visited{*/
+        /*text-decoration: none;*/
+        /*color: #7c7488;*/
+    /*}*/
+    /*body > div > header > .wrapper > nav > ul > a > li{*/
+        /*display: inline-block;*/
+        /*border-left: 1px solid #fff;*/
+        /*border-right: 1px solid #fff;*/
+
+        /*width: 15%;*/
+        /*height: 100%;*/
+
+        /*text-transform: uppercase;*/
+        /*font-size: 20px;*/
+
+        /*text-align: center;*/
+        /*padding-top: 1%;*/
+
+        /*list-style: none;*/
+    /*}*/
+    /*body > div > aside{*/
+        /*float: right;*/
+        /*width: 250px;*/
+    /*}*/
+    /*body > div > aside > section{*/
+        /*float: right;*/
+        /*display: inline-block;*/
+
+        /*border: 1px solid #ececed;*/
+        /*border-radius: 15px;*/
+        /*background: #ececed;*/
+        /*width: 200px;*/
+        /*margin-bottom: 10px;*/
+    /*}*/
+        /*body > div > aside > section > article{*/
+            /*height: 100%;*/
+            /*display: block;*/
+        /*}*/
+        /*body > div > aside > section:first-of-type > article > content > p{*/
+            /*width: 150px;*/
+            /*height: 20px;*/
+            /*overflow: hidden;*/
+            /*text-overflow: ellipsis;*/
+        /*}*/
+        /*body > div > aside > section:nth-child(2) > article > footer > p{*/
+            /*display: inline-block;*/
+            /*font-weight: bold;*/
+        /*}*/
+        /*body > div > aside > section:nth-child(2) > article > footer:before{*/
+            /*display: inline-block;*/
+            /*content: 'Author: ';*/
+            /*margin-right: 5px;*/
+        /*}*/

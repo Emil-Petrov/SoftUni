@@ -1,0 +1,90 @@
+#wrapper{
+    background-color: #ececed;
+    width: 600px;
+    height: 325px;
+    /*margin:0 auto;*/
+    position: relative;
+    padding: 15px;
+}
+h2, div header h3 span{
+    color: #214364;
+}
+    div header h3{
+        padding: 0px;
+        margin: 0px;
+        text-transform: uppercase;
+    }
+#register{
+    display: inline-block;
+    width: 275px;
+    float: left;
+    background-color: transparent;
+}
+    #register input{
+        width: 100%;
+    }
+    #register .submit input{
+        width: 100px;
+        float: right;
+        border: 2px solid #14375b;
+        background-color: transparent;
+        color: #15385b;
+    }
+#login{
+    padding: 5px 5px 30px;
+    display: inline-block;
+    color: #fdfdfd;
+    width: 300px;
+    height: 210;
+    float: right;
+    background-color: #234465;
+}
+    #login header h3 span{
+        color: #fdfdfd;
+    }
+    #login input{
+        width: 90%;
+        display: block;
+        position: relative;
+        margin: 0 auto;
+    }
+    #login .submit input[type="submit"]{
+        width: 100px;
+        float: right;
+        border: 2px solid #fda201;
+        background-color: transparent;
+        color: #fdfdfd;
+    }
+input{
+    display: inline-block;
+    margin: 0 auto;
+    width: 200px;
+    height: 25px;
+}
+a{
+    color: #fdfdfd;
+}
+#forgotPwd{
+    text-align: right;
+    padding-bottom: 20px;
+}
+.submit input, .submit label{
+    width: 100px;
+}
+div form p #rememberMe{
+    float: left;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    margin-left: 12px;
+}
+body div div:first-of-type{
+    color: #a5a5a5;
+}
+h2{
+    padding: 0px;
+    margin: 0px;
+}
+body div div:first-of-type{
+    margin-bottom: 15px;
+}

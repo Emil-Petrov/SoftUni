@@ -1,0 +1,70 @@
+body{
+    font-family: Tahoma;
+    font-size: 1.2em;
+}
+table, th, td{
+    border: 1px solid #000;
+    padding: 0px;
+    margin: 5px;
+}
+    table thead tr th{
+        font-size: 3em;
+        height: 100px;
+        width: 400px;
+    }
+    table tfoot tr td{
+        width: 100px;
+        height: 100px;
+    }
+    table tbody tr td{
+        height: 100px;
+        width: 100px;
+    }
+        table tbody tr td table tbody tr td{
+            height: 40px;
+            width: 80px;
+            text-align: center;
+            vertical-align: middle;
+            /*font-weight: bold;*/
+            margin: 5px;
+        }
+#se{
+    vertical-align: top;
+    text-align: left;
+}
+#sc{
+    vertical-align: top;
+    text-align: right;
+}
+#sm{
+    vertical-align: top;
+    text-align: left;
+}
+#mail{
+    vertical-align: middle;
+    text-align: center;
+}
+#vidya{
+    vertical-align: bottom;
+    text-align: right;
+}
+#handhelds{
+    vertical-align: middle;
+    text-align: left;
+}
+#tw1{
+    vertical-align: bottom;
+    text-align: right;
+}
+#tw2{
+    vertical-align: bottom;
+    text-align: left;
+}
+#drnkng{
+    text-align: right;
+    vertical-align: middle;
+}
+#drnkng:after{
+    content: " >";
+    font-weight: bold;
+}

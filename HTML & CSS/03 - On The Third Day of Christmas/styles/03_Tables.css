@@ -1,0 +1,19 @@
+body{
+    font-family: Tahoma;
+}
+table, tr, td{
+    border: 1px solid #000;
+}
+body table{
+    width: 200px;
+    height: 150px;
+}
+#nestable{
+    vertical-align: middle;
+}
+td{
+    text-align: center;
+    font-weight: normal;
+    font-size: 2em;
+    padding: 5px;
+}

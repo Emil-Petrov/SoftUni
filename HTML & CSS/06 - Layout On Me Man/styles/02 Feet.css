@@ -1,0 +1,86 @@
+body{
+    font-family: 'PT Sans', Tahoma, sans-serif;
+    color: #f4f5dc;
+    font-size: 15px;
+}
+
+    body > footer{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        width: 100%;
+        height: 250px;
+
+        background: #234465;
+    }
+        body > footer > section {
+            height: 100%;
+            width: 80%;
+            margin: 0 auto;
+        }
+        body > footer > section > article{
+            display: inline-block;
+            height: 250px;
+            vertical-align: middle;
+        }
+            body > footer > section > article > nav > ul{
+                padding: 20px;
+                list-style: none;
+                text-align: left;
+            }
+            body > footer > section > article > nav > ul > li{
+                display: inline-block;
+                vertical-align: top;
+                color: #fd950d;
+                text-align: left;
+                margin-right: 50px;
+                width: 200px;
+            }
+            body > footer > section > article > nav > ul > li > ul{
+                padding-top: 10px;
+                padding-left: 0;
+            }
+            body > footer > section > article > nav > ul > li > ul > li{
+                list-style: none;
+                text-align: left;
+                padding-top: 5px;
+                width: 250px;
+            }
+            body > footer > section > article > nav > ul > li > ul > li > a{
+                text-decoration: none;
+                color: #f4f5dc;
+            }
+            body > footer > section > article > .signUp{
+                display: block;
+                height: 200px;
+                padding: 20px;
+            }
+            body > footer > section > article > .signUp > span{
+
+                display: block;
+                width: 150px;
+                height: 35px;
+
+                text-align: center;
+
+                border: 2px solid #da8d10;
+                background-color: transparent;
+
+                margin: 20px;
+            }
+            body > footer > section > article > .signUp > span > a{
+                box-sizing: border-box;
+                display: block;
+
+                text-decoration: none;
+                color: #f4f5dc;
+
+                width: 100%;
+                height: 37px;
+                padding-top: 7px;
+            }
+            body > footer > section > article:nth-child(3) > div {
+                margin-top: 20px;
+                background-color: #e7eaec;
+            }

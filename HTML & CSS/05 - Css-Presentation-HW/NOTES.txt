@@ -1,0 +1,1 @@
+How to center the input fields in the form?

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="styles/02%20Media-Profile.css"/>
+</head>
+<body>
+<main>
+    <section class="profiles">
+        <header>
+            <h3>Profile</h3>
+        </header>
+        <article id="user-id">
+            <content>
+                <figcaption class="user"><h4>Kent</h4></figcaption>
+                <figure class="profilePic">
+                    <img src="http://placehold.it/150x120" alt=""/>
+                </figure>
+                <label for="completion" class="profile-completion">60</label>
+                <meter id="completion" value="60" min="0" max="100"></meter>
+            </content>
+        </article>
+        <article id="user-audio">
+            <header>
+                <h4>Uploaded audio files</h4>
+            </header>
+            <content>
+                <embed src="res/audio/sound%20113.mp3" autostart=false type="audio/mpeg"/> <!-- how do i stop autoplay on this-->
+                <audio controls loop>
+                    <source src="res/audio/sound%20113.mp3" type="audio/mpeg">
+                </audio>
+                <audio controls loop>
+                    <source src="res/audio/sound%20113.mp3" type="audio/mpeg">
+                </audio>
+                <audio controls loop>
+                    <source src="res/audio/sound%20113.mp3" type="audio/mpeg">
+                </audio>
+            </content>
+        </article>
+        <article id="user-video">
+            <header>
+                <h4>Uploaded Video Files</h4>
+            </header>
+            <content>
+                <video controls>
+                    <source  src="http://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"/>
+                    <track src="placeholder.vtt" kind="subtitles" srclang="placeholder" label="placeholder">
+                    <track src="placeholder.vtt" kind="subtitles" srclang="placeholder" label="placeholder">
+                </video>
+            </content>
+        </article>
+    </section>
+</main>
+</body>
+</html>

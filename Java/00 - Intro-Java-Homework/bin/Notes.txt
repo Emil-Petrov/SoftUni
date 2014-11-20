@@ -1,0 +1,2 @@
+Exe from 8 won't work (Change path in config.xml to fix)
+Result in folder.

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>fakebook</title>
+    <link rel="stylesheet" href="styles/04 FakeBook.css"/>
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <h1>fakebook<span>&#174;</span></h1>
+        <h3>Registration</h3>
+        <h4>It is safe and it will always be!</h4>
+    </header>
+    <main>
+        <form>
+            <div class="notImportant">
+                <fieldset>
+                    <legend>None-Important Information</legend>
+                    <div class="contact">
+                        <input type="text" placeholder="First Name"/>
+                        <input type="text" placeholder="Last Name"/>
+                    </div>
+                    <div class="contact">
+                        <input type="email" placeholder="Your Email"/>
+                        <input type="tel" placeholder="Phone Number"/>
+                    </div>
+                    <div class="contact">
+                        <input type="password" placeholder="Your Password"/>
+                        <input type="url" placeholder="Website"/>
+                    </div>
+                    <div>
+                        <div class="bDay">
+                            <label for="bDay">Birthday</label>
+                            <input type="datetime-local" id="bDay"/>
+                        </div>
+                        <div class="gender">
+                            <input type="radio" name="Sex" value="Female" id="fem"/>
+                            <label for="fem">Female</label>
+                            <input type="radio" name="Sex" value="Male" id="male"/>
+                            <label for="male">Male</label>
+                            <input type="radio" name="Sex" value="Other" id="other"/>
+                            <label for="other">Other</label>
+                        </div>
+                    </div>
+                </fieldset>
+                <input type="reset" value="Clear Form"/>
+            </div>
+            <div class="requiredInfo">
+                <fieldset>
+                    <legend>Important Information *required</legend>
+                    <div>
+                        <select name="country" id="country" required>
+                            <option value="" disabled selected>Country</option>
+                            <option value="basement">Basement</option>
+                            <option value="bg">Bulgaria</option>
+                            <option value="nk">North-Korea</option>
+                            <option value="basement">Basement</option>
+                        </select>
+                        <input type="text" placeholder="Village" required/>
+                        <input type="text" placeholder="Disctring" required/> <!--Katniss is that you-->
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Street" required/>
+                        <input type="text" placeholder="Nr" required/> <!--Should this and the rest of the Nr be of type number?-->
+                        <input type="number" placeholder="Floor" required/>
+                        <input type="text" placeholder="Ap Nr" required/>
+                    </div>
+                    <div>
+                        <label for="doorClr">Door Color</label>
+                        <input type="color" id="doorClr" value="#ff5400" required/>
+                        <input type="text" placeholder="Water Meter Nr" required/>
+                        <select name="pantisu" id="pantsu" required>
+                            <option value="" disabled selected>Aunt Panties' Size</option>
+                            <option value="wtf">Are you serious?</option>
+                            <option value="wincest">Who made this???</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="moreInfo">More Personal Information</label>
+                        <textarea name="moreInfo" id="moreInfo" cols="2" rows="5" placeholder="Give us more information" required></textarea>
+                    </div>
+                </fieldset>
+                <input type="submit" value="Register"/>
+            </div>
+        </form>
+    </main>
+</div>
+</body>
+</html>

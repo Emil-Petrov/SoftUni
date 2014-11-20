@@ -1,0 +1,152 @@
+html{
+    background-color: #000;
+}
+header{
+    position: absolute;
+    width: 100%;
+    background-color: #234465;
+    font-family: 'PT Sans',Tahoma,sans-serif;
+    color: #eef0f3;
+    height: 70px;
+}
+    header > a {
+        float: left;
+    }
+    header > a, header > a:hover{
+        text-decoration: none;
+        color: #eef0f3;
+    }
+    header > a > span{
+        display: inline-block;
+        width: 260px;
+        height: 55px;
+
+        vertical-align: top;
+        font-size: smaller;
+
+        margin: 5px;
+        padding-left: 235px;
+        padding-top: 5px;
+
+        background: url("../res/logo.png");
+        background-repeat: no-repeat;
+        background-position: 10px;
+    }
+    nav{
+        position: absolute;
+        width: 100%;
+        float:right;
+        text-transform: uppercase;
+        text-align: right;
+    }
+    nav > ul, nav > ul > li{
+        font-size: 15px;
+        vertical-align: text-top;
+        list-style: none;
+        padding-top: 15px;
+        padding-bottom: 0;
+        padding-left: 0;
+        text-align: right;
+    }
+    nav > ul{
+        display: inline-block;
+        width: 100%;
+    }
+    nav> ul > li{
+        display: inline-block;
+
+        width: 200px;
+        font-weight: 500;
+        height: 20px;
+        margin-right: 5px;
+        vertical-align: top;
+        text-align: center;
+    }
+    .dropDown{
+        display: none;
+    }
+    nav > ul > li:hover > .dropDown{
+        margin-top: 0;
+        display: block;
+        list-style: none;
+        background-color: #234465;
+        text-align: center;
+        width: 100%;
+        font-weight: 500;
+    }
+    aside{
+        text-transform: uppercase;
+
+        display: block;
+        width: 25%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        vertical-align: top;
+    }
+    aside  div{
+        display: inline-block;
+        margin-left: 10px;
+        padding: 5px;
+    }
+    select {
+        border: none;
+        background-color: #234465;
+        outline: none;
+        -webkit-appearance: none;
+        color: #eef0f3;
+    }
+    #notifications{
+        text-transform: uppercase;
+
+        display: inline-block;
+        width: 40px;
+        height: 20px;
+        
+        content: "";
+        
+        background-image: url("../res/BellIcon.png");
+        background-repeat: no-repeat;
+        background-position: 20px;
+    }
+    #userPanel{
+        text-transform: uppercase;
+
+        display: inline-block;
+        width: 70px;
+        height: 20px;
+    }
+    #userPanel > option:after{
+        width: 50px;
+    }
+    option:disabled{
+        display: none;
+    }
+    .search > input{
+        height: 20px;
+        border: none;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        background: #eef0f3;
+
+    }
+    .search > span{
+        display: inline-block;
+
+        height: 20px;
+        width: 20px;
+
+        color: #234465;
+
+        margin-left: 1px;
+        padding-left: 2px;
+        vertical-align: 2px;
+
+        border: none;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        background: #eef0f3;
+    }
+    .search > span:before{
+        vertical-align: middle;
+    }

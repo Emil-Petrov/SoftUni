@@ -1,0 +1,65 @@
+main{
+    background: #fdbfca;
+    border-radius: 15px;
+    font-family: Tahoma;
+    font-size: 15px;
+    width: 100%;
+}
+h1, h4{
+    margin: 0;
+    padding: 0;
+}
+    .profiles{
+        display: block;
+    }
+    .profiles > header > h3{
+        width: 58px;
+        margin: 0 auto;
+    }
+    .profiles > article{
+        display: inline-block;
+    }
+    .profiles > #user-id{
+        width: 151px;
+        margin-left: 15px;
+        margin-bottom: 15px;
+        vertical-align: top;
+    }
+    .profiles > #user-id > content > .user > h4{
+        display: inline;
+    }
+    .profiles > #user-id > content > .user:before{
+        display: inline;
+        content: 'User: ';
+    }
+    .profiles > #user-id > content > figure{
+        margin: 0;
+    }
+    .profiles > #user-id > content > .profile-completion{
+        display: block;
+    }
+    .profiles > #user-id > content > .profile-completion:before{
+        content: 'Profile completed ';
+    }
+    .profiles > #user-id > content > .profile-completion:after{
+        content: '%';
+    }
+    .profiles > #user-id > content > #completion{
+        width: 100%;
+    }
+    .profiles > #user-audio{
+        vertical-align: top;
+    }
+    .profiles > #user-audio > content > embed{
+        width: 200px;
+        height: 125px;
+        margin-left: 5px;
+    }
+    .profiles > #user-audio > content > audio{
+        display: block;
+        width: 200px;
+        margin: 5px;
+    }
+    .profiles > #user-video > content > video{
+        width: 100%
+    }

@@ -1,0 +1,37 @@
+main > section{
+    width: 600px;
+    border-radius: 15px;
+    background-color: #000;
+    margin: 0 auto;
+}
+    main > section > header{
+        padding-left: 200px;
+    }
+    main > section > header > a, main > section > header > a:visited{
+        text-decoration: none;
+        color: #daa520;
+    }
+    main > section > article{
+        width: 500px;
+        margin: 0 auto;
+    }
+        main > section > article > p{
+            margin: 0;
+            height: 200px;
+        }
+            main > section > article > p > iframe{
+                float: left;
+                display: inline-block;
+                width: 200px;
+                height: 150px;
+                margin: 0;
+            }
+            main > section > article > p > a{
+                float: left;
+                display: block;
+                width: 200px;
+                margin-top: 10px;
+                margin-left: 50px;
+                text-decoration: none;
+                color: #b1b1b1;
+            }

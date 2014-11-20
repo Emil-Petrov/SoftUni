@@ -1,0 +1,152 @@
+
+body, html{
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    font-family: tahoma;
+}
+form{
+    text-align: left;
+}
+#mainWrapper{
+    width: 502px;
+    height: 750px;
+
+    margin: 0 auto;
+    padding: 0;
+
+    background-image: url("../res/formBackground.jpg");
+    border-radius: 5px;
+}
+.field{
+    background-color: rgba(137, 154, 179, 0.7   );
+    border: 1px solid #bacde4;
+    border-radius: 5px;
+    margin: 5px;
+}
+.wrapper{
+    margin: 0 15px 15px 15px;
+    padding: 0;
+}
+form{
+    padding: 1px;
+}
+h2{
+    color: #f9efe2;
+    text-align: left;
+    padding: 0;
+    margin: 25px 0 0 0;
+}
+h2:before{
+    content: "Step 1: ";
+}
+h4{
+    text-decoration: none;
+    font-weight: normal;
+    padding: 0;
+    margin: 5px;
+    text-align: left;
+}
+.input, textarea{
+    width: 250px;
+}
+.input{
+    border: 2px solid #fff;
+}
+.input:focus{
+    border: 2px solid #dc143c;
+}
+input{
+    padding: 2px;
+    margin: 5px auto;
+}
+label{
+    margin: 5px;
+    display: inline-block;
+    vertical-align: top;
+}
+.radio{
+    display: inline-block;
+    margin-left: 20px;
+}
+#name{
+    margin-left: 106px;
+}
+#email{
+    margin-left: 109px;
+}
+#phoneNumber{
+    margin-left: 103px;
+}
+
+#adrs{
+    margin-top: 5px;
+    margin-left: 92px;
+    margin-bot: 5px;
+}
+#postCode{
+    margin-left: 80px;
+}
+#country{
+    margin-left: 92px;
+}
+
+#cardNumber{
+    margin-left: 58px;
+}
+#secCode{
+    margin-left: 55px;
+}
+#nameOnCard {
+    margin-left: 51px;
+}
+
+
+
+#visaRadio{
+    margin-left: 35px;
+    margin-right: 35px;
+}
+#amexRadio{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+#\#mastercard{
+    vertical-align: baseline;
+}
+#\#mastercard:before{
+    content: url("../res/MasterCardIcon.png");
+}
+#\#amex{
+    vertical-align: baseline;
+    margin-left: 0px;
+    margin-right: 35px;
+}
+#\#amex:before{
+    content: url("../res/AmExIcon.png") ;
+}
+
+#\#visa{
+    vertical-align: baseline;
+}
+#\#visa:before{
+    content: url("../res/VisaIcon.png");
+}
+
+#submit{
+    width: 80px;
+    height: 40px;
+    margin-left: 210px;
+
+
+    border: 1px solid black;
+    border-radius: 90px;
+
+    background-color: #04152f;
+    color: white;
+}
+#submit:hover{
+    background-color: #8a2296;
+    outline: none;
+}

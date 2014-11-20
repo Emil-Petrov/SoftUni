@@ -1,0 +1,88 @@
+div{
+    border-radius: 360%;
+    margin: 0%;
+}
+#head{
+    float: left;
+    display: block;
+    border: 2px solid black;
+    background: yellow;
+    width: 400px;
+    height: 400px;
+}
+#lEye{
+    float: left;
+    border: 2px solid black;
+    margin-left: 90px;
+    margin-top: 70px;
+    background: white;
+    width: 80px;
+    height: 80px;
+}
+#lPupil{
+    float: left;
+    border: 2px solid black;
+    margin-left: 140px;
+    margin-top: -60%;
+    background: black;
+    width: 20px;
+    height: 20px;
+}
+#rPupil{
+    float: right;
+    border: 2px solid black;
+    margin-right: 140px;
+    margin-top: -71%;
+    background: black;
+    width: 20px;
+    height: 20px;
+}
+#rEye{
+    float:right;
+    border: 2px solid black;
+    margin-right: 90px;
+    margin-top: 70px;
+    background: white;
+    width: 80px;
+    height: 80px;
+}
+#nose{
+    float:none;
+    border: 2px solid black;
+    width: 80px;
+    height: 80px;
+    background: red;
+    margin-left: 40%;
+    margin-top: 165px;
+}
+#mouth{
+    float:none;
+    border: 2px solid black;
+    margin-left: 25%;
+    margin-top: 5%;
+    background: white;
+    width: 200px;
+    height: 80px;
+    border-radius: 50px;
+    font-style: italic;
+}
+#lTooth{
+    float: left;
+    border: 3px solid black;
+    width: 40px;
+    height: 40px;
+    border-radius: 0px 0px 10px 10px;
+    border-top: none;
+    margin-left: 155px;
+    margin-top: -83px;
+}
+#rTooth{
+    float: right;
+    border: 3px solid black;
+    width: 40px;
+    height: 40px;
+    border-radius: 0px 0px 10px 10px;
+    border-top: none;
+    margin-right: 155px;
+    margin-top: -83px;
+}

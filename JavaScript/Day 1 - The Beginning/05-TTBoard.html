@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>/nk2wViKSh_M</title>
+</head>
+<style>
+    body{
+        background: #000112;
+        font-family: 'PT Sans', Tahoma, sans-serif;
+    }
+    #container{
+        margin: 0 auto;
+        width: 200px;
+    }
+    .Announcer{
+        display: block;
+        width: 160px;
+        height: 55px;
+        text-align: center;
+        background: #80ff00;
+        color: #000112;
+        margin-bottom: 10px;
+    }
+    #Announcer{
+        margin-top: 5px;;
+    }
+    .row{
+        display: block;
+        width: 200px;
+        height: 60px;
+    }
+    .cell{
+        display: inline-block;
+        border: 1px solid black;
+        background: white;
+        width: 49px;
+        height: 49px;
+    }
+    #p1c{
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        background: rgb(35, 157, 255);
+        vertical-align: middle;;
+    }
+    #p2c{
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        background: rgb(255, 51, 51);
+        vertical-align: middle;;
+    }
+</style>
+<body>
+<div id="container">
+    <div class="Announcer" >
+        <header>Let the games begin!</header>
+        <p id="Announcer">Player 1: <span id="p1c"></span> goes first.</p>
+    </div>
+    <div class="row">
+        <div id="cell1" class="cell" onclick="TakeTurn(this.id)"></div>
+        <div id="cell2" class="cell" onclick="TakeTurn(this.id)"></div>
+        <div id="cell3" class="cell" onclick="TakeTurn(this.id)"></div>
+    </div>
+    <div class="row">
+        <div id="cell4" class="cell" onclick="TakeTurn(this.id)"></div>
+        <div id="cell5" class="cell" onclick="TakeTurn(this.id)"></div>
+        <div id="cell6" class="cell" onclick="TakeTurn(this.id)"></div>
+    </div>
+    <div class="row">
+        <div id="cell7" class="cell" onclick="TakeTurn(this.id)"></div>
+        <div id="cell8" class="cell" onclick="TakeTurn(this.id)"></div>
+        <div id="cell9" class="cell" onclick="TakeTurn(this.id)"></div>
+    </div>
+</div>
+<script src="scripts/06-TicTacToe.js"></script>
+</body>
+</html>

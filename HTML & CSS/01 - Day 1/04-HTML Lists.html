@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html style="margin: 10px;">
+	<head>
+		<title>Nested lists</title>
+		<div>Preceding text</div>
+	<head>
+	<body style="width:50%;">
+		<ol style="list-style-type: upper-roman; text-align: justify;">
+			<li style="padding-left: 20px;">List Item 1</li>
+				<ol style="list-style-type:lower-alpha">
+					<li>Nested Item 1.1</li>
+					<li>Nested item 1.2</li>
+				</ol>
+			<li style="padding-left: 20px;">List Item 2</li>
+			<ol>
+				<li>Nested item 2.1</li>
+				<li>Nested item 2.2
+					<ul style="list-style-type: circle;">
+						<li>Nested Item 2.2.1</li>
+							<li>Nested Item 2.2.2
+								<ul style="list-style-type: square;">
+									<li>Nested Item 2.2.2.1</li>
+									<li>Nested Item 2.2.2.2</li>
+								</ul>
+							</li>
+						<li>Nested Item 2.2.3</li>
+					</ul>
+				</li>
+				<li>Nested Item 2.3</li>
+			</ol>
+			<li style="padding-left: 20px";>List Item 3</li>
+				<ul style="list-style-type: disc;">
+					<li>Nested Item 3.1</li>
+					<li>Nested Item 3.1</li>
+					<li>Nested Item 3.1</li>
+				</ul>
+		</ol>
+	</body>
+</html>

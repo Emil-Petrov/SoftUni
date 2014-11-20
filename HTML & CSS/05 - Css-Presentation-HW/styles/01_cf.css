@@ -1,0 +1,112 @@
+body{
+    font-family: tahoma;
+}
+
+#container{
+    width: 700px;
+    height: 200px;
+
+    border: 5px;
+    border-top-style: dotted;
+    border-top-color: #FF0;
+    border-right-style: solid;
+    border-right-color: #0F0;
+    border-left-style: dashed;
+    border-left-color: #f00;
+    border-bottom-style: double;
+    border-bottom-color: #00f;
+
+    box-shadow: 15px 15px 10px #666;
+}
+
+#shText{
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 5px 5px 5px #999;
+
+    font-size: 3em;
+}
+
+#btnContainer{
+    border: 3px solid #F00;
+    border-radius: 45px;
+    box-shadow: 0px 0px 0px 3px #ff0, 0px 0px 0px 6px #0f0, 0px 0px 0px 9px#00f;
+
+    text-align: center;
+    margin: 30px 50px 30px 50px;
+    text-shadow: 0.25em 0.25em 5px #aaa;
+    font-size: 1.2em;
+}
+
+.notButtons{
+    text-shadow: none;
+    font-size: 0.8em;
+
+    border: 5px outset #f4b545;
+
+    background-color: #E4A644;
+
+
+    margin: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.contDiv{
+    margin: 10px 25px 15px 25px;
+}
+#bubble1{
+    width: 20px;
+    height: 20px;
+
+    border: 3px;
+    border-style: dashed;
+    border-color: #FFF;
+    border-radius: 45px;
+    box-shadow: 0px 0px 0px 3px rgba(170, 170, 170, 0.7) ;
+
+    background-color: rgba(170, 170, 170, 0.7);
+
+    position: relative;
+    bottom: 80px;
+    left: 550px;
+}
+#bubble2{
+    width: 40px;
+    height: 40px;
+
+    border: 4px;
+    border-style: dashed;
+    border-color: #FFF;
+    border-radius: 45px;
+    box-shadow: 0px 0px 0px 4px rgba(170, 170, 170, 0.7) ;
+
+    background-color: rgba(170, 170, 170, 0.7);
+
+    position: relative;
+    bottom: 150px;
+    left: 600px;
+}
+#bubble3{
+    width: 100px;
+    height: 50px;
+
+    border: 3px;
+    border-style: dashed;
+    border-color: #fff;
+    border-radius: 45px;
+    box-shadow: 0px 0px 0px 5px rgba(170, 170, 170, 0.7) ;
+
+    background-color: rgba(170, 170, 170, 0.7);
+
+    color: #fff;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 5px;
+
+    position: relative;
+    bottom: 250px;
+    left: 650px;
+}

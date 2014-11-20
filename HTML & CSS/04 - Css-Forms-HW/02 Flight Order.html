@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Flight Order</title>
+    <link rel="stylesheet" href="styles\02 FlyOrder.css"/>
+</head>
+<body>
+<form action="">
+    <header>
+        <h1>Flight order</h1>
+    </header>
+    <main>
+        <div class="left">
+            <div class="city">
+                <label for="from">From</label>
+                <select name="from" id="from">
+                    <option value="" disabled selected>enter a city</option>
+                    <option value="Narnia">Narnia</option>
+                    <option value="LaLaLand">LaLa-Land</option>
+                    <option value="Pernik">Pernik</option>
+                </select>
+            </div>
+            <div  class="time">
+                <label for="departDate">Departure Date</label>
+                <input id="departDate" type="date">
+            </div>
+            <div  class="time">
+                <label for="returnDate">Return Date</label>
+                <input id="returnDate" type="date"/>
+            </div>
+            <div class="iHaveNoGoodNameForYou">
+                <span>
+                    <label for="12+">12+</label>
+                    <input id="12+" type="number" min="12"/>
+                </span>
+                <span>
+                    <label for="2-12">2-12</label>
+                    <input id="2-12" type="number" min="2" max="12"/>
+                </span>
+                <span>
+                    <label for="0-2">0-2</label>
+                    <input id="0-2" type="number" min="0" max="2"/>
+                </span>
+            </div>
+        </div>
+        <div class="right">
+            <div  class="city">
+                <label for="to">To</label>
+                <select name="to" id="to">
+                    <option value="" disabled selected>enter a city</option>
+                    <option value="Narnia">Narnia</option>
+                    <option value="LaLaLand">LaLa-Land</option>
+                    <option value="Pernik">Pernik</option>
+                </select>
+                <span class="prefDir">
+                    <input id=prefDir type="checkbox"/>
+                    <label for="prefDir">Prefer directs</label>
+                </span>
+            </div>
+            <div class="time interval">
+                <label for="interval1">Time Interval</label>
+                <input id="interval1" type="time"/>
+                <input type="time"/>
+            </div>
+            <div  class="time interval">
+                <label for="interval2">Time Interval</label>
+                <input id="interval2" type="time"/>
+                <input type="time"/>
+            </div>
+            <div class="pickClass">
+                <label for="pickClass">Choose class</label>
+                <select name="pickClass" id="pickClass">
+                    <option value="Economy">Economy</option>
+                    <option value="VIP">VIP</option>
+                </select>
+            </div>
+            <div class="search">
+                <input type="submit" value="Search"/>
+            </div>
+        </div>
+    </main>
+</form>
+</body>
+</html>

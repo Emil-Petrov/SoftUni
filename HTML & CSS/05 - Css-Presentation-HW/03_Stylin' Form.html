@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Place Order</title>
+    <link rel="stylesheet" href="styles/03_order.css"/>
+</head>
+<body>
+    <div id="mainWrapper">
+        <form>
+        <div class="wrapper" id="details">
+            <header>
+                <h2>Your details</h2>
+            </header>
+            <div class="field">
+                <label for="name">Name</label>
+                <input  class="input" id="name" type="text" placeholder="First and last name" required/>
+            </div>
+            <div class="field">
+                <label for="email">Email</label>
+                <input  class="input" type="email" id="email" placeholder="example@domain.com" required/>
+            </div>
+            <div class="field">
+                <label for="phoneNumber">Phone</label>
+                <input  class="input" type="number" id="phoneNumber" placeholder="eg +358 00 000 000" required/>
+            </div>
+        </div>
+        <div class="wrapper">
+            <header>
+                <h2>Delivery address</h2>
+            </header>
+            <div class="field" id="txtbox">
+                <label for="adrs">Address</label>
+                <textarea  class="input" name="address" id="adrs" cols="30" rows="6" required></textarea>
+            </div>
+            <div class="field">
+                <label for="postCode">Post code</label>
+                <input  class="input" id="postCode" type="number" required/>
+            </div>
+            <div class="field">
+                <label for="country">Country</label>
+                <input  class="input" id="country" type="text" required/></div>
+        </div>
+        <div class="wrapper">
+            <header>
+                <h2>Card details</h2>
+            </header>
+            <div>
+                    <div class="field">
+                        <h4>Card type</h4>
+                        <span class="radio" id="visaRadio" >
+                            <input type="radio" name="creditCard" id="visa" value="VISA" required/>
+                            <label id="#visa" for="visa">VISA</label>
+                        </span>
+                        <span class="radio" id="amexRadio">
+                            <input type="radio" name="creditCard" id="amex" value="AmEx" required/>
+                            <label id="#amex" for="amex">AmEx</label>
+                        </span>
+                        <span class="radio">
+                            <input type="radio" name="creditCard" id="mastercard" value="mastercard" required/>
+                            <label id="#mastercard" for="mastercard">Mastercard</label>
+                        </span>
+                    </div>
+                    <div class="field">
+                        <label for="cardNumber">Card number</label>
+                        <input  class="input" id="cardNumber" type="number" required/></div>
+                    <div class="field">
+                        <label for="secCode">Security code</label>
+                        <input  class="input" id="secCode" type="number" required/></div>
+                    <div class="field">
+                        <label for="nameOnCard">Name on card</label>
+                        <input  class="input" id="nameOnCard" type="text" placeholder="exact name as on the card" required/></div>
+                </div>
+        </div>
+        <input id="submit" type="submit" value="BUY IT!"/>
+    </form>
+    </div>
+</body>
+</html>

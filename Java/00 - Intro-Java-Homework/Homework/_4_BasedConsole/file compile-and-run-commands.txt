@@ -1,0 +1,4 @@
+For the .bat(I am the night!):
+@ECHO OFF //Clears console
+javac _3_SumNumbers.java //Make .class file
+java _3_SumNumbers //Run the above in console.
