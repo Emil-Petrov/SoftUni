@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div>first div</div>
+<div>second div</div>
+<div class="empty"></div>
+<div>third div<div>inner div</div></div>
+<ul id="result"></ul>
+<script>
+        for (var div in document.getElementsByTagName('div')){
+            if (document.getElementsByTagName('div')[div].innerHTML == '' || document.getElementsByTagName('div')[div].innerHTML == undefined){
+                    continue;
+            }
+            var contentDiv = document.createElement('li');
+            contentDiv.innerHTML = document.getElementsByTagName('div')[div].innerHTML;
+            document.getElementById('result').appendChild(contentDiv)
+        }
+</script>
+</body>
+</html>

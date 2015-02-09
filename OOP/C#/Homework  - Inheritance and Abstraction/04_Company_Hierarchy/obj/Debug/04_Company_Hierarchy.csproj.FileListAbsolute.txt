@@ -1,0 +1,6 @@
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework  Inheritance and abstraction\04_Company_Hierarchy\bin\Debug\04_Company_Hierarchy.exe.config
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework  Inheritance and abstraction\04_Company_Hierarchy\bin\Debug\04_Company_Hierarchy.exe
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework  Inheritance and abstraction\04_Company_Hierarchy\bin\Debug\04_Company_Hierarchy.pdb
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework  Inheritance and abstraction\04_Company_Hierarchy\obj\Debug\04_Company_Hierarchy.exe
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework  Inheritance and abstraction\04_Company_Hierarchy\obj\Debug\04_Company_Hierarchy.pdb
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework  Inheritance and abstraction\04_Company_Hierarchy\obj\Debug\04_Company_Hierarchy.csprojResolveAssemblyReference.cache

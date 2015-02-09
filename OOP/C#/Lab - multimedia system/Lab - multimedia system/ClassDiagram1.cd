@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Shop.Core.Manager" Collapsed="true">
+    <Position X="11.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Base (ignore)\Manager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shop.Core.RentManager" Collapsed="true">
+    <Position X="9.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAIBAAAAAAAAAAAQCAAAAAAQAAAIAAAAAA=</HashCode>
+      <FileName>Core\RentManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shop.Core.ReportManager" Collapsed="true">
+    <Position X="11.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAIAAAAAAAIAAAAAAgAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Core\ReportManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shop.Core.SaleManager" Collapsed="true">
+    <Position X="9.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAIAAAAAAAABAAAQAAAAAAAAAAAABAAAAgAIAAAAAA=</HashCode>
+      <FileName>Core\SaleManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shop.Core.ShopEngine" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEBCAABAACAAAAAAQAAAAAAAACAAAAAAAAAAAEAABAI=</HashCode>
+      <FileName>Core\ShopEngine.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.245" Collapsed="true" />
+  </Class>
+  <Class Name="Shop.Exceptions.InsufficentSuppliesException" Collapsed="true">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\InsufficentSuppliesException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Testing.ShopTest" Collapsed="true">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>ShopTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shop.Items.Item">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgACAAAAAYAAAEAAAAJAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Base\Item.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Shop.Items.Book">
+    <Position X="5.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Products\Book.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shop.Items.Game">
+    <Position X="0.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Products\Game.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shop.Items.Video">
+    <Position X="3" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Products\Video.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shop.Reports.Report">
+    <Position X="1.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Base\Report.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shop.Reports.RentReport">
+    <Position X="0.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAIAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Reports\RentReport.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shop.Reports.SaleReport">
+    <Position X="2.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIIAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Models\Reports\SaleReport.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shop.Marketing.Rent" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAEAAAgAAhAQAAAIAAAAAAAEgAAAAAAgBAEAAAAAAAA=</HashCode>
+      <FileName>Models\Marketing\Rent.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Shop.Marketing.Sale" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEABAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Models\Marketing\Sale.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="Shop.Interface.IEngine" Collapsed="true">
+    <Position X="7.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Interface\IEngine.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Shop.Interface.IItem" Collapsed="true">
+    <Position X="9.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAAAEAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\IItem.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Shop.Interface.IRent" Collapsed="true">
+    <Position X="11.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAQAAAIAAAAAAAAAAAAAAAgAAEAAAAAAAA=</HashCode>
+      <FileName>Interface\IRent.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Shop.Interface.ISell" Collapsed="true">
+    <Position X="7.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Interface\ISell.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Shop.Enums.AgeRestriction" Collapsed="true">
+    <Position X="7.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgACAAAAACA=</HashCode>
+      <FileName>Enums\AgeRestriction.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Shop.Enums.RentState" Collapsed="true">
+    <Position X="9.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAABAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Enums\RentState.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

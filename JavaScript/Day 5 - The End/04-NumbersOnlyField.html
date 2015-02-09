@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="text" id = 'input'/>
+<script>
+    function checkInput() {
+        var input = document.getElementById('input').value;
+        var regex = /\D/g;
+        if (regex.test(input)) {
+            document.getElementById('input').style.background = '#f00';
+            document.getElementById('input').value = input.replace(/[^0-9]+/g, '');
+            setTimeout(function () { document.getElementById('input').style.background = '#fff' }, 250)
+        }
+    }
+
+    document.getElementById('input').addEventListener('input', checkInput);
+</script>
+</body>
+</html>

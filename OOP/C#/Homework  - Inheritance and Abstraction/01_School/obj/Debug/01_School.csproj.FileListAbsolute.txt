@@ -1,0 +1,2 @@
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework  Inheritance and abstraction\01_School\bin\Debug\01_School.exe.config
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework  Inheritance and abstraction\01_School\obj\Debug\01_School.csprojResolveAssemblyReference.cache

@@ -1,0 +1,1 @@
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\01 Interest Calculator\Delegates and Events\bin\Debug\Delegates and Events.exe.config

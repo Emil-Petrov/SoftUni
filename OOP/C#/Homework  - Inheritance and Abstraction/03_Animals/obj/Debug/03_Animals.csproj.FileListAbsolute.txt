@@ -1,0 +1,6 @@
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework  Inheritance and abstraction\03_Animals\bin\Debug\03_Animals.exe.config
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework  Inheritance and abstraction\03_Animals\bin\Debug\03_Animals.exe
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework  Inheritance and abstraction\03_Animals\bin\Debug\03_Animals.pdb
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework  Inheritance and abstraction\03_Animals\obj\Debug\03_Animals.csprojResolveAssemblyReference.cache
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework  Inheritance and abstraction\03_Animals\obj\Debug\03_Animals.exe
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework  Inheritance and abstraction\03_Animals\obj\Debug\03_Animals.pdb

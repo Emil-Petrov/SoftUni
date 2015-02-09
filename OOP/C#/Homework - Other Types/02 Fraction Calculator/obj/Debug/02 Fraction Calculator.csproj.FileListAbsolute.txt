@@ -1,0 +1,6 @@
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Other Types\02 Fraction Calculator\bin\Debug\02 Fraction Calculator.exe.config
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Other Types\02 Fraction Calculator\bin\Debug\02 Fraction Calculator.exe
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Other Types\02 Fraction Calculator\bin\Debug\02 Fraction Calculator.pdb
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Other Types\02 Fraction Calculator\obj\Debug\02 Fraction Calculator.exe
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Other Types\02 Fraction Calculator\obj\Debug\02 Fraction Calculator.pdb
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Other Types\02 Fraction Calculator\obj\Debug\02 Fraction Calculator.csprojResolveAssemblyReference.cache

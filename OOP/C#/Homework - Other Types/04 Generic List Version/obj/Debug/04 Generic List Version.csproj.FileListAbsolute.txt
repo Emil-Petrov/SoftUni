@@ -1,0 +1,1 @@
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Other Types\04 Generic List Version\bin\Debug\04 Generic List Version.exe.config

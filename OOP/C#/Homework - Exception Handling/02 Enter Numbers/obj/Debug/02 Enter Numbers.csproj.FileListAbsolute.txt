@@ -1,0 +1,6 @@
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework - Exception Handling\Problem 2\bin\Debug\Problem 2.exe.config
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework - Exception Handling\Problem 2\obj\Debug\Problem 2.exe
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework - Exception Handling\Problem 2\obj\Debug\Problem 2.pdb
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework - Exception Handling\02 Enter Numbers\bin\Debug\Problem 2.exe.config
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework - Exception Handling\02 Enter Numbers\obj\Debug\Problem 2.exe
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework - Exception Handling\02 Enter Numbers\obj\Debug\Problem 2.pdb

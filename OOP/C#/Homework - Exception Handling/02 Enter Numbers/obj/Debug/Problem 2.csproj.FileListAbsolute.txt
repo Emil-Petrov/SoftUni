@@ -1,0 +1,8 @@
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework\Problem 2\bin\Debug\Problem 2.exe.config
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework\Problem 2\bin\Debug\Problem 2.exe
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework\Problem 2\bin\Debug\Problem 2.pdb
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework\Problem 2\obj\Debug\Problem 2.exe
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework\Problem 2\obj\Debug\Problem 2.pdb
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework - Something\Problem 2\bin\Debug\Problem 2.exe.config
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework - Something\Problem 2\obj\Debug\Problem 2.exe
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework - Something\Problem 2\obj\Debug\Problem 2.pdb

@@ -1,0 +1,12 @@
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework - Encapsulation and Polymorphism\02 Bank of Some Weird Village\bin\Debug\02 Bank of Some Weird Village.exe.config
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework - Encapsulation and Polymorphism\02 Bank of Some Weird Village\bin\Debug\02 Bank of Some Weird Village.exe
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework - Encapsulation and Polymorphism\02 Bank of Some Weird Village\bin\Debug\02 Bank of Some Weird Village.pdb
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework - Encapsulation and Polymorphism\02 Bank of Some Weird Village\obj\Debug\02 Bank of Some Weird Village.exe
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework - Encapsulation and Polymorphism\02 Bank of Some Weird Village\obj\Debug\02 Bank of Some Weird Village.pdb
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework - Encapsulation and Polymorphism\02 Bank of Some Weird Village\obj\Debug\02 Bank of Some Weird Village.csprojResolveAssemblyReference.cache
+C:\Users\Emil\Desktop\02 Bank of Some Weird Village\bin\Debug\02 Bank of Some Weird Village.exe.config
+C:\Users\Emil\Desktop\02 Bank of Some Weird Village\obj\Debug\02 Bank of Some Weird Village.exe
+C:\Users\Emil\Desktop\02 Bank of Some Weird Village\obj\Debug\02 Bank of Some Weird Village.pdb
+C:\Users\Emil\Desktop\02 Bank of Some Weird Village\bin\Debug\02 Bank of Some Weird Village.exe
+C:\Users\Emil\Desktop\02 Bank of Some Weird Village\bin\Debug\02 Bank of Some Weird Village.pdb
+C:\Users\Emil\Desktop\02 Bank of Some Weird Village\obj\Debug\02 Bank of Some Weird Village.csprojResolveAssemblyReference.cache

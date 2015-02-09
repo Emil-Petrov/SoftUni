@@ -1,0 +1,10 @@
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework - Encapsulation and Polymorphism\03 The Slum\obj\Debug\TheSlum.csprojResolveAssemblyReference.cache
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework - Encapsulation and Polymorphism\03 The Slum\bin\Debug\TheSlum.exe
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework - Encapsulation and Polymorphism\03 The Slum\bin\Debug\TheSlum.pdb
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework - Encapsulation and Polymorphism\03 The Slum\obj\Debug\TheSlum.exe
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework - Encapsulation and Polymorphism\03 The Slum\obj\Debug\TheSlum.pdb
+C:\Users\Emil\Desktop\03 The Slum\obj\Debug\TheSlum.exe
+C:\Users\Emil\Desktop\03 The Slum\obj\Debug\TheSlum.pdb
+C:\Users\Emil\Desktop\03 The Slum\bin\Debug\TheSlum.exe
+C:\Users\Emil\Desktop\03 The Slum\bin\Debug\TheSlum.pdb
+C:\Users\Emil\Desktop\03 The Slum\obj\Debug\TheSlum.csprojResolveAssemblyReference.cache

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<textarea id="output" value=""></textarea>
+<script>
+    document.addEventListener('mousemove', function(e){
+        var x = e.clientX || e.pageX;
+        var y = e.clientY || e.pageY;
+
+        console.log('X:' + x + ';   Y:' + y + '   Time: ' + new Date() + '\n')
+        document.getElementById('output').value += 'X:' + x + ';   Y:' + y + '   Time: ' + new Date() + '\n';
+    }, false);
+</script>
+</body>
+</html>

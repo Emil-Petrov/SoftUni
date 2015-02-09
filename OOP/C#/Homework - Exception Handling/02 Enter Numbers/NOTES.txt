@@ -1,0 +1,3 @@
+I'm sorry for the name of the project. Will make it right in the future. 
+
+Also I didn't have time to make new exceptions and use them properly thus the code is not user friendly but works as it should.

@@ -1,0 +1,3 @@
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework  Inheritance and abstraction\02_Human Student Worker\bin\Debug\02_Human Student Worker.exe.config
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework  Inheritance and abstraction\02_Human Student Worker\obj\Debug\02_Human Student Worker.exe
+C:\Users\Emil\Desktop\SoftUni\OOP\C#\Homework  Inheritance and abstraction\02_Human Student Worker\obj\Debug\02_Human Student Worker.pdb
