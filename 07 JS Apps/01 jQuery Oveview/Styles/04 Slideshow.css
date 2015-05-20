@@ -1,0 +1,39 @@
+.slideshowContainer{
+    width: 500px;
+    height: 150px;;
+}
+div{
+    display: inline-block;
+}
+ul{
+    display: inline-block;
+    width: 350px;
+    padding: 0;
+}
+ul li{
+    position: absolute;
+    display: block;
+    width: 300px;
+    left: auto;
+    padding: 0;
+    list-style: none;
+}
+img{
+    width: 117%;
+}
+.left{
+    position: relative;
+    width: 75px;
+    height: 70px;
+    background: url(../Images/Arrow_left-right.svg.hi.png) no-repeat;
+    background-size: 150px;
+    float: left;
+}
+.right{
+    position: relative;
+    width: 75px;
+    height: 70px;
+    background: url(../Images/Arrow_left-right.svg.hi.png) -75px 0 no-repeat;
+    background-size: 150px;
+    float: right;
+}

@@ -1,0 +1,1 @@
+var app = anglar.module("socialNetwork", []);

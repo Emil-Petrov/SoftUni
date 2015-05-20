@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        p{
+            margin: 0;
+        }
+        .name, .job, .website, .description {
+            display: inline-block;
+            border: 1px solid black;
+            margin: 0;
+            width: 200px;
+            height: 25px;
+        }
+
+        p{
+            display: block;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js"></script>
+</head>
+<body>
+
+<script>
+    $.get("templates/02 Templates.html", function (template) {
+        console.log(template)
+        var people = {
+            people: [
+                {"name": "Pesho", "job": "racist", website: "http://www.google.com"},
+                {"name": "Ivan", "job": "wizard", website: "http://www.youtube.com"},
+                {"name": "Gosho", "job": "piqnica", website: "http://www.abv.bg"}
+            ]
+        };
+        var peopleHTML = Mustache.render(template, people);
+        $('body').append(peopleHTML);
+    });
+</script>
+</body>
+</html>

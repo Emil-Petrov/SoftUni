@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <header>
+        <h1>Living Creatures</h1>
+    </header>
+    <section>
+        <article class="birds">
+            <h2 class="birds-heading">Birds</h2>
+            <ul class="birds-list">
+                <li class="bird">Nightingale</li>
+                <li class="bird">Owl</li>
+                <li class="bird">Hawk
+                    <ul>
+                        <li class="sub-bird">Black Hawk</li>
+                        <li class="sub-bird">Chicago Hawk</li>
+                    </ul>
+                </li>
+                <li id="eagle" class="bird">Eagle</li>
+                <li class="bird">Sparrow</li>
+                <li class="bird">Falcon</li>
+                <li class="bird">Blackbird</li>
+            </ul>
+        </article>
+        <article class="mammals">
+            <h2 class="mammal-heading">Mammals</h2>
+            <ol class="mammal-list">
+                <li id="dolphin" class="mammal">Dolphin</li>
+                <li class="mammal">Elephant</li>
+                <li class="mammal">Hyena</li>
+            </ol>
+        </article>
+    </section>
+</body>
+
+<script type="text/javascript" src="Scripts/06%20Traverse.js">
+</script>
+<script>
+    traverse('.birds');
+//    var i, iterations, elements, event, func, elementType, domModule, parentType, childType, liElement;
+//
+//    domModule = (function domModification() {
+//
+//        function appendChild() {
+//            elementType = Object.prototype.toString.call(arguments[0]).split(/\W/)[2];
+//            parentType = Object.prototype.toString.call(arguments[1]).split(/\W/)[2];
+//            if (parentType != "String"){
+//                if (elementType != "String"){
+//                    arguments[1].appendChild(arguments[0]);
+//                }else{
+//                    arguments[1].appendChild(document.querySelector(arguments[0]));
+//                }
+//            }else{
+//                if (elementType != "String"){
+//                    document.querySelector(arguments[1]).appendChild(arguments[0]);
+//                }else{
+//                    document.querySelector(arguments[1]).appendChild(document.querySelector(arguments[0]));
+//                }
+//            }
+//        }
+//
+//        function removeChild(){
+//            elementType = Object.prototype.toString.call(arguments[0]).split(/\W/)[2];
+//            childType = Object.prototype.toString.call(arguments[1]).split(/\W/)[2];
+//            if (childType != "String"){
+//                if (elementType != "String"){
+//                    arguments[0].removeChild(arguments[1]);
+//                }else{
+//                    arguments[0].removeChild(document.querySelector(arguments[1]));
+//                }
+//            }else{
+//                if (childType != "String"){
+//                    document.querySelector(arguments[0]).removeChild(arguments[1]);
+//                }else{
+//                    document.querySelector(arguments[0]).removeChild(document.querySelector(arguments[1]));
+//                }
+//            }
+//        }
+//
+//        function addHandler(){
+//
+//            elementType = Object.prototype.toString.call(arguments[0]).split(/\W/)[2];
+//            event = arguments[1];
+//            func = arguments[2];
+//
+//            if (elementType != "String"){
+//                elements = arguments[0];
+//            }else{
+//                elements = document.querySelectorAll(arguments[0]);
+//            }
+//            iterations = elements.length;
+//
+//            for (i = 0; i < iterations; i++){
+//                elements[i].addEventListener(event, func);
+//            }
+//        }
+//
+//        function retrieveElements(){
+//            return document.querySelectorAll(arguments[0]);
+//        }
+//
+//        return{
+//            appendChild : appendChild,
+//            removeChild : removeChild,
+//            addHandler : addHandler,
+//            retrieveElements : retrieveElements
+//        }
+//    })();
+//    liElement = document.createElement("li");
+//    // Appends a list item to ul.birds-list
+//    domModule.appendChild(liElement,".birds-list");
+//    // Removes the first li child from the bird list
+//    domModule.removeChild("ul.birds-list","li:first-child");
+//    // Adds a click event to all bird list items
+//    domModule.addHandler("li.bird", 'click', function(){ alert("I'm a bird!") });
+//    // Retrieves all elements of class "bird"
+//    elements = domModule.retrieveElements(".bird");
+</script>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var output, pattern, placeholder, placeholders, i;
+
+    var specialConsole = (function specialConsole(){
+
+        function writeLine(){
+            console.log(formatString(arguments))
+        }
+
+        function writeWarning(){
+            console.warn(formatString(arguments));
+        }
+
+        function writeInfo(){
+            console.info(formatString(arguments));
+        }
+
+        function writeError(){
+            console.error(formatString(arguments));
+        }
+
+        function formatString(arguments){
+            if (arguments.length > 1){
+                pattern = /{([0-9]|[1-9]\d+)}/g;
+                placeholders = [];
+                while (placeholder = pattern.exec(arguments[0])){
+                    placeholders.push(placeholder[1]);
+                }
+                placeholders.sort(function (a,b){return a-b;});
+
+                if (placeholders[placeholders.length-1] > arguments.length-2){
+                    throw baby;
+                }else{
+                    for (i = 1; i <= placeholders.length; i++){
+                        pattern = new RegExp('\\{'+placeholders[i-1]+'\\}',"g");
+                        arguments[0] = arguments[0].replace(pattern, arguments[i].toString());
+                    }
+                }
+            }
+            output = arguments[0];
+            return output;
+        }
+        return {
+            writeLine : writeLine,
+            writeError : writeError,
+            writeInfo : writeInfo,
+            writeWarning : writeWarning
+        }
+    })();
+    specialConsole.writeLine("Message: hello");
+    specialConsole.writeLine("Message: {0}", "hello");
+    specialConsole.writeLine("Object: {0}", { name: "Gosho", toString: function() { return this.name }});
+    specialConsole.writeError("Error: {0}", "A fatal error has occurred.");
+    specialConsole.writeWarning("Warning: {0}", "You are not allowed to do that!");
+    specialConsole.writeInfo("Info: {0}", "Hi there! Here is some info for you.");
+    specialConsole.writeError("Error object: {0}", { msg: "An error happened", toString: function() { return this.msg }});
+</script>
+</body>
+</html>

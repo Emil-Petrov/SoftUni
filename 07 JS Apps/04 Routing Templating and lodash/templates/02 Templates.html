@@ -1,0 +1,20 @@
+
+
+<div class="container">
+    <div class="description">Name</div>
+    <div class="description">Job</div>
+    <div class="description">Site</div>
+    {{#people}}
+        <p>
+            {{#name}}
+                <div class="name">{{name}}</div>
+            {{/name}}
+            {{#job}}
+                <div class="job">{{job}}</div>
+            {{/job}}
+            {{#website}}
+                <div class="website"><a href="{{website}}">{{website}}</a></div>
+            {{/website}}
+        </p>
+    {{/people}}
+</div>

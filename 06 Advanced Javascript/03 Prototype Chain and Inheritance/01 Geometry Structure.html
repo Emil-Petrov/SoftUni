@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script type="text/javascript" src="Scripts/01%20Shapes.js"></script>
+<script>
+    var pointA = new Shapes.Point(2,4);
+    var pointB = new Shapes.Point(3,5);
+    var pointC = new Shapes.Point(4,6);
+    var radius = 5;
+    var width = 10;
+    var height = 15;
+    var color = "#FFF";
+
+    var circle = new Shapes.Circle(pointA, radius, color);
+    var rectangle = new Shapes.Rectangle(pointA, width, height, color);
+    var triangle = new Shapes.Triangle(pointA, pointB, pointC, color);
+    var line = new Shapes.Line(pointA, pointC, color);
+    var segment = new Shapes.Segment(pointB, pointC, color);
+
+    console.log(circle.toString())
+    console.log(rectangle.toString());
+    console.log(triangle.toString());
+    console.log(line.toString());
+    console.log(segment.toString());
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+*{
+    font-size: 24px;
+}
+*:first-letter{
+    text-transform: uppercase;
+}
+ul{
+    display: inline-block;
+    list-style: none;
+}
+li{
+    padding: 5px;
+}
+.selected{
+    background-color: #f0f;
+}
+.submit{
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    background: #37F;
+    border: 1px solid black;
+}
+.incorrect{
+    background-color: #f00;
+}
+.correct{
+    background-color: #0F0;
+}
+.reset{
+    position: absolute;
+    left: 45%;
+    padding: 5px;
+}
+.poll{
+    border: 1px solid black;
+}

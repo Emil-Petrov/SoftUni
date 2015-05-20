@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        img {
+            display: block;
+        }
+    </style>
+    <script src="libs/angular.js"></script>
+</head>
+<body ng-app="app">
+<div>
+    <span>Links: </span>
+    <div>http://1.bp.blogspot.com/-i2E8bW4c-iI/VUsBx_DpAoI/AAAAAAAApjc/lQCW--uomuE/s640/MSI_Primer_800x315_0.jpg</div>
+    <div>http://4.bp.blogspot.com/-dxnA6SvJPy4/VUsDfczGnHI/AAAAAAAApj0/rh_o5PrM6GE/s640/The%2BMighty%2BBanner%2BV2%2C3.jpg</div>
+</div>
+<br/>
+<div ng-controller="imageController">
+    <label for="picSrc">Enter image URL</label>
+    <input type="text" id="picSrc" ng-model="picture" ng-change="changeSource()"/>
+    <div id="status"></div>
+    <img id="picContainer" ng-src="{{image_source}}"/>
+</div>
+<script type="text/javascript" src="scripts/02%20Binding%20image%20to%20text%20box.js"></script>
+</body>
+</html>

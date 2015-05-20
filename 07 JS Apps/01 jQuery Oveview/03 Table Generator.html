@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="Styles/03%20Table%20Generator.css"/>
+</head>
+<body>
+<script type="text/javascript" src="Scripts/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="Scripts/03%20Table%20Generator.js"></script>
+<script>
+    var JString = '[{"manufacturer":"BMW","model":"E92 320i","year":2011,"price":50000,"class":"Family"},{"manufacturer":"Porsche","model":"Panamera","year":2012,"price":100000,"class":"Sport"},{"manufacturer":"Peugeot","model":"305","year":1978,"price":1000,"class":"Family"}]';
+    createTable(JString);
+    $('html').append(createTable(JString))
+</script>
+</body>
+</html>
+
+

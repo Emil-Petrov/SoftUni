@@ -1,0 +1,12 @@
+*{
+    font-size: 30px;
+}
+html input{
+    width: 450px;
+    display: block;
+}
+html button{
+    padding: 5px;
+    margin: 10px 10px;
+    width: 200px;
+}

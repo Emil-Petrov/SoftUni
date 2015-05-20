@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .country, .town {
+            background-color: #5f92ea;
+            display: block;
+            width: 150px;
+            height: 50px;
+            padding: 0;
+            text-wrap: none;
+            margin: 0;
+        }
+
+        .town {
+            background-color: #ff4600;
+        }
+    </style>
+</head>
+<body>
+<div class="btn-fix">CLICK ME TO FIX THE THINGY BELOW</div>
+<div>Click on any country or town to delete it</div>
+<input class="new-country-text" type="text" placeholder="Country Name"/>
+<div class="add-new-country">Add new country</div>
+<br/>
+<input class="change-country-text" type="text" placeholder="New Country Name"/>
+<div class="change-first-country">Change first country</div>
+<br/>
+<input class="new-town-text" type="text" placeholder="Town Name"/>
+<div class="add-new-town">Click me to add new town to first country</div>
+<br/>
+<input class="change-town-text" type="text" placeholder="New Town Name"/>
+<div class="change-first-town-name">Click to change first town name</div>
+<div class="change-first-town-location">Click me to move first town to last country</div>
+<br/>
+<div class="reset-db">Click me to return the DB to it's "original" state (it takes a while)</div>
+<div class="towns"></div>
+<div class="countries"></div>
+<script type="text/javascript" src="Scripts/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="Scripts/CountryApp.js"></script>
+<script>
+    var text, id;
+    CountryApp.displayCountries($('.countries'));
+    id = $('.country').first().attr('id');
+    CountryApp.displayTowns(id, $('.towns'));
+    $('.add-new-country').click(function () {
+        text = $('.new-country-text').val();
+        CountryApp.addCountry(text, $('.countries'));
+    });
+    $('.change-first-country').click(function () {
+        text = $('.change-country-text').val();
+        id = $('.country').first().attr('id');
+        CountryApp.changeCountry(id, text);
+    });
+    $('.add-new-town').click(function () {
+        text = $('.new-town-text').val();
+        id = $('.country').first().attr('id');
+        CountryApp.addTown(text, id);
+    });
+    $('.change-first-town-name').click(function () {
+        var text = $('.change-town-text').val();
+        var id = $('.town').first().attr('id');
+        CountryApp.changeTown(id, text);
+    });
+    $('.change-first-town-location').click(function () {
+        text = $('.new-town-text').val();
+        id = $('.town').first().attr('id');
+        var countryId = $('.country').last().attr('id');
+        CountryApp.changeTown(id, text, countryId);
+    });
+    $('.reset-db').click(function () {
+        CountryApp.resetDB($('.countries'), $('.towns'));
+    });
+    $('.btn-fix').click(function(){
+        $('.town').click(function () {
+            id = $(this).attr('id');
+            CountryApp.deleteTown(id);
+        });
+        $('.country').click(function () {
+            id = $(this).attr('id');
+            CountryApp.deleteCountry(id);
+        });
+    })
+	
+	//If you want to test the rest of the things you can see all available commands in the CountryApp module.
+	//I hope the demo is enough to convince you though...
+</script>
+</body>
+</html>

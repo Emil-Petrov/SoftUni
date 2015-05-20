@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script type="text/javascript" src="Scripts/03%20TestContext..js"></script>
+<script>
+    //For some reason this returns window and i believe it shouldn't since testContext is inside of the function?
+    (function testFunction() {
+        testContext();
+    })();
+    //This returns window as testContext is in the global scope currently.
+    testContext();
+    //Calls the constructor of testContext so the scope of this is inside the function thus this is the function.
+    var test = new testContext();
+</script>
+</body>
+</html>

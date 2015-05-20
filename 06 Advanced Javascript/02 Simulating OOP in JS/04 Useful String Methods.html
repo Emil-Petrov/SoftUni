@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script type="text/javascript" src="Scripts/04%20String%20Extention.js"></script>
+<script>
+    var testString, example, hello, character;
+    testString = '123Kappa';
+    console.log(testString.startsWith('123'));
+    console.log(testString.endsWith('Kappa'));
+    console.log(testString.left(3));
+    console.log(testString.right(5));
+    console.log(testString.padLeft(5,'-'));
+    console.log(testString.padLeft(10));
+    console.log(testString.padRight(5, '-'));
+    console.log("Kappa ".repeat(3));
+
+//    //SoftUni Tests below.
+
+//    example = "This is an example string used only for demonstration purposes.";
+//    console.log(example.startsWith("This"));
+//    console.log(example.startsWith("this"));
+//    console.log(example.startsWith("other"));
+
+//    example = "This is an example string used only for demonstration purposes.";
+//    console.log(example.endsWith("poses."));
+//    console.log(example.endsWith ("example"));
+//    console.log(example.startsWith("something else"));
+//    example = "This is an example string used only for demonstration purposes.";
+//    console.log(example.left(9));
+//    console.log(example.left(90));
+//    example = "This is an example string used only for demonstration purposes.";
+//    console.log(example.right(9));
+//    console.log(example.right(90));
+
+//    // Combinations must also work
+//    example = "abcdefgh";
+//    console.log(example.left(5).right(2));
+//    hello = "hello";
+//    console.log(hello.padLeft(5));
+//    console.log(hello.padLeft(10));
+//    console.log(hello.padLeft(5, "."));
+//    console.log(hello.padLeft(10, "."));
+//    console.log(hello.padLeft(2, "."));
+
+//    hello = "hello";
+//    console.log(hello.padRight(5));
+//    console.log(hello.padRight(10));
+//    console.log(hello.padRight(5, "."));
+//    console.log(hello.padRight(10, "."));
+//    console.log(hello.padRight(2, "."));
+//    character = "*";
+//    console.log(character.repeat(5));
+
+//    // Alternative syntax
+//    console.log("~".repeat(3));
+
+//    // Another combination
+//    console.log("*".repeat(5).padLeft(10, "-").padRight(15, "+"));
+
+</script>
+</body>
+</html>

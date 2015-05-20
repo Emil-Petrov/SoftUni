@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html ng-app="videoSystem">
+<style>
+    *{
+        text-overflow: ellipsis;
+    }
+    button {
+        display: inline-block;
+        width: 150px;
+        text-align: center;
+        background: #ecedc0;
+    }
+
+    input {
+        padding: 0;
+    }
+
+    textarea {
+        padding: 0;
+        display: block;
+        resize: none;
+    }
+    .video{
+        display: inline-block;
+        width: 302px;
+        margin: 0;
+        border: 1px solid black;
+    }
+    form, .video-preview{
+        display: inline-block;
+        width: 1000px;
+        vertical-align: top;
+    }
+    img{
+        display:inline-block;
+        width: 300px;
+    }
+    h3{
+        display: inline;
+    }
+    .video-preview span, .video-preview div{
+        width: 300px;
+        overflow: hidden;
+    }
+</style>
+<script src="libs/angular.js"></script>
+<body ng-controller="videoController">
+<div class="wrapper">
+    <form novalidate class="create-Video" name="videoForm">
+        <div>Fields marked with a * are required!</div>
+        <div>
+            <label for="title">Video title*</label>
+            <input name="title" id="title" type="text" ng-model="createVideo.title" ng-pattern="/.{5,}/" required/>
+            <span style="color:red" ng-show="videoForm.title.$invalid">
+                <span ng-show="!videoForm.title.$dirty">Please enter video title.</span>
+                <span ng-show="videoForm.title.$dirty && videoForm.title.$error.pattern">Title should be at least 5 symbols long.</span>
+            </span>
+        </div>
+
+        <div>
+            <label for="picture">Picture*</label>
+            <input name="picture" id="picture" type="url" ng-model="createVideo.pictureUrl" required/>
+            <span style="color:red" ng-show="videoForm.picture.$invalid">
+                <span ng-show="!videoForm.picture.$dirty">Please enter video poster URL</span>
+                <span ng-show="videoForm.picture.$error.url && videoForm.picture.$dirty">Please provide a valid URL.
+                    <br/>
+                    Hello there, if you know what a URL is you might notice that this isn't exactly working as it should. And it's all angular's or html's fault for the bad regex behind the URL pattern.
+                    <br/>
+                    What I'm getting at here is that I won't bother making it work because I don't have the time for it.</span>
+            </span>
+        </div>
+
+        <div>
+            <label for="length">Length</label>
+            <input id="length" name="length" type="number" ng-model="createVideo.length" min="0"/>
+            <span style="color:red" ng-show="videoForm.length.$invalid && videoForm.length.$dirty">
+                <span>Video length must be a non negative number.</span>
+            </span>
+        </div>
+
+        <div>
+            <label for="category">Category*</label>
+            <input id="category" name="category" type="text" ng-model="createVideo.category" ng-pattern="/.{5,}/" required/>
+            <span style="color:red" ng-show="videoForm.category.$invalid">
+                <span ng-show="!videoForm.category.$dirty">Please enter category name.</span>
+                <span ng-show="videoForm.category.$error.pattern && videoForm.category.$dirty"> Category name should be at least 5 symbols long.</span>
+            </span>
+        </div>
+
+        <div>
+            <label for="subscribersCount">Subscribers</label>
+            <input id="subscribersCount" name="subscribers" ng-model="createVideo.subscribersCount" type="number" min="0"/>
+            <span style="color:red" ng-show="videoForm.subscribers.$invalid && videoForm.subscribers.$dirty">
+                <span>Subscribers count must be a non negative number.</span>
+            </span>
+        </div>
+
+        <div>
+            <label for="date">Date</label>
+            <input id="date" ng-model="createVideo.date" type="date"/>
+        </div>
+
+        <div>
+            <label for="subbed">Subtitles</label>
+
+            <div id="subbed">
+                <label for="yes">Yes</label>
+                <input type="radio" id="yes" ng-model="createVideo.haveSubtitles" name="subbed" value="1"/>
+
+                <label for="no">No</label>
+                <input type="radio" id="no" ng-model="createVideo.haveSubtitles"  name="subbed" value="0" />
+            </div>
+        </div>
+        <button type="submit" ng-disabled="videoForm.$invalid" ng-click="createVideo.submitVideo()">Submit</button>
+    </form>
+    <div class="video-preview">
+        <div ng-show="createVideo.title" class="title">Title: <span><h3>{{createVideo.title}}</h3></span></div>
+        <div ng-show="createVideo.title && createVideo.pictureUrl" class="picture"><img ng-src="{{createVideo.pictureUrl}}" alt="cover of video"/></div>
+        <div ng-show="createVideo.title && createVideo.length" class="length">Length: {{createVideo.length}} minutes</div>
+        <div ng-show="createVideo.title && createVideo.category" class="category">Category: {{createVideo.category}}</div>
+        <div ng-show="createVideo.title && createVideo.subscribersCount" class="subscribers">Subscribers count:{{createVideo.subscribersCount}}</div>
+        <div ng-show="createVideo.title && createVideo.date" class="date">Date: {{createVideo.date | date : 'd MMM yyyy'}}</div>
+        <div ng-show="createVideo.title" class="subbed">Subtitles: {{createVideo.haveSubtitles | hasSubtitles : 'Available' : 'Not available'}}</div>
+        <div class="comments" ng-show="createVideo.comments.length > 0">
+            <h4>Comments:</h4>
+            <div class="comment" ng-repeat="comment in createVideo.comments">
+                <div class="userName">Author: {{comment.username}}</div>
+                <div class="date">Date: {{comment.date | date : "d MMM yyyy 'at' HH:mm"}}</div>
+                <div class="content">{{comment.content}}</div>
+                <div class="picture"><img ng-src="{{comment.pictureUrl}}" alt="Comment Picture"/></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="filter-videos">
+        <div>
+            <label for="by-category">By Category</label>
+            <input type="checkbox" ng-checked="" id="by-category"/>
+            <input id="categories" type="text"/>
+        </div>
+        <div>
+            <label for="by-date">By Date</label>
+            <input type="checkbox" id="by-date"/>
+            <input id="filter-date" type="datetime"/>
+        </div>
+        <div>
+            <label for="has-subtitles">Has Subtitles</label>
+            <input type="checkbox" id="has-subtitles"/>
+        </div>
+    </div>
+
+    <div class="video-preview">
+        <div class="video" ng-repeat="video in videos">
+            <div ng-show="video.title" class="title">Title: <span>{{video.title}}</span></div>
+            <div ng-show="video.title && video.pictureUrl" class="picture"><img src="{{video.pictureUrl}}" alt="cover of video"/></div>
+            <div ng-show="video.title && video.length" class="length">Length: {{video.length}}</div>
+            <div ng-show="video.title && video.category" class="category">Category: {{video.category}}</div>
+            <div ng-show="video.title && video.subscribers" class="subscribers">Subscribers count:{{video.subscribers}}</div>
+            <div ng-show="video.title && video.date" class="date">Date: {{video.date | date : 'd MMM yyyy'}}</div>
+            <div ng-show="video.title" class="subbed">Subtitles: {{video.haveSubtitles | hasSubtitles : 'Available' : 'Not available'}}</div>
+            <div class="comments" ng-show="video.title && video.comments"><br/>
+                <div>
+
+                    <div class="createComment">
+                        <div>
+                            <label for="username">Author</label>
+                            <input id="username" ng-model="comment.username" type="text"/>
+                        </div>
+                        <div>
+                            <label for="comment-picture">Picture:</label>
+                            <input type="url" ng-model="comment.picture" id="comment-picture"/>
+                        </div>
+                        <div>
+                            <label for="content">Content</label>
+                            <textarea name="content" id="content" ng-model="comment.content" cols="30" rows="10"></textarea>
+                        </div>
+                        <button ng-click="$addComment($index)">Add Comment</button>
+                    </div>
+                </div>
+                <div>Comments:</div>
+                <div class="comment" ng-repeat="comment in video.comments">
+                    <div class="userName">Author: {{comment.username}}</div>
+                    <div class="date">Date: {{comment.date | date : 'd MMM yyyy'}}</div>
+                    <div class="content">{{comment.content}}</div>
+                    <div class="picture"><img src="{{comment.pictureUrl}}" alt="Comment Picture"/></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--app-->
+<script type="text/javascript" src="scripts/app.js"></script>
+<!--services-->
+<script type="text/javascript" src="scripts/services/videoData.js"></script>
+<!--controllers-->
+<script type="text/javascript" src="scripts/controllers/videoController.js"></script>
+<!--filters-->
+<script type="text/javascript" src="scripts/filters/hasSubtitles.js"></script>
+</body>
+</html>

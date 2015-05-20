@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="Styles/02%20Poll.css"/>
+</head>
+<body>
+</body>
+<script type="text/javascript" src="Scripts/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="Scripts/02%20Poll.js"></script>
+<script>
+    var questions = [];
+    var question1 = new Question('Are dinosaurs real?',
+            [new Answer('Yes', false),
+                new Answer('No', true),
+                new Answer('How can dinosaurs be real if our eyes aren\'t real?', false),
+                new Answer('Dinosaurs is kill', true)]);
+
+    var question2 = new Question('Do you believe in giraffes?',
+            [new Answer('Yes', true),
+                new Answer('No', false),
+                new Answer('Never seen one so I call bs on giraffes', false),
+                new Answer('I have built my own giraffe worshiping altar so me and Giro-senpai can talk all the time', true)]);
+
+    var question3 = new Question('Papoy?',
+            [new Answer('Yes', false),
+                new Answer('Papoy!', true),
+                new Answer('Yes, the toy!', true),
+                new Answer('Papoy?', false)]);
+    var question4 = new Question('TEST QUESTION... You cant possibly fail this. Right?',
+            [new Answer('Yes I can', false),
+                new Answer('PICK ME!', true),
+                new Answer('OR ME!', true),
+                new Answer('Only answer #1 is wrong...', true)]);
+    var question5 = new Question('Le fail test question',
+            [new Answer('What?', false),
+                new Answer('Wrong!', false),
+                new Answer('Wrong!', false),
+                new Answer('Wrong!', false)]);
+    questions.push(question1, question2, question3, question4, question5);
+
+    if (!localStorage['visited']){
+        localStorage['visited'] = true;
+        localStorage['questions'] = JSON.stringify(questions);
+    }
+
+    startPoll($('body'), questions, 300);
+</script>
+</html>

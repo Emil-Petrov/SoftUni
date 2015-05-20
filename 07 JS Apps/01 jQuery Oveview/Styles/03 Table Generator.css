@@ -1,0 +1,19 @@
+table{
+    border: 1px solid black;
+    table-layout: fixed;
+    width: 800px;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+th, td {
+    border: 1px solid black;
+    overflow: hidden;
+    width: 200px;
+    padding: 5px;
+}
+th{
+    text-align: center;
+    text-transform: capitalize;
+    background-color: #2F2;
+}

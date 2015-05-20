@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="Scripts/01%20PrintArgsInfo.js"></script>
+</head>
+<body>
+<script>
+    console.log("Empty call");
+    printArgsInfo.call();
+    console.log("Call with arguments");
+    printArgsInfo.call(null, 12, 3, 4, null, [], {});
+    console.log("Empty apply");
+    printArgsInfo.apply();
+    console.log("Apply with arguments");
+    printArgsInfo.apply(null,[1,2,3,false, printArgsInfo]);
+</script>
+</body>
+</html>

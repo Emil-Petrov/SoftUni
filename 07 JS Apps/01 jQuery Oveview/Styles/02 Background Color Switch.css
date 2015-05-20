@@ -1,0 +1,30 @@
+*{
+    font-size: 30px;
+    font-family: sans-serif;
+}
+div{
+    margin: 10px 0;
+}
+input{
+    width: 100px;
+    height: 50px;
+}
+ul{
+    padding: 0;
+    margin: 0;
+    float: right;
+}
+form{
+    padding: 0;
+    margin: 0;
+    float: left;
+}
+button{
+    width: 100px;
+    height: 50px;
+    margin: 0 0 0 90px;
+}
+.container{
+    width: 500px;
+    background-color: #f0f;
+}
