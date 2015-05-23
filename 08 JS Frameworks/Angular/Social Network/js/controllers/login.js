@@ -1,14 +1,18 @@
-app.controller("loginController", function ($scope, $user, utils) {
+app.controller("loginController", function ($scope, $user, $utils) {
     function User(username, password) {
         this.username = username;
         this.password = password;
     }
     User.prototype.login = function () {
-        var _username = this.username;
         $user.login(this.username, this.password)
             .then(function (info) {
                 var token = "Bearer " + info.data.access_token;
-                utils.setStorage(_username, info.data.userName, token);
+                $user.currentUser(token)
+                    .then(function(info){
+                        var userInfo = info.data;
+                        $utils.setStorage(token, userInfo.username, userInfo.name, userInfo.coverImageData, userInfo.profileImageData, userInfo.email);
+                        console.log(info.data);
+                    });
             }, function (err) {
                 console.log(err);
             });

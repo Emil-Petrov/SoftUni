@@ -6,6 +6,16 @@
     <script type="text/javascript" src="js/libs/angular.js"></script>
 </head>
 <body ng-app="socialNetwork">
+<div ng-controller="headerController">
+    <div class="userPreview">
+        <div class="userPicture"><img src="{{user.profilePictue}}" alt="User Picture"/>{{user.profilePicture}}</div>
+        <div class="username"><a href="#/me">{{user.name}}</a></div>
+        <div ng-click="user.getFriendRequests()">TEST</div>
+        <div ng-repeat="request in user.friendRequests">
+            {{request.user.name}}
+        </div>
+    </div>
+</div>
 <div class="test" ng-controller="loginController">
     <h1>Here goes nothing!</h1>
     <input ng-model="user.username" type="text"/>
@@ -28,5 +38,6 @@
 <!--controllers-->
 <script type="text/javascript" src="js/controllers/login.js"></script>
 <script type="text/javascript" src="js/controllers/register.js"></script>
+<script type="text/javascript" src="js/controllers/header.js"></script>
 </body>
 </html>
