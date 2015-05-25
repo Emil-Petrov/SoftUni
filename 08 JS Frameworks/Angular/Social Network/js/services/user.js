@@ -163,7 +163,7 @@ app.factory("$user", function ($http) {
         getUser: getUser,
         findUsers : findUsers,
         currentUser: getCurrentUser,
-        currentUserFriends: getCurrentUserFriends,
+        getCurrentUserFriends: getCurrentUserFriends,
         currentUserFriendRequests: getCurrentFriendRequests,
         acceptFriendRequest: acceptFriendRequest,
         sendFriendRequest: sendFriendRequest,

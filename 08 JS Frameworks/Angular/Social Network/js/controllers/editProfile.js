@@ -1,13 +1,4 @@
 app.controller('editProfileController', function ($user, $scope, $utils) {
-
-    function changePicture(picture, preview, callback) {
-        var FR = new FileReader();
-        FR.onload = function () {
-            callback(FR.result);
-            preview.src = FR.result;
-        };
-        FR.readAsDataURL(picture)
-    }
     var currentUser = $utils.getCurrentUser();
     $scope.name = currentUser.name;
     $scope.email = currentUser.email;
@@ -39,6 +30,15 @@ app.controller('editProfileController', function ($user, $scope, $utils) {
                 console.log(arguments);
             });
     };
+
+    function changePicture(picture, preview, callback) {
+        var FR = new FileReader();
+        FR.onload = function () {
+            callback(FR.result);
+            preview.src = FR.result;
+        };
+        FR.readAsDataURL(picture)
+    }
 
 });
 

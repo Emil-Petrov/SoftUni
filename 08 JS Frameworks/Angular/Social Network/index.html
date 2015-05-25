@@ -4,44 +4,70 @@
     <meta charset="UTF-8">
     <title></title>
     <script type="text/javascript" src="js/libs/angular.js"></script>
+    <style>
+        .menuItem {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .userPicture {
+            width: 50px;
+            height: 50px;
+        }
+        .userPicture > img {
+            width: 100%;
+        }
+
+        .preview{
+            display: block;
+            height: 150px;
+        }
+    </style>
 </head>
 <body ng-app="socialNetwork">
 <div ng-controller="headerController">
-    <div class="userPreview">
-        <div class="userPicture"><img src="{{user.profilePictue}}" alt="User Picture"/>{{user.profilePicture}}</div>
-        <div class="username"><a href="#/me">{{user.name}}</a></div>
-        <div ng-click="user.getFriendRequests()">TEST</div>
-        <div ng-repeat="request in user.friendRequests">
-            {{request.user.name}}
-        </div>
+    <div class="menuItem userPreview">
+        <div class="menuItem userPicture"><img ng-src="{{profilePicture}}" alt="User Picture"/></div>
+        <div class="menuItem username"><a href="#/me">{{name}}</a></div>
     </div>
+    <div class="menuItem" ng-click="getFriendRequests()"><a href="#/friend+requests">View Friend Requests</a></div>
+    <div ng-repeat="request in friendRequests">
+        {{request.user.name}}
+    </div>
+    <div class="menuItem findFriends">
+        <input type="text" ng-model="nameQuery"/>
+        <div class="menuItem" ng-click="findFriends()">Find Friends</div>
+    </div>
+    <div class="menuItem logout" ng-click="logout()"><a href="#">logout</a></div>
 </div>
+<h1>Here goes nothing!</h1>
+<h1>SPLIT THIS WHOLE THING</h1>
 <div ng-controller="loginController">
-    <h1>Here goes nothing!</h1>
-    <input ng-model="user.username" type="text"/>
-    <input ng-model="user.password" type="text"/>
-    <div ng-click="user.login()">LOGIN</div>
+    <input ng-model="username" type="text"/>
+    <input ng-model="password" type="text"/>
+    <div ng-click="login()">LOGIN</div>
 </div>
 <div ng-controller="registerController">
-    <input ng-model="user.username" type="text"/>
-    <input ng-model="user.password" type="text"/>
-    <input ng-model="user.confirmPassword" type="text"/>
-    <input ng-model="user.name" type="text"/>
-    <input ng-model="user.email" type="text"/>
-    <div ng-click="user.register()">Register</div>
+    <input ng-model="username" type="text"/>
+    <input ng-model="password" type="text"/>
+    <input ng-model="confirmPassword" type="text"/>
+    <input ng-model="name" type="text"/>
+    <input ng-model="email" type="text"/>
+
+    <div ng-click="register()">Register</div>
 </div>
 <div ng-controller="editProfileController">
     <div>Name: <input type="text" ng-model="name" placeholder="{{name}}"/></div>
     <div>Email: <input type="email" ng-model="email" value="{{email}}"/></div>
     <div>
         <span>Profile Picture:</span>
-        <input type="file" id="upload-profile-picture" ng-model="currentUser.profilePicture" onchange="angular.element(this).scope().changeProfilePicture()"/>
-        <img id="profile-picture-preview" ng-src="{{profilePicture}}"/>
+        <input type="file" id="upload-profile-picture" ng-model="currentUser.profilePicture"
+               onchange="angular.element(this).scope().changeProfilePicture()"/>
+        <img class="preview" id="profile-picture-preview" ng-src="{{profilePicture}}"/>
     </div>
     <div>
         <span>Cover Picture: </span>
         <input type="file" id="upload-cover-picture" onchange="angular.element(this).scope().changeCoverPicture()"/>
-        <img id="cover-picture-preview" ng-src="{{coverPicture}}"/>
+        <img class="preview" id="cover-picture-preview" ng-src="{{coverPicture}}"/>
     </div>
     <div>
         <label for="male">Male:</label>
@@ -53,6 +79,25 @@
     </div>
     <div ng-click="saveChanges()">Change Profile</div>
 </div>
+<div ng-controller="myFriendsController">
+    <div ng-if="friends.length <= 0">
+        You have no friends, <br/>
+        Feel free to go outside and find some, or if you are feeling lucky you can always use the search option at the top or go to our <a href="#/find+friends">search page.</a>
+    </div>
+    <div ng-if="friends.length > 0" ng-repeat="friend in friends">
+        <div>
+            <!--TODO: add friend preview-->
+            FRIEND PREVIEW
+        </div>
+    </div>
+</div>
+
+<div ng-controller="changePasswordController">
+    <input type="password" ng-model="oldPassword"/>
+    <input type="password" ng-model="newPassword"/>
+    <input type="password" ng-model="confirmPassword"/>
+    <div ng-click="changePassword()">Save Changes</div>
+</div>
 <!--app-->
 <script type="text/javascript" src="js/app.js"></script>
 <!--services-->
@@ -63,6 +108,8 @@
 <script type="text/javascript" src="js/controllers/register.js"></script>
 <script type="text/javascript" src="js/controllers/header.js"></script>
 <script type="text/javascript" src="js/controllers/editProfile.js"></script>
+<script type="text/javascript" src="js/controllers/myFriends.js"></script>
+<script type="text/javascript" src="js/controllers/changePassword.js"></script>
 </body>
 </html>
 

@@ -1,10 +1,9 @@
 app.controller('headerController', function ($scope, $user, $utils) {
-    function User() {
-        this.name = $utils.getCurrentUser().username;
-        this.friendRequests = [];
-    }
-
-    User.prototype.getFriendRequests = function () {
+    var currentUser = $utils.getCurrentUser();
+    $scope.name = currentUser.username;
+    $scope.friendRequests = [];
+    $scope.profilePicture = currentUser.profilePicture;
+    $scope.getFriendRequests = function () {
         var _this = this;
         $user.currentUserFriendRequests($utils.getSessionToken())
             .then(function (info) {
@@ -13,9 +12,15 @@ app.controller('headerController', function ($scope, $user, $utils) {
             })
     };
 
-    User.prototype.logout = function () {
+    $scope.logout = function () {
         $user.logout($utils.getSessionToken());
     };
 
-    $scope.user = new User();
+    $scope.findFriends = function(){
+        $user.findUsers($utils.getSessionToken(), $scope.nameQuery).then(function(){
+            console.log(arguments);
+        }, function(){
+            console.log(arguments)
+        })
+    }
 });
