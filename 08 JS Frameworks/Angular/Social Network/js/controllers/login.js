@@ -10,7 +10,7 @@ app.controller("loginController", function ($scope, $user, $utils) {
                 $user.currentUser(token)
                     .then(function(info){
                         var userInfo = info.data;
-                        $utils.setStorage(token, userInfo.username, userInfo.name, userInfo.coverImageData, userInfo.profileImageData, userInfo.email);
+                        $utils.setStorage(token, userInfo.username, userInfo.name, userInfo.coverImageData, userInfo.profileImageData, userInfo.email, userInfo.gender);
                         console.log(info.data);
                     });
             }, function (err) {
