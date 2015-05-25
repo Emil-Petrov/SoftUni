@@ -1,24 +1,11 @@
 app.controller('registerController', function ($scope, $user, $utils) {
-    function User(username, password, confirmPassword, name, email, gender) {
-        this.username = username;
-        this.password = password;
-        this.confirmPassword = confirmPassword;
-        this.name = name;
-        this.email = email;
-        this.gender = gender;
-    }
-
-    User.prototype.register = function () {
-        var _username = this.username;
-        var _name = this.name;
-        $user.register(this.username, this.password, this.confirmPassword, this.name, this.email)
+    $scope.register = function () {
+        $user.register($scope.username, $scope.password, $scope.confirmPassword, $scope.name, $scope.email)
             .then(function (info) {
                 var token = "Bearer " + info.data.access_token;
-                $utils.setStorage(_username, _name, token)
+                $utils.setStorage(token, $scope.username, $scope.name, null, null, $scope.email, $scope.gender)
             }, function (err) {
                 console.log(err);
-            });
+            })
     };
-
-    $scope.user = new User();
 });
