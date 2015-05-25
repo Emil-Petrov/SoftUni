@@ -1,0 +1,17 @@
+.userPicture > img {
+    width: 100%;
+}
+
+.preview{
+    display: block;
+    height: 150px;
+}
+li > img{
+    vertical-align: middle;
+    max-width: 50px;
+    max-height: 50px;
+}
+.dropdown  > ul > li > a > img{
+    max-width: 50px;
+    max-height: 50px;
+}

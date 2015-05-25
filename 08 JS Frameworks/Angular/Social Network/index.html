@@ -4,41 +4,14 @@
     <meta charset="UTF-8">
     <title></title>
     <script type="text/javascript" src="js/libs/angular.js"></script>
-    <style>
-        .menuItem {
-            display: inline-block;
-            vertical-align: middle;
-        }
-        .userPicture {
-            width: 50px;
-            height: 50px;
-        }
-        .userPicture > img {
-            width: 100%;
-        }
-
-        .preview{
-            display: block;
-            height: 150px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles/main.css"/>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body ng-app="socialNetwork">
-<div ng-controller="headerController">
-    <div class="menuItem userPreview">
-        <div class="menuItem userPicture"><img ng-src="{{profilePicture}}" alt="User Picture"/></div>
-        <div class="menuItem username"><a href="#/me">{{name}}</a></div>
-    </div>
-    <div class="menuItem" ng-click="getFriendRequests()"><a href="#/friend+requests">View Friend Requests</a></div>
-    <div ng-repeat="request in friendRequests">
-        {{request.user.name}}
-    </div>
-    <div class="menuItem findFriends">
-        <input type="text" ng-model="nameQuery"/>
-        <div class="menuItem" ng-click="findFriends()">Find Friends</div>
-    </div>
-    <div class="menuItem logout" ng-click="logout()"><a href="#">logout</a></div>
-</div>
+<ng-include src="'templates/header.html'"></ng-include>
 <h1>Here goes nothing!</h1>
 <h1>SPLIT THIS WHOLE THING</h1>
 <div ng-controller="loginController">

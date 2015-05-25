@@ -11,8 +11,9 @@ app.factory("$user", function ($http) {
     var currentUserUrl = 'me';
     var currentUserFriendsUrl = currentUserUrl + '/friends';
     var currentUserFriendRequestsUrl = currentUserUrl + '/requests';
-    var acceptFriendRequestPrefixUrl = currentUserUrl + '/requests/';
-    var acceptFriendRequestSuffixUrl = '?status=approved';
+    var friendRequestUrl = currentUserUrl + '/requests/';
+    var acceptFriendRequestUrl = '?status=approved';
+    var rejectFriendRequestUrl = '?status=rejected';
     var sendFriendRequestUrl = currentUserUrl + '/requests/';
     var changePasswordUrl = currentUserUrl + '/changepassword';
 
@@ -104,7 +105,15 @@ app.factory("$user", function ($http) {
     function acceptFriendRequest(token, requestId){
         return $http({
             method: "PUT",
-            url: BASE_URL + acceptFriendRequestPrefixUrl + requestId + acceptFriendRequestSuffixUrl,
+            url: BASE_URL + friendRequestUrl + requestId + acceptFriendRequestUrl,
+            headers: getAuthorizationToken(token)
+        })
+    }
+
+    function rejectFriendRequest(token, requestId){
+        return $http({
+            method: "PUT",
+            url: BASE_URL + friendRequestUrl + requestId + rejectFriendRequestUrl,
             headers: getAuthorizationToken(token)
         })
     }
@@ -166,6 +175,7 @@ app.factory("$user", function ($http) {
         getCurrentUserFriends: getCurrentUserFriends,
         currentUserFriendRequests: getCurrentFriendRequests,
         acceptFriendRequest: acceptFriendRequest,
+        rejectFriendRequest: rejectFriendRequest,
         sendFriendRequest: sendFriendRequest,
         changePassword: changeCurrentUserPassword,
         changeProfile: changeCurrentUserProfile

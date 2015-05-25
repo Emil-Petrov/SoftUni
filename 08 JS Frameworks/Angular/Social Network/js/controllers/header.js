@@ -2,15 +2,15 @@ app.controller('headerController', function ($scope, $user, $utils) {
     var currentUser = $utils.getCurrentUser();
     $scope.name = currentUser.username;
     $scope.friendRequests = [];
-    $scope.profilePicture = currentUser.profilePicture;
-    $scope.getFriendRequests = function () {
-        var _this = this;
-        $user.currentUserFriendRequests($utils.getSessionToken())
+    (function(){$user.currentUserFriendRequests($utils.getSessionToken())
             .then(function (info) {
+                console.log(info);
                 console.log(info.data);
-                _this.friendRequests = info.data;
+                $scope.friendRequests = info.data;
             })
-    };
+    }());
+
+    $scope.profilePicture = currentUser.profilePicture;
 
     $scope.logout = function () {
         $user.logout($utils.getSessionToken());
@@ -22,5 +22,14 @@ app.controller('headerController', function ($scope, $user, $utils) {
         }, function(){
             console.log(arguments)
         })
+    };
+
+    // TODO: Test this.
+    $scope.acceptFriendRequest = function(id){
+        $user.acceptFriendRequest($utils.getSessionToken(), id)
+    };
+
+    $scope.rejectFriendRequest = function(id){
+        $user.rejectFriendRequest($utils.getSessionToken(), id);
     }
 });

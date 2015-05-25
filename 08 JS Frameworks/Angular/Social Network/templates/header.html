@@ -1,0 +1,39 @@
+<div class="navbar navbar-default navbar-inverse" role="navigation" ng-controller="headerController">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#/">EMOBOOK</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><img ng-src="{{profilePicture}}"/></li>
+                <li><a href="#/me">{{name}}</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">Friend Requests () <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li ng-repeat="request in friendRequests">
+                            <a href="#/users/{{request.user.username}}">
+                                <img ng-src="{{request.user.profileImageData}}" src="http://placehold.it/30x30" alt=""/>
+                                <span>{{request.user.name}}</span>
+                            </a>
+                            <a ng-click="acceptFriendRequest(request.id)">Accept</a>
+                            <a ng-click="rejectFriendRequest(request.id)">Decline</a>
+                            <div class="divider"></div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Find friends">
+                </div>
+                <div class="btn btn-default">Submit</div>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li ng-click="logout()"><a href="#/">Logout</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</div>
