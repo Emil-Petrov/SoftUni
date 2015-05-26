@@ -49,7 +49,7 @@ app.factory("$comments", function ($http) {
     function getCommentDetailedLikes(token, postId, commentId) {
         return $http({
             method: "GET",
-            url: BASE_URL + postId + commentsUrl + '/' + commentId + likesUrl,
+            url: BASE_URL + postUrl + postId + commentsUrl + '/' + commentId + likesUrl,
             headers: getAuthorizationToken(token)
         })
     }
@@ -57,7 +57,7 @@ app.factory("$comments", function ($http) {
     function getCommentPreviewLikes(token, postId, commentId) {
         return $http({
             method: "GET",
-            url: BASE_URL + postId + commentsUrl + '/' + commentId + likesUrl,
+            url: BASE_URL + postUrl + postId + commentsUrl + '/' + commentId + likesUrl,
             headers: getAuthorizationToken(token)
         })
     }
@@ -65,7 +65,7 @@ app.factory("$comments", function ($http) {
     function likeComment(token, postId, commentId){
         return $http({
             method: "POST",
-            url: BASE_URL + postId + commentsUrl + '/' + commentId + likesUrl,
+            url: BASE_URL + postUrl + postId + commentsUrl + '/' + commentId + likesUrl,
             headers: getAuthorizationToken(token)
         })
     }
@@ -73,7 +73,7 @@ app.factory("$comments", function ($http) {
     function unlikeComment(token, postId, commentId){
         return $http({
             method: "DELETE",
-            url: BASE_URL + postId + commentsUrl + '/' + commentId + likesUrl,
+            url: BASE_URL + postUrl + postId + commentsUrl + '/' + commentId + likesUrl,
             headers: getAuthorizationToken(token)
         })
     }
