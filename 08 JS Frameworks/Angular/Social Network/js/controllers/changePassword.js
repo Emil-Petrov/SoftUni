@@ -1,5 +1,5 @@
-app.controller("changePasswordController", function($scope, $user, $utils){
+app.controller("changePasswordController", function($scope, $profile, $utils){
    $scope.changePassword = function(){
-       $user.changePassword($utils.getSessionToken(), $scope.oldPassword, $scope.newPassword, $scope.confirmPassword)
+       $profile.changePassword($utils.getSessionToken(), $scope.oldPassword, $scope.newPassword, $scope.confirmPassword)
    };
 });

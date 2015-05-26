@@ -1,14 +1,17 @@
-app.controller('headerController', function ($scope, $user, $utils) {
+app.controller('headerController', function ($scope, $user, $profile, $utils) {
     var currentUser = $utils.getCurrentUser();
     $scope.name = currentUser.username;
     $scope.friendRequests = [];
-    (function(){$user.currentUserFriendRequests($utils.getSessionToken())
+
+    var checkRequests = function () {
+        $profile.currentUserFriendRequests($utils.getSessionToken())
             .then(function (info) {
-                console.log(info);
-                console.log(info.data);
                 $scope.friendRequests = info.data;
+                $scope.count = info.data.length;
             })
-    }());
+    };
+    checkRequests();
+    //setInterval(checkRequests, 10000);
 
     $scope.profilePicture = currentUser.profilePicture;
 
@@ -16,20 +19,20 @@ app.controller('headerController', function ($scope, $user, $utils) {
         $user.logout($utils.getSessionToken());
     };
 
-    $scope.findFriends = function(){
-        $user.findUsers($utils.getSessionToken(), $scope.nameQuery).then(function(){
+    $scope.findFriends = function () {
+        $user.findUsers($utils.getSessionToken(), $scope.nameQuery).then(function () {
             console.log(arguments);
-        }, function(){
+        }, function () {
             console.log(arguments)
         })
     };
 
-    // TODO: Test this.
-    $scope.acceptFriendRequest = function(id){
-        $user.acceptFriendRequest($utils.getSessionToken(), id)
+    // TODO: Test this. Also remove HTML elements upon click
+    $scope.acceptFriendRequest = function (id) {
+        $profile.acceptFriendRequest($utils.getSessionToken(), id)
     };
 
-    $scope.rejectFriendRequest = function(id){
-        $user.rejectFriendRequest($utils.getSessionToken(), id);
+    $scope.rejectFriendRequest = function (id) {
+        $profile.rejectFriendRequest($utils.getSessionToken(), id);
     }
 });

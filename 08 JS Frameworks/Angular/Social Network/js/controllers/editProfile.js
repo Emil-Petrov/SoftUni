@@ -1,4 +1,4 @@
-app.controller('editProfileController', function ($user, $scope, $utils) {
+app.controller('editProfileController', function ($profile, $scope, $utils) {
     var currentUser = $utils.getCurrentUser();
     $scope.name = currentUser.name;
     $scope.email = currentUser.email;
@@ -23,7 +23,7 @@ app.controller('editProfileController', function ($user, $scope, $utils) {
     };
 
     $scope.saveChanges = function () {
-        $user.changeProfile($utils.getSessionToken(), $scope.name, $scope.email, $scope.profilePicture, $scope.coverPicture, $scope.gender)
+        $profile.changeProfile($utils.getSessionToken(), $scope.name, $scope.email, $scope.profilePicture, $scope.coverPicture, $scope.gender)
             .then(function () {
                 console.log(arguments);
             }, function () {

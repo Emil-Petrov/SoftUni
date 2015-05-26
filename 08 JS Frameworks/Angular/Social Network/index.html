@@ -9,72 +9,45 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        .page{
+            border: 1px solid black;
+        }
+    </style>
 </head>
 <body ng-app="socialNetwork">
 <ng-include src="'templates/header.html'"></ng-include>
 <h1>Here goes nothing!</h1>
 <h1>SPLIT THIS WHOLE THING</h1>
+
 <div ng-controller="loginController">
     <input ng-model="username" type="text"/>
     <input ng-model="password" type="text"/>
-    <div ng-click="login()">LOGIN</div>
+    <div class="btn" ng-click="login()">LOGIN</div>
 </div>
-<div ng-controller="registerController">
-    <input ng-model="username" type="text"/>
-    <input ng-model="password" type="text"/>
-    <input ng-model="confirmPassword" type="text"/>
-    <input ng-model="name" type="text"/>
-    <input ng-model="email" type="text"/>
-
-    <div ng-click="register()">Register</div>
-</div>
-<div ng-controller="editProfileController">
-    <div>Name: <input type="text" ng-model="name" placeholder="{{name}}"/></div>
-    <div>Email: <input type="email" ng-model="email" value="{{email}}"/></div>
-    <div>
-        <span>Profile Picture:</span>
-        <input type="file" id="upload-profile-picture" ng-model="currentUser.profilePicture"
-               onchange="angular.element(this).scope().changeProfilePicture()"/>
-        <img class="preview" id="profile-picture-preview" ng-src="{{profilePicture}}"/>
-    </div>
-    <div>
-        <span>Cover Picture: </span>
-        <input type="file" id="upload-cover-picture" onchange="angular.element(this).scope().changeCoverPicture()"/>
-        <img class="preview" id="cover-picture-preview" ng-src="{{coverPicture}}"/>
-    </div>
-    <div>
-        <label for="male">Male:</label>
-        <input ng-model="gender" type="radio" name="gender" value="1" id="male"/>
-        <label for="female">Female:</label>
-        <input ng-model="gender" type="radio" name="gender" value="2" id="female"/>
-        <label for="other">Other:</label>
-        <input ng-model="gender" type="radio" name="gender" value="3" id="other"/>
-    </div>
-    <div ng-click="saveChanges()">Change Profile</div>
-</div>
-<div ng-controller="myFriendsController">
-    <div ng-if="friends.length <= 0">
-        You have no friends, <br/>
-        Feel free to go outside and find some, or if you are feeling lucky you can always use the search option at the top or go to our <a href="#/find+friends">search page.</a>
-    </div>
-    <div ng-if="friends.length > 0" ng-repeat="friend in friends">
-        <div>
-            <!--TODO: add friend preview-->
-            FRIEND PREVIEW
+<div ng-controller="newsFeedController">
+        <div class="page" ng-repeat="page in feed">
+            <h5 class="page-header">
+                <a href="#users/{{page.author.username}}">
+                    <div class="author">{{page.author.name}}</div>
+                    <img ng-src="{{page.author.profileImageData}}" alt="author picture"/>
+                </a>
+                <a href="#posts/{{page.id}}">{{page.date | date:'medium'}}</a>
+            </h5>
+            <p class="page-content">
+                {{page.postContent}}
+            </p>
+            <span ng-show="!page.liked"><span class="likes-count" ng-show="page.likesCount > 0">({{page.likesCount}})</span>Like</span>
+            <span ng-show="page.liked">Unlike</span>
+            <span>Comment <span class="carot"></span></span>
         </div>
     </div>
-</div>
-
-<div ng-controller="changePasswordController">
-    <input type="password" ng-model="oldPassword"/>
-    <input type="password" ng-model="newPassword"/>
-    <input type="password" ng-model="confirmPassword"/>
-    <div ng-click="changePassword()">Save Changes</div>
 </div>
 <!--app-->
 <script type="text/javascript" src="js/app.js"></script>
 <!--services-->
 <script type="text/javascript" src="js/services/user.js"></script>
+<script type="text/javascript" src="js/services/profile.js"></script>
 <script type="text/javascript" src="js/services/utils.js"></script>
 <!--controllers-->
 <script type="text/javascript" src="js/controllers/login.js"></script>
@@ -83,6 +56,7 @@
 <script type="text/javascript" src="js/controllers/editProfile.js"></script>
 <script type="text/javascript" src="js/controllers/myFriends.js"></script>
 <script type="text/javascript" src="js/controllers/changePassword.js"></script>
+<script type="text/javascript" src="js/controllers/newsFeed.js"></script>
 </body>
 </html>
 
