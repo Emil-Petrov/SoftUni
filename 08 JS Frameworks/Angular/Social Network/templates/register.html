@@ -1,0 +1,83 @@
+<section ng-controller="registerController">
+    <div class="container">
+        <div class="col-xs-12">
+            <div class="form-wrap">
+                <h1>Register</h1>
+                <form name="registerForm" novalidate>
+                    <div class="form-group">
+                        <input type="text" ng-model="username" name="username" class="form-control" placeholder="Username" ng-pattern="/^[a-zA-Z0-9]{1,20}$/" ng-required="true">
+                        <span>
+                            <span style="color:red" ng-show="registerForm.username.$error.pattern">Username should be between 1 and 20 symbols long. Only letters and numbers</span>
+                            <span style="color:#3276b1" ng-show="registerForm.username.$error.required">Required.</span>
+                            <span style="color:#19b133" ng-show="registerForm.username.$valid">Valid.</span>
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" ng-model="password" name="password" class="form-control" placeholder="Password" ng-pattern="/.{6,}/" ng-required="true">
+                        <span>
+                            <span style="color:red" ng-show="registerForm.password.$error.pattern">Password should be at least 5 symbols long.</span>
+                            <span style="color:#3276b1" ng-show="registerForm.password.$error.required">Required.</span>
+                            <span style="color:#19b133" ng-show="registerForm.password.$valid">Valid.</span>
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" ng-model="confirmPassword" name="confirmPassword" class="form-control" placeholder="Repeat Password" ng-required="true">
+                        <span>
+                            <span style="color:red" ng-show="confirmPassword != password">Password should match above.</span>
+                            <span style="color:#3276b1" ng-show="registerForm.confirmPassword.$error.required">Required.</span>
+                            <span style="color:#19b133" ng-show="confirmPassword == password && registerForm.confirmPassword.$valid">Valid.</span>
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" ng-model="email" name="email" class="form-control" placeholder="Email" ng-required="true">
+                        <span>
+                            <span style="color:red" ng-show="registerForm.email.$error.email">Invalid email address.</span>
+                            <span style="color:#3276b1" ng-show="registerForm.email.$error.required">Required.</span>
+                            <span style="color:#19b133" ng-show="registerForm.email.$valid">Valid.</span>
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" ng-model="name" name="name" class="form-control" placeholder="Name" ng-pattern="/^[a-zA-Z0-9].{0,19}$/"  ng-required="true">
+                        <span>
+                            <span style="color:red" ng-show="registerForm.name.$error.pattern">Username should be between 1 and 20 symbols long.</span>
+                            <span style="color:#3276b1" ng-show="registerForm.name.$error.required">Required.</span>
+                            <span style="color:#19b133" ng-show="registerForm.name.$valid">Valid.</span>
+                        </span>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="Gender" class="control-label text-right">Gender: </label>
+
+                            <div>
+                                <div class="input-group">
+                                    <div id="radioBtn" class="btn-group">
+                                        <a class="btn btn-primary btn-sm notActive" data-toggle="gender"
+                                           data-title="male">Male</a>
+                                        <a class="btn btn-primary btn-sm notActive" data-toggle="gender"
+                                           data-title="female">Female</a>
+                                        <a class="btn btn-primary btn-sm active" data-toggle="gender"
+                                           data-title="other">Other</a>
+                                    </div>
+                                    <input type="hidden" name="gender" id="gender" value="other">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" ng-disabled="!registerForm.$valid && confirmPassword == password" class="btn btn-custom btn-lg btn-block" value="Register" ng-click="register()">Register</button>
+                </form>
+            </div>
+        </div>
+        <!-- /.col-xs-12 -->
+    </div>
+    <!-- /.container -->
+</section>
+<script>
+    $('#radioBtn a').on('click', function () {
+        var sel = $(this).data('title');
+        var tog = $(this).data('toggle');
+        $('#' + tog).prop('value', sel);
+
+        $('a[data-toggle="' + tog + '"]').not('[data-title="' + sel + '"]').removeClass('active').addClass('notActive');
+        $('a[data-toggle="' + tog + '"][data-title="' + sel + '"]').removeClass('notActive').addClass('active');
+    })
+</script>

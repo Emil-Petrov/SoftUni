@@ -1,0 +1,15 @@
+<ng-include src="'templates/header.html'"></ng-include>
+<div ng-controller="friendBoxController">
+    <div class="friends-list-container">
+        <div class="row">
+            <div ng-repeat="friend in friends">
+                <ng-include src="'templates/friendbox-user-preview.html'"></ng-include>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-controller="newsFeedController" class="col-xs-offset-2">
+    <div class="post-container" ng-repeat="post in feed">
+        <ng-include src="'templates/post-template.html'"></ng-include>
+    </div>
+</div>

@@ -9,6 +9,7 @@ app.factory("$profile", function ($http) {
     var changePasswordUrl = currentUserUrl + '/changepassword';
     var feedPrefixUrl = '/feed?StartPostId=';
     var feedSuffixUrl = '&PageSize=';
+    var previewUrl = '/preview';
 
     function getCurrentUser(token){
         return $http({
@@ -22,6 +23,14 @@ app.factory("$profile", function ($http) {
         return $http({
             method: "GET",
             url: BASE_URL + currentUserFriendsUrl,
+            headers: getAuthorizationToken(token)
+        })
+    }
+
+    function getCurrentUserFriendsPreview(token){
+        return $http({
+            method: "GET",
+            url: BASE_URL + currentUserFriendsUrl + previewUrl,
             headers: getAuthorizationToken(token)
         })
     }
@@ -107,6 +116,7 @@ app.factory("$profile", function ($http) {
     return {
         currentUser: getCurrentUser,
         getCurrentUserFriends: getCurrentUserFriends,
+        getCurrentUserFriendsPreview: getCurrentUserFriendsPreview,
         currentUserFriendRequests: getCurrentFriendRequests,
         acceptFriendRequest: acceptFriendRequest,
         rejectFriendRequest: rejectFriendRequest,

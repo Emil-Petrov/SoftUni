@@ -11,13 +11,14 @@ app.factory("$user", function ($http) {
     var wallPrefixUrl = '/wall?StartPostId=';
     var wallSuffixUrl = '&PageSize=';
 
-    function register(username, password, confirmPassword, name, email) {
+    function register(username, password, confirmPassword, name, email, gender) {
         var newUser = {
             username: username,
             password: password,
             confirmPassword: confirmPassword,
             name: name,
-            email: email
+            email: email,
+            gender: gender
         };
 
         return $http({

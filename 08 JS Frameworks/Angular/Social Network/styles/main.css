@@ -2,7 +2,7 @@
 @import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css');
 
 body {
-    padding-top: 45px;
+    padding-top: 75px;
 }
 
 .navbar {
@@ -154,10 +154,8 @@ body {
     border: 1px solid rgb(217, 217, 217);
     border-radius: 2px;
     box-shadow: rgba(0, 0, 0, 0.0470588) 0px 1px 0px 0px;
-}
-
-.panel-google-plus.panel-google-plus-show-comment > .panel-footer > .input-placeholder {
-    display: none;
+    background: white;
+    width: 70%;
 }
 
 .panel-google-plus > .panel-google-plus-comment {
@@ -224,14 +222,9 @@ body {
     margin-top: 0;
 }
 
-.comment-container {
-    width: 85%;
-    margin: 0 auto;
-}
-
 .panel-body {
     width: 100%;
-    max-height: 150px;
+    /*max-height: 150px;*/
 }
 
 .panel-body > p {
@@ -260,4 +253,300 @@ li > img {
 .dropdown > ul > li > a > img {
     max-width: 50px;
     max-height: 50px;
+}
+
+.comment-container {
+    width: 100%;
+    margin: 0 0 0 auto;
+    background: #f6f6f6;
+    height: 45px;
+}
+
+.comments > div > p {
+    vertical-align: middle;
+    background: #e8e8e8;
+    border: 1px solid #e5e5e5;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.comment-container > div > .panel-heading > h4 {
+    display: inline-block;
+}
+
+.comments .panel-heading {
+    background: black;
+}
+
+.comments p {
+    margin: 0;
+}
+
+p.panel-content {
+    align-content: center;
+    vertical-align: middle;
+    background: #e8e8e8;
+    border: 5px solid #e7e7e7;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    text-align: center;
+}
+
+.comments .btn {
+    float: right;
+    max-width: 60px;
+    position: relative;
+    top: -49px;
+    margin-right: 5px;
+}
+
+.panel-heading > span.likes-count {
+    position: absolute;
+    top: 25px;
+    left: 420px;
+}
+
+.comments .likes-count {
+    position: relative;
+    right: -495px;
+    top: -40px;
+    color: rgb(153, 153, 153);
+
+}
+
+.post-likes-count, .post-comments-count {
+    position: relative;
+    top: 20px;
+    left: -270px;
+    color: rgb(153, 153, 153);
+}
+
+.like-btn {
+    background: #50cf38;
+}
+
+.unlike-btn {
+    background: #ff863a;
+}
+
+.edit-btn {
+    background: #c1ac3e
+}
+
+.delete-btn {
+    background: #f44139;
+}
+
+.post-container .panel-footer {
+    background: #5f6ac8;
+}
+
+.post-type {
+    float: right;
+    color: #aaaaaa;
+}
+
+.comment-author-profile-picture {
+    position: relative;
+    top: -5px;
+    left: -5px;
+    max-width: 35px;
+    max-height: 35px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.card {
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #CCC;
+    border-radius: 8px;
+    text-align: center;
+    padding: 0;
+    background-color: #284c79;
+    color: rgb(136, 172, 217);
+    width: 100%;
+}
+
+.card .header-bg {
+    /* This stretches the canvas across the entire hero unit */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    border-bottom: 1px #FFF solid;
+    /* This positions the canvas under the text */
+    z-index: 1;
+}
+
+.card .avatar {
+    position: relative;
+    margin-top: 15px;
+    z-index: 1;
+    height: 100%;
+}
+
+.card .avatar img {
+    width: 100px;
+    height: 100px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 5px solid rgba(0, 0, 30, 0.8);
+}
+
+.friends-list-container .col-sm-2 {
+    padding: 0;
+    width: 175px;
+    height: 150px;;
+    margin-left: 5px;
+}
+
+.friends-list-container .row {
+    align-items: center;
+    width: 550px;
+    margin: 0 auto;
+}
+
+.friends-list-container {
+    float: right;
+    margin-right: 50px;
+    padding-top: 5px;
+    border: 2px solid black;
+    width: 550px;
+}
+
+.friendbox-friend-name, .comment-heading {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.comment-heading {
+    max-width: 420px;
+}
+
+.friends-list-container a {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+}
+
+.card .content {
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.panel {
+    border: 2px solid black;
+}
+
+.panel-heading .img-circle {
+    max-width: 45px;
+}
+
+.panel > .panel-heading {
+    height: 50px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.edit-box {
+    display: none;
+}
+
+.edit-box textarea {
+    resize: none;
+}
+
+p.panel-content.edit-box > span.save-edit.btn.like-btn {
+    top: -25px;
+}
+
+.post .img-circle {
+    border: 2px solid black;
+}
+
+.post > .panel-heading > .btn {
+    float: right;
+    margin-right: 5px;
+}
+
+.welcome-view section {
+    display: inline-block;;
+    padding-top: 50px display : inline;
+}
+
+.welcome-view section h1 {
+    color: #1fa67b;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+.welcome-view section .form-group {
+    margin-bottom: 25px;
+}
+
+.welcome-view .form-control {
+    color: #212121;
+}
+
+.welcome-view .btn-custom {
+    color: #fff;
+    background-color: #1fa67b;
+}
+
+.welcome-view .btn-custom:hover,
+.welcome-view .btn-custom:focus {
+    color: #fff;
+}
+
+.welcome-view section .container {
+    width: 500px;
+}
+
+.welcome-view section {
+    vertical-align: top;
+}
+
+.welcome-view .or {
+    display: inline-block;
+    font-size: 50px;
+    margin-top: 50px;
+}
+
+.welcome-view {
+    width: 100%;
+    height: 100%;
+}
+
+.welcome-view > div {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.welcome-view h1 {
+    margin: 50px auto 0 auto;
+    width: 330px;
+}
+
+.welcome-view #radioBtn .notActive {
+    color: #3276b1;
+    background-color: #fff;
+}
+
+.input-group, #radioBtn {
+    width: 100%;
+}
+
+.welcome-view #radioBtn > a {
+    width: 33%;
+}
+
+.save-edit {
+    float: right;
 }

@@ -15,3 +15,15 @@ username: 73s7
 password: 123456
 name: Going full leet...
 mail: zobimqko@abv.bg
+
+#4
+username: z
+password: asdfgh
+name: ad
+email: whoa@a
+
+#5
+username: TestingEdnoDveTri
+password: superparola
+name: TestingEdnoDveTri
+mail: testing@edno.dve.tri

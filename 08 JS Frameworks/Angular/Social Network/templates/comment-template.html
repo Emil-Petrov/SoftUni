@@ -1,0 +1,26 @@
+<div class="comments" id="comment-{{comment.id}}">
+    <div class="comment-container">
+        <div class="panel-heading">
+            <img class="comment-author-profile-picture"
+                 ng-src="{{comment.author.profileImageData || 'http://placehold.it/50x50'}}"/>
+            <h4 class="comment-heading">Posted by
+                <a href="#/users/{{comment.author.username}}" target="_blank">{{comment.author.name}}</a>
+                <span> on - {{comment.date | date: 'medium'}}</span>
+            </h4>
+        </div>
+        <span class="likes-count"><i class="glyphicon glyphicon-thumbs-up"></i> {{comment.likesCount}}</span>
+        <span class="like-btn btn" ng-show="!comment.liked" ng-click="likeComment(post.id, comment)">Like</span>
+        <span class="unlike-btn btn" ng-show="comment.liked" ng-click="unlikeComment(post.id, comment)">Unlike</span>
+        <span class="edit-btn btn" ng-if="comment.author.username == currentUserUsername"
+              ng-click="showEditBox(comment)">Edit</span>
+        <span class="delete-btn btn" ng-if="comment.author.username == currentUserUsername"
+              ng-click="deleteComments(post, comment.id, $index)">Delete</span>
+    </div>
+    <p class="panel-content">{{comment.commentContent}}</p>
+
+    <p class="panel-content edit-box">
+        <textarea id="comment-{{comment.id}}-edit" cols="80" rows="3">{{comment.commentContent}}</textarea>
+        <span class="save-edit btn like-btn" ng-click="editComment(post, comment)">Save</span>
+        <span class="cancel-edit btn delete-btn" ng-click="hideEditBox(comment)">Cancel</span>
+    </p>
+</div>

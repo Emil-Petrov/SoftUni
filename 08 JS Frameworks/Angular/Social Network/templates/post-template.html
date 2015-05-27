@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="col-xs-7">
+        <div class="post panel panel-default panel-google-plus" id="post-{{post.id}}">
+            <div class="panel-heading">
+                <img class="[ img-circle pull-left ]"
+                     ng-src="{{post.author.profileImageData || 'http://placehold.it/100x100'}}"/>
+                <h3>
+                    <a href="#/users/{{post.author.username}}">{{post.author.name.trim()}}</a>
+                </h3>
+                <h5><span> on</span> - <span>{{post.date | date: 'medium'}}</span></h5>
+
+                <span class="post-likes-count"><i class="glyphicon glyphicon-thumbs-up"></i> {{post.likesCount}}</span>
+                <span class="post-comments-count"><i class="glyphicon glyphicon-comment"></i> {{post.totalCommentsCount}}</span>
+
+                <span class="btn like-btn" ng-show="!post.liked" ng-click="likePost(post)">Like</span>
+                <span class="btn unlike-btn" ng-show="post.liked"  ng-click="unlikePost(post)">Unlike</span>
+                <span class="btn edit-btn" ng-if="post.author.username == currentUserUsername" ng-click="showPostEditBox(post)">Edit</span>
+                <span class="btn delete-btn" ng-if="post.wallOwner.username == currentUserUsername || post.author.username == currentUserUsername" ng-click="deletePost(posts, post)">Delete</span>
+
+            </div>
+            <div class="panel-body">
+                <p class="panel-content">{{post.postContent}}</p>
+                <div class="panel-content edit-box">
+                    <textarea id="post-{{post.id}}-edit" cols="106" rows="3">{{post.postContent}}</textarea>
+                    <span class="btn like-btn" ng-click="editPost(post)">Save</span>
+                    <span class="btn delete-btn" ng-click="hidePostEditBox(post)">Cancel</span>
+                </div>
+            </div>
+            <div ng-repeat="comment in post.comments">
+                <ng-include src="'templates/comment-template.html'"></ng-include>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--<div class="dropdown">-->
+<!--<span class="dropdown-toggle" type="button" data-toggle="dropdown">-->
+<!--<span class="[ glyphicon glyphicon-chevron-down ]"></span>-->
+<!--</span>-->
+<!--<ul class="dropdown-menu" role="menu">-->
+<!--<li role="presentation">-->
+<!--<a role="menuitem" tabindex="-1" href="#/users/{{post.author.username}}">View-->
+<!--Profile</a>-->
+<!--</li>-->
+<!--<li role="presentation" class="divider"></li>-->
+<!--<li role="presentation">-->
+<!--<a role="menuitem" tabindex="-1" href="#">Another action</a>-->
+<!--</li>-->
+<!--</ul>-->
+<!--</div>-->
