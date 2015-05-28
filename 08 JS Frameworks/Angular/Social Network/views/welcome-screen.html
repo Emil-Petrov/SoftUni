@@ -1,0 +1,29 @@
+<div ng-controller="reallyANGULAR">
+    <div ng-if="sessionStorage.currentUser">
+        <ng-include src="'templates/header.html'"></ng-include>
+        <div ng-controller="friendBoxController">
+            <div class="friends-list-container">
+                <div class="row">
+                    <div ng-repeat="friend in friends">
+                        <ng-include src="'templates/friendbox-user-preview.html'"></ng-include>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div ng-controller="newsFeedController" class="col-xs-offset-2">
+            <div class="post-container" ng-repeat="post in feed">
+                <ng-include src="'templates/post-view-template.html'"></ng-include>
+            </div>
+        </div>
+    </div>
+    <div ng-if="!sessionStorage.currentUser">
+        <div class="welcome-view">
+            <h1><span>Welcome to our site</span></h1>
+            <div>
+                <ng-include src="'templates/login.html'"></ng-include>
+                <span class="or">OR</span>
+                <ng-include src="'templates/register.html'"></ng-include>
+            </div>
+        </div>
+    </div>
+</div>

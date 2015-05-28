@@ -16,7 +16,7 @@
         <span class="delete-btn btn" ng-if="comment.author.username == currentUserUsername"
               ng-click="deleteComments(post, comment.id, $index)">Delete</span>
     </div>
-    <p class="panel-content">{{comment.commentContent}}</p>
+    <p class="panel-content text-center">{{comment.commentContent}}</p>
 
     <p class="panel-content edit-box">
         <textarea id="comment-{{comment.id}}-edit" cols="80" rows="3">{{comment.commentContent}}</textarea>

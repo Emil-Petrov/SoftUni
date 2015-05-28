@@ -9,8 +9,10 @@
                 </h3>
                 <h5><span> on</span> - <span>{{post.date | date: 'medium'}}</span></h5>
 
-                <span class="post-likes-count"><i class="glyphicon glyphicon-thumbs-up"></i> {{post.likesCount}}</span>
-                <span class="post-comments-count"><i class="glyphicon glyphicon-comment"></i> {{post.totalCommentsCount}}</span>
+                <div class="counter-fix">
+                    <span class="post-likes-count"><i class="glyphicon glyphicon-thumbs-up"></i> {{post.likesCount}}</span>
+                    <span class="post-comments-count"><a href="#"><i class="glyphicon glyphicon-comment"></i> {{post.totalCommentsCount}}</a></span>
+                </div>
 
                 <span class="btn like-btn" ng-show="!post.liked" ng-click="likePost(post)">Like</span>
                 <span class="btn unlike-btn" ng-show="post.liked"  ng-click="unlikePost(post)">Unlike</span>
@@ -29,6 +31,7 @@
             <div ng-repeat="comment in post.comments">
                 <ng-include src="'templates/comment-template.html'"></ng-include>
             </div>
+            <div class="text-right" id="view-{{post.id}}-comments"><a ng-click="viewComments(post)">Load all comments...</a></div>
         </div>
     </div>
 </div>

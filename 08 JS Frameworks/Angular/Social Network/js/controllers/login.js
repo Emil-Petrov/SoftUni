@@ -1,4 +1,4 @@
-app.controller("loginController", function ($scope, $user, $utils, $profile) {
+app.controller("loginController", function ($scope, $user, $utils, $profile, $route) {
     $scope.login = function () {
         $user.login($scope.username, $scope.password)
             .then(function (info) {
@@ -7,7 +7,7 @@ app.controller("loginController", function ($scope, $user, $utils, $profile) {
                     .then(function (info) {
                         var userInfo = info.data;
                         $utils.setStorage(token, userInfo.username, userInfo.name, userInfo.coverImageData, userInfo.profileImageData, userInfo.email, userInfo.gender);
-                        console.log(info.data);
+                        $route.reload()
                     });
             }, function (err) {
                 console.log(err);

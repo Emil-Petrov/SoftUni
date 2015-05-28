@@ -315,9 +315,7 @@ p.panel-content {
 }
 
 .post-likes-count, .post-comments-count {
-    position: relative;
-    top: 20px;
-    left: -270px;
+
     color: rgb(153, 153, 153);
 }
 
@@ -549,4 +547,46 @@ p.panel-content.edit-box > span.save-edit.btn.like-btn {
 
 .save-edit {
     float: right;
+}
+
+.edit-profile-container, .change-password-container {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.edit-profile-container form .form-group label, .edit-profile-container form .form-group .input-group {
+    display: inline;
+}
+
+.edit-profile-container form .form-group .input-group {
+    width: 550px;
+    display: inline-block;
+    padding-left: 30px;
+}
+
+.edit-profile-container .gender-select {
+    padding-left: 120px;;
+}
+
+.edit-profile-container .text-center img.cover {
+    max-width: 750px;
+    max-height: 250px;;
+}
+
+.edit-profile-container #profile-picture-preview {
+    max-width: 150px;
+    max-height: 150px;
+}
+.counter-fix{
+    position: absolute;
+    top: 45px;
+    left: 80px;
+}
+.image-circle{
+    width: auto;
+    height: auto;
+}
+
+.change-password-btn, .change-password-btn > input, .edit-profile-btn, .edit-profile-btn > input{
+    width: 485px;
 }

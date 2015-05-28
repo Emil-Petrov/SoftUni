@@ -1,4 +1,4 @@
-app.controller('headerController', function ($scope, $user, $profile, $utils) {
+app.controller('headerController', function ($scope, $user, $profile, $utils, $route) {
     var currentUser = $utils.getCurrentUser();
     $scope.name = currentUser.username;
     $scope.friendRequests = [];
@@ -16,7 +16,11 @@ app.controller('headerController', function ($scope, $user, $profile, $utils) {
     $scope.profilePicture = currentUser.profilePicture;
 
     $scope.logout = function () {
-        $user.logout($utils.getSessionToken());
+        $user.logout($utils.getSessionToken())
+            .then(function () {
+                sessionStorage.clear();
+                $route.reload();
+            });
     };
 
     $scope.findFriends = function () {

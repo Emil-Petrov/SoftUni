@@ -64,7 +64,6 @@ app.controller("newsFeedController", function ($scope, $user, $profile, $utils, 
                 angular.element(commentElement).remove();
                 $posts.viewPost($utils.getSessionToken(), post.id).then()
                     .then(function (info) {
-                        console.log(info);
                         post.comments = info.data.comments;
                     });
             });
@@ -143,7 +142,7 @@ app.controller("newsFeedController", function ($scope, $user, $profile, $utils, 
         document.getElementById("post-" + post.id + "-edit").parentNode.style.display = 'block';
     };
 
-    $scope.hidePostEditBox = function(post){
+    $scope.hidePostEditBox = function (post) {
         document.getElementById('post-' + post.id).children[1].children[0].style.display = 'block';
         document.getElementById("post-" + post.id + "-edit").parentNode.style.display = 'none';
     };
@@ -158,5 +157,15 @@ app.controller("newsFeedController", function ($scope, $user, $profile, $utils, 
             }, function (err) {
                 console.log(err)
             });
+    };
+
+    $scope.viewComments = function (post) {
+        $comments.getComments($utils.getSessionToken(), post.id)
+            .then(function (info) {
+                console.log(info);
+                post.comments = info.data;
+                var loadCommentsElement =  document.getElementById('view-' + post.id + '-comments');
+                loadCommentsElement.parentNode.removeChild(loadCommentsElement);
+            })
     }
 });

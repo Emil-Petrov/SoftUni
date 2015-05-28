@@ -14,14 +14,14 @@ app.factory("$utils", function () {
     }
 
     function getSessionToken() {
-        // TODO: REMOVE;
-        sessionStorage.currentUser = sessionStorage.currentUser || JSON.stringify({"username":"Tes7","name":"Posledna Proba Zavrushtaneto","email":"testing123@kappa.bg","gender":1})
+        //// TODO: REMOVE;
+        //sessionStorage.currentUser = sessionStorage.currentUser || JSON.stringify({"username":"Tes7","name":"Posledna Proba Zavrushtaneto","email":"testing123@kappa.bg","gender":1})
         return JSON.parse(sessionStorage.currentUser).sessionToken;
     }
 
     function getCurrentUserStorageInfo(){
-        // TODO: REMOVE;
-        sessionStorage.currentUser = sessionStorage.currentUser || JSON.stringify({"username":"Tes7","name":"Posledna Proba Zavrushtaneto","email":"testing123@kappa.bg","gender":1})
+        //// TODO: REMOVE;
+        //sessionStorage.currentUser = sessionStorage.currentUser || JSON.stringify({"username":"Tes7","name":"Posledna Proba Zavrushtaneto","email":"testing123@kappa.bg","gender":1})
         return JSON.parse(sessionStorage.currentUser);
     }
 
@@ -31,7 +31,3 @@ app.factory("$utils", function () {
         getCurrentUser: getCurrentUserStorageInfo
     }
 });
-
-// Dude with friends
-// Bearer Nb1hShsKUyD6-Mpl-4P-r3sgHSU476EbwArLppFyFK37SbCADmiJS5gL6c3Oyddvc9YogTHzYqJCPeMeXton2xeSPTCenta0VeKWQxk-Dt9YmiPEsEi6vhHLg1aZz5KRqxXNXOKTBT46N7haHWh5SnGIbrSvl1I4alAbhRdVlJ4rOGpOh5LxV6dJHlpt6RgjaL65t8dX33uHUp2EoKQbF8DbsGSYJtoisJyn723vH9khu0T3aMewbz7o_itCsLTMyRelk8r0SDOfg1lfWsfI7WOKSCV8TFkcPcwX9wOSb7I5-tU4a-KGccL6B8WEV_qPgCqKOvJvi-6BRo9ABMcl8gDw_rU5YMLn1HeJWhq-JvycPCHAO7bcK7x0QFu3tOc0qDKFyrp6cVUpKPd6dKU1bWKOF_3J4w5y-Zz7ZoacVRVwg3JE0Ab3HBg7x5m59Gu5Tnh2rMp-FrvNld7i6TyjkXPeKEp4UcK5wmrHdNbrVmRg4DCpy2oEjtLajKnr-jLX
-

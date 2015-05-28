@@ -2,7 +2,7 @@
     <div class="container">
         <div class="col-xs-12">
             <div class="form-wrap">
-                <h1>Register</h1>
+                <h1>Register a new one</h1>
                 <form name="registerForm" novalidate>
                     <div class="form-group">
                         <input type="text" ng-model="username" name="username" class="form-control" placeholder="Username" ng-pattern="/^[a-zA-Z0-9]{1,20}$/" ng-required="true">
@@ -15,7 +15,7 @@
                     <div class="form-group">
                         <input type="password" ng-model="password" name="password" class="form-control" placeholder="Password" ng-pattern="/.{6,}/" ng-required="true">
                         <span>
-                            <span style="color:red" ng-show="registerForm.password.$error.pattern">Password should be at least 5 symbols long.</span>
+                            <span style="color:red" ng-show="registerForm.password.$error.pattern">Password should be at least 6 symbols long.</span>
                             <span style="color:#3276b1" ng-show="registerForm.password.$error.required">Required.</span>
                             <span style="color:#19b133" ng-show="registerForm.password.$valid">Valid.</span>
                         </span>
@@ -24,7 +24,7 @@
                         <input type="password" ng-model="confirmPassword" name="confirmPassword" class="form-control" placeholder="Repeat Password" ng-required="true">
                         <span>
                             <span style="color:red" ng-show="confirmPassword != password">Password should match above.</span>
-                            <span style="color:#3276b1" ng-show="registerForm.confirmPassword.$error.required">Required.</span>
+                            <span style="color:#3276b1" ng-show="!registerForm.confirmPassword.$valid">Required.</span>
                             <span style="color:#19b133" ng-show="confirmPassword == password && registerForm.confirmPassword.$valid">Valid.</span>
                         </span>
                     </div>
@@ -39,7 +39,7 @@
                     <div class="form-group">
                         <input type="text" ng-model="name" name="name" class="form-control" placeholder="Name" ng-pattern="/^[a-zA-Z0-9].{0,19}$/"  ng-required="true">
                         <span>
-                            <span style="color:red" ng-show="registerForm.name.$error.pattern">Username should be between 1 and 20 symbols long.</span>
+                            <span style="color:red" ng-show="registerForm.name.$error.pattern">Name should be between 1 and 20 symbols long.</span>
                             <span style="color:#3276b1" ng-show="registerForm.name.$error.required">Required.</span>
                             <span style="color:#19b133" ng-show="registerForm.name.$valid">Valid.</span>
                         </span>
@@ -63,7 +63,7 @@
                             </div>
                         </div>
                     </div>
-                    <button type="submit" ng-disabled="!registerForm.$valid && confirmPassword == password" class="btn btn-custom btn-lg btn-block" value="Register" ng-click="register()">Register</button>
+                    <button type="submit" ng-disabled="!registerForm.$valid || confirmPassword != password" class="btn btn-custom btn-lg btn-block" value="Register" ng-click="register()">Register</button>
                 </form>
             </div>
         </div>

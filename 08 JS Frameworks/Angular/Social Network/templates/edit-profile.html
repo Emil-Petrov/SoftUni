@@ -1,0 +1,92 @@
+<div class="edit-profile-container" ng-controller="editProfileController">
+    <h1>Edit Profile</h1>
+    <hr>
+    <div class="row">
+        <!-- left column -->
+        <form action="">
+            <div class="col-md-3">
+                <div class="text-center">
+                    <img class="avatar" id="profile-picture-preview"
+                         ng-src="{{profilePicture || 'http://placehold.it/150'}}">
+                    <h6>Upload a different profile picture...</h6>
+                    <span>Allowed format: .jpg</span>
+                    <br/>
+                    <span>Limit: 128kb</span>
+                    <input type="file" class="form-control" id="upload-profile-picture"
+                           onchange="angular.element(this).scope().changeProfilePicture()">
+                </div>
+            </div>
+        </form>
+
+        <!-- edit form column -->
+        <div class="col-md-9 personal-info">
+            <!--<div class="alert alert-info alert-dismissable">-->
+            <!--<a class="panel-close close" data-dismiss="alert">×</a>-->
+            <!--<i class="fa fa-coffee"></i>-->
+            <!--This is an <strong>.alert</strong>. Use this to show important messages to the user.-->
+            <!--</div>-->
+            <h3>Personal info</h3>
+
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Name:</label>
+
+                    <div class="col-lg-8">
+                        <input class="form-control" ng-model="name" type="text" value="{{name}}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Email:</label>
+
+                    <div class="col-lg-8">
+                        <input class="form-control" ng-model="email" type="email" value="{{email}}">
+                    </div>
+                </div>
+                <div class="form-group gender-select">
+                    <label for="Gender" class="control-label text-right">Gender: </label>
+
+                    <div class="input-group">
+                        <div id="radioBtn" class="btn-group">
+                            <a class="btn btn-primary btn-sm notActive" id="male" data-toggle="gender"
+                               data-title="male">Male</a>
+                            <a class="btn btn-primary btn-sm notActive" id="female" data-toggle="gender"
+                               data-title="female">Female</a>
+                            <a class="btn btn-primary btn-sm notActive" id="other" data-toggle="gender"
+                               data-title="other">Other</a>
+                        </div>
+                        <input type="hidden" name="gender" id="gender" value="other">
+                        <!--Set gender after the above content loads... I couldn't think of another way to call a function after all the elements loaded. onLoad and ng-init didn't work for some reason.-->
+                        {{setGender()}}
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="text-center">
+                        <img class="cover" id="cover-picture-preview" ng-src="{{coverPicture || 'http://placehold.it/750x250'}}">
+                        <h6>Upload a different cover image...</h6>
+
+                        <input type="file" class="form-control" id="upload-cover-picture"
+                               onchange="angular.element(this).scope().changeCoverPicture()">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label"></label>
+
+                    <div class="col-md-8 edit-profile-btn">
+                        <input type="button" class="btn btn-primary" value="Save Changes" ng-click="saveChanges()">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('#radioBtn a').on('click', function () {
+        var sel = $(this).data('title');
+        var tog = $(this).data('toggle');
+        $('#' + tog).prop('value', sel);
+
+        $('a[data-toggle="' + tog + '"]').not('[data-title="' + sel + '"]').removeClass('active').addClass('notActive');
+        $('a[data-toggle="' + tog + '"][data-title="' + sel + '"]').removeClass('notActive').addClass('active');
+    })
+</script>

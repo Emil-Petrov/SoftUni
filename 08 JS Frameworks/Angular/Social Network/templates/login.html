@@ -16,7 +16,7 @@
                         <div class="form-group">
                             <input type="password" ng-model="password" name="password" class="form-control" placeholder="Password" ng-pattern="/.{6,}/" ng-required="true">
                             <span>
-                                <span style="color: red" ng-show="loginForm.password.$dirty && loginForm.password.$error.pattern">Username should be between 1 and 20 symbols long.</span>
+                                <span style="color: red" ng-show="loginForm.password.$dirty && loginForm.password.$error.pattern">Password should be at least 6 symbols long.</span>
                                 <span style="color:#3276b1" ng-show="loginForm.password.$error.required">Required.</span>
                                 <span style="color:#19b133" ng-show="loginForm.password.$valid">Valid.</span>
                             </span>
