@@ -38,5 +38,23 @@ app.controller('headerController', function ($scope, $user, $profile, $utils, $r
 
     $scope.rejectFriendRequest = function (id) {
         $profile.rejectFriendRequest($utils.getSessionToken(), id);
+    };
+
+    $scope.findPeople = function(){
+        if ($scope.nameQuery.length <= 0){
+            $scope.peopleFound = [];
+            return;
+        }
+        $user.findUsers($utils.getSessionToken(), $scope.nameQuery)
+            .then(function(info){
+                $scope.peopleFound = info.data;
+            });
+    };
+
+    $scope.sendFriendRequest = function(username){
+        $profile.sendFriendRequest($utils.getSessionToken(), username)
+            .then(function(info){
+                console.log(info.data.message);
+            });
     }
 });

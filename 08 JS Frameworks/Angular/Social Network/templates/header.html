@@ -7,29 +7,44 @@
             <ul class="nav navbar-nav">
                 <li><img class="user-profile-picture" ng-src="{{profilePicture || 'http://placehold.it/35x35'}}"/></li>
                 <li><a href="#/users/{{name}}">{{name}}</a></li>
-                <li class="dropdown" ng-show="count">
-                    <a class="dropdown-toggle" data-toggle="dropdown">Friend requests ({{count}}) <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li ng-repeat="request in friendRequests">
-                            <a href="#/users/{{request.user.username}}">
-                                <img ng-src="{{request.user.profileImageData || 'http://placehold.it/30x30'}}"  alt=""/>
-                                <span>{{request.user.name}}</span>
-                            </a>
-                            <a ng-click="acceptFriendRequest(request.id)">Accept</a>
-                            <a ng-click="rejectFriendRequest(request.id)">Decline</a>
-                            <div class="divider"></div>
-                        </li>
-                    </ul>
-                </li>
                 <li><a href="#/edit-profile">Edit Profile</a></li>
                 <li><a href="#/change-password">Change Password</a></li>
             </ul>
             <form class="navbar-form navbar-left">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Find friends">
-                </div>
-                <div class="btn btn-default">Submit</div>
+                <ul class="form-group">
+                    <input type="text" class="form-control" placeholder="Find friends" ng-model="nameQuery" ng-change="findPeople()">
+                    <li class="dropdown">
+                        <ul ng-show="peopleFound.length > 0" class="dropdown-menu find-friends" role="menu">
+                            <li ng-repeat="person in peopleFound">
+                                <a href="#/users/{{person.username}}">
+                                    <img class="find-people" ng-src="{{person.profileImageData || 'http://placehold.it/50x50'}}" alt=""/>
+                                    <span>{{person.name}}</span>
+                                </a>
+                                <a ng-click="sendFriendRequest(person.username)">Send Friend Request</a>
+                                <div class="divider"></div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </form>
+            <ul class="nav navbar-nav">
+                <li class="dropdown" ng-show="count">
+                    <a class="dropdown-toggle" data-toggle="dropdown">Friend requests ({{count}}) <span
+                            class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li ng-repeat="request in friendRequests">
+                            <a href="#/users/{{request.user.username}}">
+                                <img ng-src="{{request.user.profileImageData || 'http://placehold.it/50x50'}}" alt=""/>
+                                <span>{{request.user.name}}</span>
+                            </a>
+                            <a ng-click="acceptFriendRequest(request.id)">Accept</a>
+                            <a ng-click="rejectFriendRequest(request.id)">Decline</a>
+
+                            <div class="divider"></div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li ng-click="logout()"><a href="#/">Logout</a></li>
             </ul>

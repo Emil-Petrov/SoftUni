@@ -415,10 +415,15 @@ p.panel-content {
     width: 550px;
 }
 
-.friendbox-friend-name, .comment-heading {
+.friendbox-friend-name, .comment-heading, ul.find-friends > li > a > span {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+ul.find-friends > li > a > span {
+    display: inline-block;
+    width: 115px;
 }
 
 .comment-heading {
@@ -577,16 +582,42 @@ p.panel-content.edit-box > span.save-edit.btn.like-btn {
     max-width: 150px;
     max-height: 150px;
 }
-.counter-fix{
+
+.counter-fix {
     position: absolute;
     top: 45px;
     left: 80px;
 }
-.image-circle{
+
+.image-circle {
     width: auto;
     height: auto;
 }
 
-.change-password-btn, .change-password-btn > input, .edit-profile-btn, .edit-profile-btn > input{
+.change-password-btn, .change-password-btn > input, .edit-profile-btn, .edit-profile-btn > input {
     width: 485px;
+}
+
+img.find-people {
+    max-width: 50px;
+    max-height: 50px;
+    width: auto;
+    height: auto;
+}
+
+div.navbar {
+    height: 55px;
+}
+
+ul.find-friends {
+    display: inline-block;
+}
+
+ul.form-group {
+    list-style: none;
+    padding: 0;
+}
+
+#bs-example-navbar-collapse-1 > form > ul > li > ul {
+    width: 195px;
 }
