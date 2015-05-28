@@ -11,7 +11,7 @@ app.factory("$profile", function ($http) {
     var feedSuffixUrl = '&PageSize=';
     var previewUrl = '/preview';
 
-    function getCurrentUser(token){
+    function getCurrentUser(token) {
         return $http({
             method: "GET",
             url: BASE_URL + currentUserUrl,
@@ -19,7 +19,7 @@ app.factory("$profile", function ($http) {
         })
     }
 
-    function getCurrentUserFriends(token){
+    function getCurrentUserFriends(token) {
         return $http({
             method: "GET",
             url: BASE_URL + currentUserFriendsUrl,
@@ -27,7 +27,7 @@ app.factory("$profile", function ($http) {
         })
     }
 
-    function getCurrentUserFriendsPreview(token){
+    function getCurrentUserFriendsPreview(token) {
         return $http({
             method: "GET",
             url: BASE_URL + currentUserFriendsUrl + previewUrl,
@@ -35,7 +35,7 @@ app.factory("$profile", function ($http) {
         })
     }
 
-    function getCurrentFriendRequests(token){
+    function getCurrentFriendRequests(token) {
         return $http({
             method: "GET",
             url: BASE_URL + currentUserFriendRequestsUrl,
@@ -43,7 +43,7 @@ app.factory("$profile", function ($http) {
         })
     }
 
-    function acceptFriendRequest(token, requestId){
+    function acceptFriendRequest(token, requestId) {
         return $http({
             method: "PUT",
             url: BASE_URL + friendRequestUrl + requestId + acceptFriendRequestUrl,
@@ -51,7 +51,7 @@ app.factory("$profile", function ($http) {
         })
     }
 
-    function rejectFriendRequest(token, requestId){
+    function rejectFriendRequest(token, requestId) {
         return $http({
             method: "PUT",
             url: BASE_URL + friendRequestUrl + requestId + rejectFriendRequestUrl,
@@ -59,7 +59,7 @@ app.factory("$profile", function ($http) {
         })
     }
 
-    function sendFriendRequest(token, userName){
+    function sendFriendRequest(token, userName) {
         return $http({
             method: "POST",
             url: BASE_URL + sendFriendRequestUrl + userName,
@@ -67,7 +67,7 @@ app.factory("$profile", function ($http) {
         })
     }
 
-    function changeCurrentUserPassword(token, oldPassword, newPassword, confirmPassword){
+    function changeCurrentUserPassword(token, oldPassword, newPassword, confirmPassword) {
         var changePassword = {
             oldPassword: oldPassword,
             newPassword: newPassword,
@@ -82,7 +82,7 @@ app.factory("$profile", function ($http) {
         })
     }
 
-    function changeCurrentUserProfile(token, name, email, profileImageData, coverImageData, gender){
+    function changeCurrentUserProfile(token, name, email, profileImageData, coverImageData, gender) {
         var newUserProfile = {
             name: name,
             email: email,
@@ -99,7 +99,7 @@ app.factory("$profile", function ($http) {
         })
     }
 
-    function getCurrentUserFeed(token, startPostId, pageSize){
+    function getCurrentUserFeed(token, startPostId, pageSize) {
         return $http({
             method: "GET",
             url: BASE_URL + currentUserUrl + feedPrefixUrl + startPostId + feedSuffixUrl + pageSize,

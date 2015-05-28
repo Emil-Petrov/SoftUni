@@ -26,10 +26,11 @@ app.controller('editProfileController', function ($profile, $scope, $utils, $rou
     };
 
     $scope.saveChanges = function () {
-        $profile.changeProfile($utils.getSessionToken(), $scope.name, $scope.email, $scope.profilePicture, $scope.coverPicture, $scope.gender)
+        var gender = document.getElementById('gender').value;
+        $profile.changeProfile($utils.getSessionToken(), $scope.name, $scope.email, $scope.profilePicture, $scope.coverPicture, gender)
             .then(function () {
-                $utils.setStorage($utils.getSessionToken(), currentUser.username, $scope.name, $scope.coverPicture, $scope.profilePicture, $scope.email, $scope.gender);
-                location.replace('#/');
+                $utils.setStorage($utils.getSessionToken(), currentUser.username, $scope.name, $scope.coverPicture, $scope.profilePicture, $scope.email, gender);
+                $scope.setGender();
             }, function () {
                 console.log(arguments);
             });
@@ -47,18 +48,21 @@ app.controller('editProfileController', function ($profile, $scope, $utils, $rou
     //Set Gender in View upon load;
     $scope.setGender = function () {
         if (currentUser.gender == '1') {
-            document.getElementById('female').className = document.getElementById('female').className + " active";
-            document.getElementById('gender').value = "female";
-        } else if (currentUser.gender == '2') {
             document.getElementById('male').className = document.getElementById('male').className.replace('notActive', 'active');
-            document.getElementById('gender').value = "male";
+            document.getElementById('female').className = document.getElementById('female').className.replace('active', 'notActive');
+            document.getElementById('female').className = document.getElementById('other').className.replace('active', 'notActive');
+            document.getElementById('gender').value = "1";
+        } else if (currentUser.gender == '2') {
+            document.getElementById('female').className = document.getElementById('female').className.replace('notActive', 'active');
+            document.getElementById('female').className = document.getElementById('male').className.replace('active', 'notActive');
+            document.getElementById('female').className = document.getElementById('other').className.replace('active', 'notActive');
+            document.getElementById('gender').value = "2";
         }else{
-            document.getElementById('other').className = document.getElementById('other').className + " active";
-            document.getElementById('gender').value = "other";
+            document.getElementById('other').className = document.getElementById('other').className.replace('notActive', 'active');
+            document.getElementById('female').className = document.getElementById('female').className.replace('active', 'notActive');
+            document.getElementById('female').className = document.getElementById('male').className.replace('active', 'notActive');
+            document.getElementById('gender').value = "0";
         }
     };
 
 });
-
-
-;

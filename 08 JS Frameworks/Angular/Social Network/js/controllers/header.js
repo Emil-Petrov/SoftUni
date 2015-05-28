@@ -56,5 +56,5 @@ app.controller('headerController', function ($scope, $user, $profile, $utils, $r
             .then(function(info){
                 console.log(info.data.message);
             });
-    }
+    };
 });
