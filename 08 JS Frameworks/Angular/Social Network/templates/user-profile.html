@@ -1,0 +1,25 @@
+<div class="profile-preview container">
+    <div class="fb-profile">
+        <img class="user-cover-image fb-image-lg"
+             ng-src="{{user.coverImageData || 'http://placehold.it/1250x500'}}" alt="Profile image example"/>
+        <img class="fb-image-profile thumbnail" ng-src="{{user.profileImageData || 'http://placehold.it/230x210'}}"
+             alt="Profile image example"/>
+        <h1>{{user.name}}</h1>
+    </div>
+</div>
+<script>
+    var image = document.getElementsByClassName('user-cover-image')[0];
+    image.onload = function () {
+        var imageHeight = image.clientHeight;
+        var imageWidth = image.clientWidth;
+        if (imageHeight > imageWidth) {
+            image.style.width = "100%";
+            image.style.height = imageHeight;
+            image.style.margin = "0 auto"
+        } else {
+            image.style.height = "100%";
+            image.style.width = imageWidth;
+            image.style.margin = "0 auto"
+        }
+    }
+</script>

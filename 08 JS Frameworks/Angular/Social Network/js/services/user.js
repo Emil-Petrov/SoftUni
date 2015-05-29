@@ -73,10 +73,10 @@ app.factory("$user", function ($http) {
         })
     }
 
-    function getUserWallFeed(token, startPostId, pageSize){
+    function getUserWallFeed(token, user, startPostId, pageSize){
         return $http({
             method: "GET",
-            url: BASE_URL + previewUserPrefixUrl + wallPrefixUrl + startPostId + wallSuffixUrl + pageSize,
+            url: BASE_URL + previewUserPrefixUrl + user + wallPrefixUrl + startPostId + wallSuffixUrl + pageSize,
             headers: getAuthorizationToken(token)
         })
     }

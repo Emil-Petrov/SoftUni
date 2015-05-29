@@ -16,9 +16,10 @@ app.controller('headerController', function ($scope, $user, $profile, $utils, $r
     $scope.profilePicture = currentUser.profilePicture;
 
     $scope.logout = function () {
+        sessionStorage.clear();
+
         $user.logout($utils.getSessionToken())
             .then(function () {
-                sessionStorage.clear();
                 $route.reload();
             });
     };

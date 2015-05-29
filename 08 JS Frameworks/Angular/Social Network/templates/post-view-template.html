@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" ng-controller="postController">
     <div class="col-xs-7">
         <div class="post panel panel-default panel-google-plus" id="post-{{post.id}}">
             <div class="panel-heading">
@@ -11,13 +11,13 @@
 
                 <div class="counter-fix">
                     <span class="post-likes-count"><i class="glyphicon glyphicon-thumbs-up"></i> {{post.likesCount}}</span>
-                    <span class="post-comments-count"><a href="#"><i class="glyphicon glyphicon-comment"></i> {{post.totalCommentsCount}}</a></span>
+                    <span class="post-comments-count"><a href="#/"><i class="glyphicon glyphicon-comment"></i> {{post.totalCommentsCount}}</a></span>
                 </div>
 
                 <span class="btn like-btn" ng-show="!post.liked" ng-click="likePost(post)">Like</span>
                 <span class="btn unlike-btn" ng-show="post.liked"  ng-click="unlikePost(post)">Unlike</span>
                 <span class="btn edit-btn" ng-if="post.author.username == currentUserUsername" ng-click="showPostEditBox(post)">Edit</span>
-                <span class="btn delete-btn" ng-if="post.wallOwner.username == currentUserUsername || post.author.username == currentUserUsername" ng-click="deletePost(posts, post)">Delete</span>
+                <span class="btn delete-btn" ng-if="post.wallOwner.username == currentUserUsername || post.author.username == currentUserUsername" ng-click="deletePost(post)">Delete</span>
 
             </div>
             <div class="panel-body">
@@ -33,7 +33,7 @@
             </div>
         </div>
         <div class="comment-box">
-            <div class="load-comments" id="view-{{post.id}}-comments" ng-show="post.comments.length > 0"><a ng-click="viewComments(post)">Load all comments...</a></div>
+            <div class="load-comments" id="view-{{post.id}}-comments" ng-show="post.totalCommentsCount > 3"><a ng-click="viewComments(post)">Load all comments...</a></div>
             <div class="add-comment show-add-comment" ng-click="showCommentBox(post)">Leave a comment...</div>
             <div class="add-post-comment" id="post-{{post.id}}-comment">
                 <textarea id="post-{{post.id}}-comment-box" class="add-comment add-comment-box" cols="30" rows="2" placeholder="Leave a comment..."></textarea>

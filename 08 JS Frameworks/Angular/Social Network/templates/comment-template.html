@@ -1,11 +1,4 @@
-<style>
-    .button-fix {
-        position: absolute;
-        margin-top: -55px;
-        right: 5px;
-    }
-</style>
-<div class="comments" id="comment-{{comment.id}}">
+<div ng-controller="commentController" class="comments" id="comment-{{comment.id}}">
     <div class="comment-container">
         <div class="panel-heading">
             <img class="comment-author-profile-picture"
@@ -17,13 +10,12 @@
         </div>
     </div>
     <span class="likes-count"><i class="glyphicon glyphicon-thumbs-up"></i> {{comment.likesCount}}</span>
-
     <div class="button-fix">
         <span class="like-btn btn" ng-show="!comment.liked" ng-click="likeComment(post.id, comment)">Like</span>
         <span class="unlike-btn btn" ng-show="comment.liked" ng-click="unlikeComment(post.id, comment)">Unlike</span>
         <span class="edit-btn btn" ng-if="comment.author.username == currentUserUsername"
               ng-click="showEditBox(comment)">Edit</span>
-        <span class="delete-btn btn" ng-if="comment.author.username == currentUserUsername"
+        <span class="delete-btn btn" ng-if="comment.author.username == $parent.currentUserUsername"
               ng-click="deleteComments(post, comment.id, $index)">Delete</span>
     </div>
     <p class="panel-content text-center" id="comment-{{comment.id}}-content">{{comment.commentContent}}</p>

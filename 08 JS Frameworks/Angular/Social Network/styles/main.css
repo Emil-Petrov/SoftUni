@@ -688,3 +688,9 @@ ul.form-group {
     vertical-align: middle;
     padding-top: 10px;
 }
+
+.button-fix {
+    position: absolute;
+    margin-top: -55px;
+    right: 5px;
+}
