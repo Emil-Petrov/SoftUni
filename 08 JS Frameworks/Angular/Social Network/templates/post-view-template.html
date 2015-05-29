@@ -23,7 +23,7 @@
             <div class="panel-body">
                 <p class="panel-content">{{post.postContent}}</p>
                 <div class="panel-content edit-box">
-                    <textarea id="post-{{post.id}}-edit" cols="106" rows="3">{{post.postContent}}</textarea>
+                    <textarea id="post-{{post.id}}-edit" cols="106" rows="2">{{post.postContent}}</textarea>
                     <span class="btn like-btn" ng-click="editPost(post)">Save</span>
                     <span class="btn delete-btn" ng-click="hidePostEditBox(post)">Cancel</span>
                 </div>
@@ -31,24 +31,18 @@
             <div ng-repeat="comment in post.comments">
                 <ng-include src="'templates/comment-template.html'"></ng-include>
             </div>
-            <div class="text-right" id="view-{{post.id}}-comments"><a ng-click="viewComments(post)">Load all comments...</a></div>
+        </div>
+        <div class="comment-box">
+            <div class="load-comments" id="view-{{post.id}}-comments" ng-show="post.comments.length > 0"><a ng-click="viewComments(post)">Load all comments...</a></div>
+            <div class="add-comment show-add-comment" ng-click="showCommentBox(post)">Leave a comment...</div>
+            <div class="add-post-comment" id="post-{{post.id}}-comment">
+                <textarea id="post-{{post.id}}-comment-box" class="add-comment add-comment-box" cols="30" rows="2" placeholder="Leave a comment..."></textarea>
+                <span class="btn save-edit like-btn" ng-click="addComment(post)">Save</span>
+                <span class="btn save-edit delete-btn" ng-click="hideCommentBox(post)">Cancel</span>
+            </div>
         </div>
     </div>
 </div>
-
-
-<!--<div class="dropdown">-->
-<!--<span class="dropdown-toggle" type="button" data-toggle="dropdown">-->
-<!--<span class="[ glyphicon glyphicon-chevron-down ]"></span>-->
-<!--</span>-->
-<!--<ul class="dropdown-menu" role="menu">-->
-<!--<li role="presentation">-->
-<!--<a role="menuitem" tabindex="-1" href="#/users/{{post.author.username}}">View-->
-<!--Profile</a>-->
-<!--</li>-->
-<!--<li role="presentation" class="divider"></li>-->
-<!--<li role="presentation">-->
-<!--<a role="menuitem" tabindex="-1" href="#">Another action</a>-->
-<!--</li>-->
-<!--</ul>-->
-<!--</div>-->
+<script>
+    autosize(document.querySelectorAll('textarea'));
+</script>

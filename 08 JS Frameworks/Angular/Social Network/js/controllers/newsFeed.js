@@ -3,7 +3,6 @@ app.controller("newsFeedController", function ($scope, $user, $profile, $utils, 
 
     $profile.getUserFeed($utils.getSessionToken(), '', 5)
         .then(function (info) {
-            console.log(info.data);
             $scope.feed = info.data;
         }, function (err) {
             console.log(err)
@@ -69,15 +68,14 @@ app.controller("newsFeedController", function ($scope, $user, $profile, $utils, 
             });
     };
 
-    // Hide comment and display edit box.
     $scope.showEditBox = function (comment) {
-        document.getElementById('comment-' + comment.id).children[1].style.display = 'none';
+        document.getElementById('comment-' + comment.id + '-content').style.display = 'none';
         document.getElementById("comment-" + comment.id + "-edit").parentNode.style.display = 'block';
     };
 
     $scope.hideEditBox = function (comment) {
         document.getElementById("comment-" + comment.id + "-edit").parentNode.style.display = 'none';
-        document.getElementById('comment-' + comment.id).children[1].style.display = 'block';
+        document.getElementById('comment-' + comment.id + '-content').style.display = 'block';
     };
 
     $scope.editComment = function (post, comment) {
@@ -92,14 +90,27 @@ app.controller("newsFeedController", function ($scope, $user, $profile, $utils, 
             });
     };
 
-    $scope.addComment = function (postId, content) {
-        $comments.addComment($utils.getSessionToken(), postId, content)
+    $scope.addComment = function (post) {
+        var commentContent = document.getElementById('post-' + post.id + '-comment-box').value;
+        $comments.addComment($utils.getSessionToken(), post.id, commentContent)
+            .then(function (info) {
+                $scope.hideCommentBox(post);
+                post.comments.push(info.data)
+            }, function (err) {
+                console.log(err);
+            })
     };
 
     $scope.showCommentBox = function (post) {
-        var postElement = document.getElementById("post-" + post.id);
-        console.log(postElement.lastElementChild);
-        postElement.lastElementChild.style.display = 'hidden';
+        var commentBoxElement = document.getElementById('post-' + post.id + '-comment');
+        commentBoxElement.style.display = 'block';
+        commentBoxElement.parentNode.children[1].style.display = 'none';
+    };
+
+    $scope.hideCommentBox = function (post) {
+        var commentBoxElement = document.getElementById('post-' + post.id + '-comment');
+        commentBoxElement.style.display = 'none';
+        commentBoxElement.parentNode.children[1].style.display = 'block';
     };
 
     $scope.likePost = function (post) {
@@ -163,8 +174,8 @@ app.controller("newsFeedController", function ($scope, $user, $profile, $utils, 
         $comments.getComments($utils.getSessionToken(), post.id)
             .then(function (info) {
                 console.log(info);
-                post.comments = info.data;
-                var loadCommentsElement =  document.getElementById('view-' + post.id + '-comments');
+                post.comments = info.data.reverse();
+                var loadCommentsElement = document.getElementById('view-' + post.id + '-comments');
                 loadCommentsElement.parentNode.removeChild(loadCommentsElement);
             })
     }
