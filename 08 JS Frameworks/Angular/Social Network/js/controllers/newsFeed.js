@@ -16,4 +16,11 @@ app.controller("newsFeedController", function ($scope, $user, $profile, $utils, 
                 console.log(err);
             });
     };
+
+    $profile.getCurrentUserFriendsPreview($utils.getSessionToken())
+        .then(function (info) {
+            console.log(info.data);
+            $scope.friends = info.data.friends;
+            $scope.friendsCount = info.data.totalCount;
+        })
 });

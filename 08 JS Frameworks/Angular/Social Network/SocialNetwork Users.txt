@@ -26,4 +26,10 @@ email: whoa@a
 username: TestingEdnoDveTri
 password: superparola
 name: TestingEdnoDveTri
-mail: testing@edno.dve.tri
+email: testing@edno.dve.tri
+
+#6
+username: guywithnofriends
+password: 123456
+name: SWF LOOKING 4 STR
+email: i@have.no.friends

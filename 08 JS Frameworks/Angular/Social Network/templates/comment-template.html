@@ -5,7 +5,7 @@
                  ng-src="{{comment.author.profileImageData || 'http://placehold.it/50x50'}}"/>
             <h4 class="comment-heading">Posted by
                 <a href="#/users/{{comment.author.username}}" target="_blank">{{comment.author.name}}</a>
-                <span> on - {{comment.date | date: 'medium'}}</span>
+                <span class="comment-date">{{comment.date | date: 'medium'}}</span>
             </h4>
         </div>
     </div>

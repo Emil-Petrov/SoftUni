@@ -8,6 +8,7 @@ app.factory("$user", function ($http) {
     var previewUserPrefixUrl = 'users/';
     var previewUserSuffixUrl = '/preview';
 
+    var friendsUrl = '/friends';
     var wallPrefixUrl = '/wall?StartPostId=';
     var wallSuffixUrl = '&PageSize=';
 
@@ -81,6 +82,14 @@ app.factory("$user", function ($http) {
         })
     }
 
+    function getUserFriendsPreview(token, username){
+        return $http({
+            method: "GET",
+            url: BASE_URL + previewUserPrefixUrl + username + friendsUrl + previewUserSuffixUrl,
+            headers: getAuthorizationToken(token)
+        })
+    }
+
     function getAuthorizationToken(token){
         return {
             Authorization: token
@@ -94,6 +103,7 @@ app.factory("$user", function ($http) {
         preview: preview,
         getUser: getUser,
         findUsers : findUsers,
-        getUserWall: getUserWallFeed
+        getUserWall: getUserWallFeed,
+        getUserFriendsPreview: getUserFriendsPreview
     }
 });

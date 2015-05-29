@@ -74,9 +74,8 @@ app.controller('postController', function ($scope, $posts, $utils, $comments) {
         var newPost = document.getElementById("post-" + post.id + "-edit");
         $posts.editPost($utils.getSessionToken(), post.id, newPost.value)
             .then(function (info) {
-                post.commentContent = info.data.commentContent;
-                newPost.parentNode.style.display = 'none';
-                document.getElementById('comment-' + post.id).children[1].style.display = 'block';
+                post.postContent = info.data.content;
+                $scope.hidePostEditBox(post);
             }, function (err) {
                 console.log(err)
             });

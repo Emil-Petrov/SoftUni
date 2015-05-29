@@ -1,6 +1,7 @@
 app.controller('headerController', function ($scope, $user, $profile, $utils, $route) {
     var currentUser = $utils.getCurrentUser();
-    $scope.name = currentUser.username;
+    $scope.name = currentUser.name;
+    $scope.username = currentUser.username;
     $scope.friendRequests = [];
 
     var checkRequests = function () {
@@ -32,7 +33,6 @@ app.controller('headerController', function ($scope, $user, $profile, $utils, $r
         })
     };
 
-    // TODO: Test this. Also remove HTML elements upon click
     $scope.acceptFriendRequest = function (id) {
         $profile.acceptFriendRequest($utils.getSessionToken(), id)
     };

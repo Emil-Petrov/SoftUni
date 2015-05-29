@@ -1,3 +1,8 @@
+<style>
+    div.panel-body > div > span.save-edit.btn.like-btn{
+        margin-left: 175px;
+    }
+</style>
 <div class="row" ng-controller="postController">
     <div class="col-xs-7">
         <div class="post panel panel-default panel-google-plus" id="post-{{post.id}}">
@@ -5,9 +10,18 @@
                 <img class="[ img-circle pull-left ]"
                      ng-src="{{post.author.profileImageData || 'http://placehold.it/100x100'}}"/>
                 <h3>
-                    <a href="#/users/{{post.author.username}}">{{post.author.name.trim()}}</a>
+                    <a href="#/users/{{post.author.username}}">{{post.author.name}}</a> posted on
+                    <span ng-if="post.author.username != post.wallOwner.username">
+                        <a href="#/users/{{post.wallOwner.username}}">{{post.wallOwner.name}}</a>'s wall
+                    </span>
+                    <span ng-if="post.author.username == post.wallOwner.username">
+                        <span ng-if="post.wallOwner.gender == 1">his</span>
+                        <span ng-if="post.wallOwner.gender == 2">her</span>
+                        <span ng-if="post.wallOwner.gender == 0" >its</span>
+                        wall
+                    </span>
                 </h3>
-                <h5><span> on</span> - <span>{{post.date | date: 'medium'}}</span></h5>
+                <h5><span class="post-date">{{post.date | date: 'medium'}}</span></h5>
 
                 <div class="counter-fix">
                     <span class="post-likes-count"><i class="glyphicon glyphicon-thumbs-up"></i> {{post.likesCount}}</span>
@@ -21,11 +35,11 @@
 
             </div>
             <div class="panel-body">
-                <p class="panel-content">{{post.postContent}}</p>
+                <p class="panel-content" id="post-{{post.id}}-content">{{post.postContent}}</p>
                 <div class="panel-content edit-box">
-                    <textarea id="post-{{post.id}}-edit" cols="106" rows="2">{{post.postContent}}</textarea>
-                    <span class="btn like-btn" ng-click="editPost(post)">Save</span>
-                    <span class="btn delete-btn" ng-click="hidePostEditBox(post)">Cancel</span>
+                    <textarea id="post-{{post.id}}-edit" cols="102" rows="2">{{post.postContent}}</textarea>
+                    <span class="save-edit btn like-btn" ng-click="editPost(post)">Save</span>
+                    <span class="cancel-edit btn delete-btn" ng-click="hidePostEditBox(post)">Cancel</span>
                 </div>
             </div>
             <div ng-repeat="comment in post.comments">

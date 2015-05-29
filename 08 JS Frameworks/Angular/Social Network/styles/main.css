@@ -411,7 +411,8 @@ p.panel-content {
     float: right;
     margin-right: 50px;
     padding-top: 5px;
-    border: 2px solid black;
+    border-radius: 20px;
+    border: 2px solid #292929;
     width: 550px;
 }
 
@@ -462,10 +463,6 @@ ul.find-friends > li > a > span {
 
 .edit-box textarea {
     resize: none;
-}
-
-p.panel-content.edit-box > span.save-edit.btn.like-btn {
-    top: -25px;
 }
 
 .post .img-circle {
@@ -556,7 +553,7 @@ p.panel-content.edit-box > span.save-edit.btn.like-btn {
 
 .save-edit {
     width: 150px;
-    top: 5px !important;
+    top: 5px;
 }
 
 .cancel-edit {
@@ -693,4 +690,50 @@ ul.form-group {
     position: absolute;
     margin-top: -55px;
     right: 5px;
+}
+
+.fb-profile img.fb-image-lg {
+    z-index: 0;
+    margin-bottom: 10px;
+}
+
+.fb-image-profile {
+    margin: -90px 10px 0px 50px;
+    z-index: 9;
+    max-width: 230px;
+    max-height: 210px;
+}
+
+.fb-profile {
+    border: 1px solid black;
+    width: 1250px;
+    height: 500px;
+}
+
+.fb-profile .user-cover-image {
+    display: block;
+    max-width: 1250px;
+    max-height: 500px;
+}
+
+.profile-preview {
+    margin-bottom: 150px;;
+}
+
+.fb-profile h1 {
+    position: relative;
+    top: -100px;
+    left: 300px;
+}
+
+.comment-date {
+    position: absolute;
+    margin-top: -3px;
+    left: 290px;
+}
+
+.post-date {
+    position: absolute;
+    margin-top: -20px;
+    left: 290px;
 }

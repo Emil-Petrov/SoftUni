@@ -46,8 +46,7 @@ app.controller('commentController', function($scope, $posts, $comments, $utils){
         $comments.editComment($utils.getSessionToken(), post.id, comment.id, newComment.value)
             .then(function (info) {
                 comment.commentContent = info.data.commentContent;
-                newComment.parentNode.style.display = 'none';
-                document.getElementById('comment-' + comment.id).children[1].style.display = 'block';
+                $scope.hideEditBox(comment);
             }, function (err) {
                 console.log(err)
             });

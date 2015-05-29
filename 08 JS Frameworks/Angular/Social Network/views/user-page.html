@@ -1,0 +1,26 @@
+<ng-include src="'templates/header.html'"></ng-include>
+<div ng-controller="userPageController">
+    <ng-include src="'templates/user-profile.html'"></ng-include>
+    <div class="post-on-wall" style="float: left;" ng-show="user.isFriend || user.username == currentUserUsername">
+        <textarea ng-model="postContent" cols="30" rows="10"></textarea>
+        <div ng-click="post()">POST</div>
+    </div>
+    <div class="friends-list-container">
+        <div class="row">
+            <span style="text-align: center " ng-if="!user.isFriend">
+                This user is not your friend. So you cant see his friends for some reason?<br/>
+                Blame the devs or use the search option above and find more friends!<br/>
+                <a ng-click="sendFriendRequest()">Send Friend Request</a>
+            </span>
+            <div ng-repeat="friend in friends">
+                <ng-include src="'templates/friendbox-user-preview.html'"></ng-include>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-offset-2">
+        <div class="post-container" ng-repeat="post in feed">
+            <ng-include src="'templates/post-view-template.html'"></ng-include>
+        </div>
+    </div>
+
+</div>
