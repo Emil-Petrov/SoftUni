@@ -11,4 +11,4 @@ app.controller("registerController", function ($scope, $user, $utils, $route) {
                 noty({text: err.data.message, type: "error", timeout: 3000});
             })
     };
-});
+})

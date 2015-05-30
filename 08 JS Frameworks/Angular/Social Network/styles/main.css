@@ -653,7 +653,6 @@ ul.form-group {
     width: 100%;
     background: #292929;
     padding-bottom: 10px;
-    margin-bottom: 10px;
     padding-top: 10px;
 }
 
@@ -746,7 +745,6 @@ div.panel-body > div > span.save-edit.btn.like-btn {
     border: 3px solid black;
     border-top: none;
     margin-top: -10px;
-    padding-top: 10px;
     text-align: center;
     font-size: 1.1em;
     width: 717px;
@@ -765,4 +763,7 @@ div.panel-body > div > span.save-edit.btn.like-btn {
 
 .post-btn {
     width: 100%;
+}
+.col-xs-7{
+    margin-bottom: 10px;
 }

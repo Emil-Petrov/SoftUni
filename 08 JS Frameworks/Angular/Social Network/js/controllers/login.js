@@ -11,7 +11,7 @@ app.controller("loginController", function ($scope, $user, $utils, $profile, $ro
                         noty({text: "Welcome back " +userInfo.name, type:"success", timeout: 3000})
                     });
             }, function (err) {
-                console.log(err);
+                noty({text: err.data.error_description, type:"error", timeout: 3000})
             });
     };
 });

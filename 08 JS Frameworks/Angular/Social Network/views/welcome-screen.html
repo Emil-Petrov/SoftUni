@@ -17,7 +17,7 @@
     <div ng-if="sessionStorage.currentUser" ng-controller="newsFeedController">
         <ng-include src="'templates/header.html'"></ng-include>
         <div>
-            <div class="friends-list-container" ng-controller="friendsController">
+            <div class="text-center friends-list-container" ng-controller="friendsController">
                 <div class="row">
                     <div style="border-bottom: 2px solid black; margin-right: 3px; text-align: center;">
                         <a href="#/users/{{currentUserUsername}}/friends">Your Friends - {{(friendsCount)}}</a>
@@ -37,10 +37,12 @@
                 Your news feed is empty.
             </span>
 
-            <div class="post-container" ng-repeat="post in feed">
-                <ng-include src="'templates/post-view-template.html'"></ng-include>
+            <div ng-if="feed.length > 0">
+                <div class="post-container" ng-repeat="post in feed">
+                    <ng-include src="'templates/post-view-template.html'"></ng-include>
+                </div>
+                <ng-include src="'templates/post-view-footer.html'"></ng-include>
             </div>
-            <ng-include src="'templates/post-view-footer.html'"></ng-include>
         </div>
     </div>
 </div>

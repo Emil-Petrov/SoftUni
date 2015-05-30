@@ -20,11 +20,11 @@
 
                 <div class="counter-fix">
                     <span class="post-likes-count"><i class="glyphicon glyphicon-thumbs-up"></i> {{post.likesCount}}</span>
-                    <span class="post-comments-count"><a href="#/"><i class="glyphicon glyphicon-comment"></i> {{post.totalCommentsCount}}</a></span>
+                    <span class="post-comments-count"><i class="glyphicon glyphicon-comment"></i> {{post.totalCommentsCount}}</span>
                 </div>
 
-                <span class="btn like-btn" ng-show="!post.liked" ng-click="likePost(post)">Like</span>
-                <span class="btn unlike-btn" ng-show="post.liked"  ng-click="unlikePost(post)">Unlike</span>
+                <span class="btn like-btn" ng-show="!post.liked && (post.author.isFriend || post.wallOwner.isFriend || post.author.name == currentUserUsername)" ng-click="likePost(post)">Like</span>
+                <span class="btn unlike-btn" ng-show="post.liked && (post.author.isFriend || post.wallOwner.isFriend || post.author.name == currentUserUsername)"  ng-click="unlikePost(post)">Unlike</span>
                 <span class="btn edit-btn" ng-if="post.author.username == currentUserUsername" ng-click="showPostEditBox(post)">Edit</span>
                 <span class="btn delete-btn" ng-if="post.wallOwner.username == currentUserUsername || post.author.username == currentUserUsername" ng-click="deletePost(post)">Delete</span>
 
