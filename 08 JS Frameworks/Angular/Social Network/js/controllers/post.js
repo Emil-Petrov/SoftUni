@@ -1,12 +1,4 @@
 app.controller('postController', function ($scope, $posts, $utils, $comments) {
-    $scope.likePost = function (postId) {
-        $posts.likePost($utils.getSessionToken(), postId);
-    };
-
-    $scope.unlikePost = function (postId) {
-        $posts.unlikePost($utils.getSessionToken(), postId);
-    };
-
     $scope.addComment = function (post) {
         var commentContent = document.getElementById('post-' + post.id + '-comment-box').value;
         $comments.addComment($utils.getSessionToken(), post.id, commentContent)
@@ -14,7 +6,7 @@ app.controller('postController', function ($scope, $posts, $utils, $comments) {
                 $scope.hideCommentBox(post);
                 post.comments.push(info.data)
             }, function (err) {
-                console.log(err);
+                noty({text: err.data.message, type:"error", timeout: 3000})
             })
     };
 
@@ -36,7 +28,7 @@ app.controller('postController', function ($scope, $posts, $utils, $comments) {
                 post.liked = info.data.liked;
                 post.likesCount = info.data.likesCount;
             }, function (err) {
-                console.log(err);
+                noty({text: err.data.message, type:"error", timeout: 3000})
             })
     };
 
@@ -46,7 +38,7 @@ app.controller('postController', function ($scope, $posts, $utils, $comments) {
                 post.liked = info.data.liked;
                 post.likesCount = info.data.likesCount;
             }, function (err) {
-                console.log(err);
+                noty({text: err.data.message, type:"error", timeout: 3000})
             })
     };
 
@@ -55,8 +47,9 @@ app.controller('postController', function ($scope, $posts, $utils, $comments) {
             .then(function () {
                 var index = $scope.feed.indexOf(post);
                 $scope.feed.splice(index, 1);
+                noty({text: "Post deleted successfully.", type:"success", timeout: 3000})
             }, function (err) {
-                console.log(err);
+                noty({text: err.data.message, type:"error", timeout: 3000})
             });
     };
 
@@ -76,8 +69,9 @@ app.controller('postController', function ($scope, $posts, $utils, $comments) {
             .then(function (info) {
                 post.postContent = info.data.content;
                 $scope.hidePostEditBox(post);
+                noty({text: "Post edited successfully.", type:"success", timeout: 3000})
             }, function (err) {
-                console.log(err)
+                noty({text: err.data.message, type:"error", timeout: 3000})
             });
     };
 
@@ -88,6 +82,9 @@ app.controller('postController', function ($scope, $posts, $utils, $comments) {
                 post.comments = info.data.reverse();
                 var loadCommentsElement = document.getElementById('view-' + post.id + '-comments');
                 loadCommentsElement.parentNode.removeChild(loadCommentsElement);
+            }, function(err){
+                noty({text: err.data.message, type:"error", timeout: 3000})
             })
-    }
+    };
+
 });

@@ -1,8 +1,3 @@
-<style>
-    div.panel-body > div > span.save-edit.btn.like-btn{
-        margin-left: 175px;
-    }
-</style>
 <div class="row" ng-controller="postController">
     <div class="col-xs-7">
         <div class="post panel panel-default panel-google-plus" id="post-{{post.id}}">
@@ -46,11 +41,11 @@
                 <ng-include src="'templates/comment-template.html'"></ng-include>
             </div>
         </div>
-        <div class="comment-box">
+        <div ng-if="post.author.isFriend || post.wallOwner.isFriend || post.author.username == currentUserUsername || post.wallOwner.username == currentUserUsername" class="comment-box">
             <div class="load-comments" id="view-{{post.id}}-comments" ng-show="post.totalCommentsCount > 3"><a ng-click="viewComments(post)">Load all comments...</a></div>
             <div class="add-comment show-add-comment" ng-click="showCommentBox(post)">Leave a comment...</div>
             <div class="add-post-comment" id="post-{{post.id}}-comment">
-                <textarea id="post-{{post.id}}-comment-box" class="add-comment add-comment-box" cols="30" rows="2" placeholder="Leave a comment..."></textarea>
+                <textarea id="post-{{post.id}}-comment-box" class="add-comment add-comment-box" cols="30" rows="3" placeholder="Leave a comment..."></textarea>
                 <span class="btn save-edit like-btn" ng-click="addComment(post)">Save</span>
                 <span class="btn save-edit delete-btn" ng-click="hideCommentBox(post)">Cancel</span>
             </div>

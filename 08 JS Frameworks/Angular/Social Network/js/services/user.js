@@ -90,6 +90,14 @@ app.factory("$user", function ($http) {
         })
     }
 
+    function getUserFriends(token, username){
+        return $http({
+            method: "GET",
+            url: BASE_URL + previewUserPrefixUrl + username + friendsUrl,
+            headers: getAuthorizationToken(token)
+        })
+    }
+
     function getAuthorizationToken(token){
         return {
             Authorization: token
@@ -104,6 +112,7 @@ app.factory("$user", function ($http) {
         getUser: getUser,
         findUsers : findUsers,
         getUserWall: getUserWallFeed,
-        getUserFriendsPreview: getUserFriendsPreview
+        getUserFriendsPreview: getUserFriendsPreview,
+        getUserFriends: getUserFriends
     }
 });

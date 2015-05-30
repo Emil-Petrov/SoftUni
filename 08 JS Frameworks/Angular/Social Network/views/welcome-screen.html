@@ -1,8 +1,12 @@
+<style>
+    .load-more-posts{
+
+    }
+</style>
 <div ng-controller="LITERALLYJUSTSESSIONSTORRAGE">
     <div ng-if="!sessionStorage.currentUser">
         <div class="welcome-view">
             <h1><span>Welcome to our site</span></h1>
-
             <div>
                 <ng-include src="'templates/login.html'"></ng-include>
                 <span class="or">OR</span>
@@ -13,15 +17,15 @@
     <div ng-if="sessionStorage.currentUser" ng-controller="newsFeedController">
         <ng-include src="'templates/header.html'"></ng-include>
         <div>
-            <div class="friends-list-container">
+            <div class="friends-list-container" ng-controller="friendsController">
                 <div class="row">
-
-                   <div style="border-bottom: 2px solid black; margin-right: 3px;">
-                       Friends - {{(friendsCount)}}
-                   </div>
+                    <div style="border-bottom: 2px solid black; margin-right: 3px; text-align: center;">
+                        <a href="#/users/{{currentUserUsername}}/friends">Your Friends - {{(friendsCount)}}</a>
+                    </div>
                     <span ng-if="friendsCount <= 0">You have no friends, <br/>
                         Feel free to go outside and find some, or if you are feeling lucky you can always use the search option at the top
                     </span>
+
                     <div ng-repeat="friend in friends">
                         <ng-include src="'templates/friendbox-user-preview.html'"></ng-include>
                     </div>
@@ -32,9 +36,11 @@
             <span ng-if="feed.length <= 0">
                 Your news feed is empty.
             </span>
+
             <div class="post-container" ng-repeat="post in feed">
                 <ng-include src="'templates/post-view-template.html'"></ng-include>
             </div>
+            <ng-include src="'templates/post-view-footer.html'"></ng-include>
         </div>
     </div>
 </div>

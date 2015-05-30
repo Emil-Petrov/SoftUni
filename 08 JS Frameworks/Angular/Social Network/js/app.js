@@ -9,6 +9,8 @@ app.config(function ($routeProvider) {
         templateUrl: 'views/change-password.html'
     }).when('/users/:username',{
         templateUrl: 'views/user-page.html'
+    }).when('/users/:username/friends',{
+        templateUrl: 'views/friends.html'
     });
     $routeProvider.otherwise({redirectTo: '/'});
 }).run(function ($rootScope, $location) {

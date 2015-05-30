@@ -9,9 +9,15 @@ app.controller('editProfileController', function ($profile, $scope, $utils, $rou
     $scope.changeProfilePicture = function () {
         var profilePictureSource = document.getElementById("upload-profile-picture").files[0];
         var profilePicturePreview = document.getElementById("profile-picture-preview");
-        if (profilePictureSource.size > 128000){
-            throw new Error("Picture is too big");
+        if (profilePictureSource.type != 'image/jpeg'){
+            noty({text: "Format not allowed", type: "error", timeout: 3000});
+            return;
         }
+        if (profilePictureSource.size > 128000) {
+            noty({text: "Profile picture is too big", type: "error", timeout: 3000});
+            return;
+        }
+
         changePicture(profilePictureSource, profilePicturePreview, function (src) {
             $scope.profilePicture = src;
         });
@@ -20,6 +26,16 @@ app.controller('editProfileController', function ($profile, $scope, $utils, $rou
     $scope.changeCoverPicture = function () {
         var coverPictureSource = document.getElementById("upload-cover-picture").files[0];
         var coverPicturePreview = document.getElementById("cover-picture-preview");
+        if (coverPictureSource.type != 'image/jpeg'){
+            noty({text: "Format not allowed", type: "error", timeout: 3000});
+            return;
+        }
+
+        if (coverPictureSource.size > 1024000){
+            noty({text: "Cover image is too big", type: "error", timeout: 3000});
+            return;
+        }
+
         changePicture(coverPictureSource, coverPicturePreview, function (src) {
             $scope.coverPicture = src;
         });
@@ -30,9 +46,10 @@ app.controller('editProfileController', function ($profile, $scope, $utils, $rou
         $profile.changeProfile($utils.getSessionToken(), $scope.name, $scope.email, $scope.profilePicture, $scope.coverPicture, gender)
             .then(function () {
                 $utils.setStorage($utils.getSessionToken(), currentUser.username, $scope.name, $scope.coverPicture, $scope.profilePicture, $scope.email, gender);
+                noty({text: "Profile changed successfully", type: "success", timeout: 3000});
                 $scope.setGender();
-            }, function () {
-                console.log(arguments);
+            }, function (err) {
+                noty({text: err.data.message, type: "error", timeout: 3000});
             });
     };
 
@@ -57,7 +74,7 @@ app.controller('editProfileController', function ($profile, $scope, $utils, $rou
             document.getElementById('female').className = document.getElementById('male').className.replace('active', 'notActive');
             document.getElementById('female').className = document.getElementById('other').className.replace('active', 'notActive');
             document.getElementById('gender').value = "2";
-        }else{
+        } else {
             document.getElementById('other').className = document.getElementById('other').className.replace('notActive', 'active');
             document.getElementById('female').className = document.getElementById('female').className.replace('active', 'notActive');
             document.getElementById('female').className = document.getElementById('male').className.replace('active', 'notActive');

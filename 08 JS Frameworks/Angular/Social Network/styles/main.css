@@ -737,3 +737,32 @@ ul.form-group {
     margin-top: -20px;
     left: 290px;
 }
+
+div.panel-body > div > span.save-edit.btn.like-btn {
+    margin-left: 175px;
+}
+
+.load-more-posts {
+    border: 3px solid black;
+    border-top: none;
+    margin-top: -10px;
+    padding-top: 10px;
+    text-align: center;
+    font-size: 1.1em;
+    width: 717px;
+}
+
+.post-on-wall {
+    position: absolute;
+    top: 950px;
+    right: 55px;
+    width: 550px;
+}
+
+.post-on-wall > textarea {
+    resize: none;
+}
+
+.post-btn {
+    width: 100%;
+}

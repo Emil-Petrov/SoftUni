@@ -37,8 +37,8 @@
                                 <img ng-src="{{request.user.profileImageData || 'http://placehold.it/50x50'}}" alt=""/>
                                 <span>{{request.user.name}}</span>
                             </a>
-                            <a ng-click="acceptFriendRequest(request.id)">Accept</a>
-                            <a ng-click="rejectFriendRequest(request.id)">Decline</a>
+                            <a ng-click="acceptFriendRequest(request)">Accept</a>
+                            <a ng-click="rejectFriendRequest(request)">Decline</a>
 
                             <div class="divider"></div>
                         </li>

@@ -63,7 +63,8 @@
                     <div class="text-center">
                         <img class="cover" id="cover-picture-preview" ng-src="{{coverPicture || 'http://placehold.it/750x250'}}">
                         <h6>Upload a different cover image...</h6>
-
+                        <span>Allowed format: .jpg</span><br/>
+                        <span>Limit: 1024kb</span>
                         <input type="file" class="form-control" id="upload-cover-picture"
                                onchange="angular.element(this).scope().changeCoverPicture()">
                     </div>

@@ -1,0 +1,13 @@
+<ng-include src="'templates/header.html'"></ng-include>
+<div ng-controller="friendsController">
+    <div ng-if="friends">
+        <label  for="filterFriends">Search: </label>
+        <input type="text" id="filterFriends" ng-model="search"/>
+        <div ng-repeat="friend in friends | filter:{name: search}">
+            <ng-include src="'templates/friendbox-user-preview.html'"></ng-include>
+        </div>
+    </div>
+    <div ng-if="!friends">
+        This user is not your friends. You cannot view his friends list.
+    </div>
+</div>
