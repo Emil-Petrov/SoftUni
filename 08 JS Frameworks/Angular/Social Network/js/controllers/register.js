@@ -8,7 +8,15 @@ app.controller("registerController", function ($scope, $user, $utils, $route) {
                 noty({text: "Welcome to our site " + $scope.name, type: "error", timeout: 3000});
                 window.location.replace('#/edit-profile');
             }, function (err) {
-                noty({text: err.data.message, type: "error", timeout: 3000});
+                console.log(JSON.stringify(err.data));
+                if(err.data.modelState){
+                    err.data.modelState[""].forEach(function(element, index){
+                        noty({text: element, type: 'error', timeout: 3000})
+                    })
+                }else{
+                    noty({text: err.data.message, type: 'error', timeout: 3000})
+                }
+
             })
     };
-})
+});
