@@ -15,7 +15,7 @@
         <span class="unlike-btn btn" ng-show="comment.liked && (post.author.isFriend || post.wallOwner.isFriend || post.author.username == currentUserUsername)" ng-click="unlikeComment(post.id, comment)">Unlike</span>
         <span class="edit-btn btn" ng-if="comment.author.username == currentUserUsername"
               ng-click="showEditBox(comment)">Edit</span>
-        <span class="delete-btn btn" ng-if="comment.author.username == $parent.currentUserUsername"
+        <span class="delete-btn btn" ng-if="comment.author.username == $parent.currentUserUsername || post.author.username == currentUserUsername"
               ng-click="deleteComments(post, comment.id, $index)">Delete</span>
     </div>
     <p class="panel-content text-center" id="comment-{{comment.id}}-content">{{comment.commentContent}}</p>

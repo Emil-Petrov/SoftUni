@@ -48,7 +48,7 @@ app.controller('commentController', function($scope, $posts, $comments, $utils){
                 comment.commentContent = info.data.commentContent;
                 $scope.hideEditBox(comment);
             }, function (err) {
-                console.log(err)
+                noty({text: err.data.message, type: "error", timeout: 30000})
             });
     };
 });
