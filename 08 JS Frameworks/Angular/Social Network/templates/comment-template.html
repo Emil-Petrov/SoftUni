@@ -11,8 +11,8 @@
     </div>
     <span class="likes-count"><i class="glyphicon glyphicon-thumbs-up"></i> {{comment.likesCount}}</span>
     <div class="button-fix">
-        <span class="like-btn btn" ng-show="!comment.liked && (post.author.isFriend || post.wallOwner.isFriend || post.author.name == currentUserUsername)" ng-click="likeComment(post.id, comment)">Like</span>
-        <span class="unlike-btn btn" ng-show="comment.liked && (post.author.isFriend || post.wallOwner.isFriend || post.author.name == currentUserUsername)" ng-click="unlikeComment(post.id, comment)">Unlike</span>
+        <span class="like-btn btn" ng-show="!comment.liked && (post.author.isFriend || post.wallOwner.isFriend || post.author.username == currentUserUsername)" ng-click="likeComment(post.id, comment)">Like</span>
+        <span class="unlike-btn btn" ng-show="comment.liked && (post.author.isFriend || post.wallOwner.isFriend || post.author.username == currentUserUsername)" ng-click="unlikeComment(post.id, comment)">Unlike</span>
         <span class="edit-btn btn" ng-if="comment.author.username == currentUserUsername"
               ng-click="showEditBox(comment)">Edit</span>
         <span class="delete-btn btn" ng-if="comment.author.username == $parent.currentUserUsername"
