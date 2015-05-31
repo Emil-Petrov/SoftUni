@@ -3,6 +3,7 @@ app.controller('userPageController', function ($scope, $profile, $user, $utils, 
     $scope.feed = [];
     $user.getUserWall($utils.getSessionToken(), $routeParams.username, '', 1)
         .then(function (info) {
+            console.log(info.data);
             $scope.feed = info.data;
         }, function (err) {
             console.log(err);
